@@ -1,0 +1,10 @@
+9
+Espada desgastada|Es una espada de madera, con una hoja de acero oxidado. No parece muy útil.|2|0|Espada|Madera y acero|10
+Hacha oxidada|Es una hacha de madera, con una hoja de acero oxidado. No parece muy útil.|2|0|Hacha|Madera y acero|10
+Arco de madera|Es un arco de madera, con una cuerda de cuero. No parece muy útil.|2|0|Arco|Madera y cuero|10
+Navaja sin filo|Es una navaja de madera, con una hoja de acero oxidado. No parece muy útil.|2|0|Navaja|Madera y acero|10
+Mandoble oxidado|Es un mandoble de madera, con una hoja de acero oxidado. No parece muy útil.|2|0|Mandoble|Madera y acero|10
+Varita de madera|Es una varita de madera. No parece muy útil.|2|0|Varita|Madera y acero|10
+Libro de hechizos|Es un viejo libro de hechizos. No parece muy útil.|2|0|Libro de hechizos|Papel|10
+Lira desafinada|Es una lira de madera. No parece muy útil.|2|0|Instrumento|Madera y acero|10
+Cetro de madera|Es un cetro de madera. No parece muy útil.|2|0|Cetro|Madera y acero|10

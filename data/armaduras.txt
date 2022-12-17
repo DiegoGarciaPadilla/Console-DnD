@@ -1,0 +1,10 @@
+9
+Armadura de madera|Es una armadura de madera, con placas de acero oxidado. No parece muy útil.|2|0|Armadura|Madera y acero|10
+Armadura oxidada|Es una armadura de hierro oxidada. No parece muy útil.|2|0|Armadura|Hierro|10
+Armadura de cuero|Es una armadura de cuero, con placas de acero oxidado. No parece muy útil.|2|0|Armadura|Cuero y acero|10
+Capa de cuero|Es una capa de cuero, con placas de acero oxidado. No parece muy útil.|2|0|Armadura|Cuero y acero|10
+Armadura desgastada|Es una armadura desgastada por el tiempo. No parece muy útil.|2|0|Armadura|Hierro|10
+Capa de seda|Es una capa de seda. No parece muy útil.|2|0|Armadura|Seda|10
+Traje de clérigo|Es un traje de clérigo. No parece muy útil.|2|0|Armadura|Tela|10
+Vestimenta de bardo|Es una vestimenta de bardo. No parece muy útil.|2|0|Armadura|Tela|10
+Harapos de lino|Es un harapo de lino. No parece muy útil.|2|0|Armadura|Lino|10
