@@ -112,7 +112,7 @@ void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
 Arma *inicializarArmas()
 {
     // Open the file
-    std::ifstream archivo("./data/armas.txt");
+    std::ifstream archivo("./data/weapons.txt");
     // Check if the file was opened correctly
     if (!archivo.is_open())
     {
@@ -183,7 +183,7 @@ void mostrarArmas(Arma *armas, int numArmas)
 Armadura *inicializarArmaduras()
 {
     // Open the file
-    std::ifstream archivo("./data/armaduras.txt");
+    std::ifstream archivo("./data/armors.txt");
     // Check if the file was opened correctly
     if (!archivo.is_open())
     {
@@ -254,7 +254,7 @@ void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
 Raza *inicializarRazas()
 {
     // Open the file
-    std::ifstream archivo("./data/razas.txt");
+    std::ifstream archivo("./data/races.txt");
     // Check if the file was opened correctly
     if (!archivo.is_open())
     {
@@ -330,7 +330,7 @@ Clase *inicializarClases()
     Armadura *armaduras = inicializarArmaduras();
 
     // Open the file
-    std::ifstream archivo("./data/clases.txt");
+    std::ifstream archivo("./data/classes.txt");
     // Check if the file was opened correctly
     if (!archivo.is_open())
     {
