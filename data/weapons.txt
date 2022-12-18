@@ -1,10 +1,10 @@
 9
-Rusty sword|It's a wooden sword, with a rusty steel blade. It doesn't seem very useful.|2|0|Sword|Wood and steel|10
-Rusty axe|It's a wooden axe, with a rusty steel blade. It doesn't seem very useful.|2|0|Axe|Wood and steel|10
-Wooden bow|It's a wooden bow, with a leather string. It doesn't seem very useful.|2|0|Bow|Wood and leather|10
-Blunt knife|It's a wooden knife, with a rusty steel blade. It doesn't seem very useful.|2|0|Knife|Wood and steel|10
-Rusty halberd|It's a wooden halberd, with a rusty steel blade. It doesn't seem very useful.|2|0|Halberd|Wood and steel|10
-Wooden wand|It's a wooden wand. It doesn't seem very useful.|2|0|Wand|Wood and steel|10
-Spellbook|It's an old spellbook. It doesn't seem very useful.|2|0|Spellbook|Paper|10
-Out of tune lute|It's a wooden lute. It doesn't seem very useful.|2|0|Instrument|Wood and steel|10
-Wooden staff|It's a wooden staff. It doesn't seem very useful.|2|0|Staff|Wood and steel|10
+Rusty sword|It's a wooden sword, with a rusty steel blade. It doesn't seem very useful.|2|0|Sword|Wood and steel|6
+Rusty axe|It's a wooden axe, with a rusty steel blade. It doesn't seem very useful.|3|0|Axe|Wood and steel|6
+Wooden bow|It's a wooden bow, with a leather string. It doesn't seem very useful.|1|0|Bow|Wood and leather|6
+Blunt knife|It's a wooden knife, with a rusty steel blade. It doesn't seem very useful.|1|0|Knife|Wood and steel|6
+Rusty halberd|It's a wooden halberd, with a rusty steel blade. It doesn't seem very useful.|1|0|Halberd|Wood and steel|6
+Wooden wand|It's a wooden wand. It doesn't seem very useful.|1|0|Wand|Wood and steel|6
+Spellbook|It's an old spellbook. It doesn't seem very useful.|1|0|Spellbook|Paper|6
+Out of tune lute|It's a wooden lute. It doesn't seem very useful.|1|0|Instrument|Wood and steel|6
+Wooden staff|It's a wooden staff. It doesn't seem very useful.|1|0|Staff|Wood and steel|6
