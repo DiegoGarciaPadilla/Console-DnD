@@ -1,12 +1,11 @@
 /**
- * DnD Character Creator
- * Diego Antonio Garcia Padilla
- * A01710777
- * 02/12/2022
- */
-
-/**
- * @brief This file contains the menu functions.
+ * @file Menu.h
+ * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
+ * @brief This file contains the functions that show the menus of the game.
+ * @version 0.1
+ * @date 2022-12-21
+ *
+ * @copyright Copyright (c) 2022
  *
  */
 
@@ -16,240 +15,324 @@
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
 
-#include "Funciones.h"     // Include the functions file
-#include "Inicializador.h" // Include the Initializer file
-#include "Raza.h"          // Include the race class
-#include "Clase.h"         // Include the class class
-#include "Estadisticas.h"  // Include the statistics class
-#include "Personaje.h"     // Include the character class
+#include "Functions.h"   // Include the functions file
+#include "Initializer.h" // Include the Initializer file
+#include "Race.h"        // Include the race class
+#include "Class.h"       // Include the class class
+#include "Weapon.h"      // Include the weapon class
+#include "Armor.h"       // Include the armor class
 
 // Functions
 
 /**
  * @brief Function to show the main menu
- * 
+ *
  * @param
  * @return
  */
 
-void menuPrincipal()
+void mainMenu()
 {
-    limpiarPantalla();
-    std::cout << "Bienvenido al creador de personajes de D&D" << std::endl;
+    // Clear the screen
+    cleanScreen();
+
+    // Show the main menu
+    std::cout << "Welcome to the D&D character creator" << std::endl;
     std::cout << std::endl;
-    std::cout << "1. Crear personaje" << std::endl;
-    std::cout << "2. Mostrar personaje" << std::endl;
-    std::cout << "3. Enciclopedia de DnD" << std::endl;
-    std::cout << "4. Salir" << std::endl;
+    std::cout << "1. Create character" << std::endl;
+    std::cout << "2. Show character" << std::endl;
+    std::cout << "3. D&D encyclopedia" << std::endl;
+    std::cout << "4. Exit" << std::endl;
 }
 
 /**
  * @brief Function to show the race encyclopedia menu
- * 
+ *
  * @param
  * @return
  */
 
-void menuRazas()
+void racesMenu()
 {
-    int opcion;
-    Raza *razas = inicializarRazas();
+    // Variables
+    int option;
 
+    // Arrays
+    Race *races = initRaces();
+    std::string *racesNames = listRaces();
+    int racesNumber = sizeof(races) / sizeof(races[0]);
+
+    // Show the races menu
     do
     {
-        limpiarPantalla();
-        std::cout << "Bienvenido a la enciclopedia de razas de D&D" << std::endl;
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << "Welcome to the D&D's races encyclopedia" << std::endl;
         std::cout << std::endl;
-        mostrarRazas(razas, 9);
-        std::cout << "10. Volver" << std::endl;
-        std::cout << "Escoge una opcion: ";
-        std::cin >> opcion;
 
-        while (opcion < 1 || opcion > 10)
+        // Show races
+        printArray(racesNames);
+        std::cout << racesNumber + 1 << ". Return" << std::endl;
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > racesNumber + 1)
         {
-            std::cout << "Opcion no valida" << std::endl;
-            std::cin >> opcion;
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
         }
 
-        if (opcion != 10)
+        // If the option is valid, show the race
+        if (option != racesNumber + 1)
         {
-            limpiarPantalla();
-            razas[opcion - 1].mostrarRaza();
-            pausa();
+            // Clear the screen
+            cleanScreen();
+
+            // Show the race
+            std::cout << races[option - 1].toString() << std::endl;
+            pause();
         }
 
-    } while (opcion != 10);
+    } while (option != racesNumber + 1);
 
-    delete[] razas;
+    // Delete the arrays
+    delete[] races;
+    delete[] racesNames;
 }
 
 /**
  * @brief Function to show the class encyclopedia menu
- * 
+ *
  * @param
  * @return
  */
 
-void menuClases()
+void classesMenu()
 {
-    int opcion;
-    Clase *clases = inicializarClases();
+    // Variables
+    int option;
 
+    // Arrays
+    Class *classes = initClasses();
+    std::string *classesNames = listClasses();
+    int classesNumber = sizeof(classes) / sizeof(classes[0]);
+
+    // Show the classes menu
     do
     {
-        limpiarPantalla();
-        std::cout << "Bienvenido a la enciclopedia de clases de D&D" << std::endl;
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << "Welcome to the D&D's classes encyclopedia" << std::endl;
         std::cout << std::endl;
-        mostrarClases(clases, 9);
-        std::cout << "10. Volver" << std::endl;
-        std::cout << "Escoge una opcion: ";
-        std::cin >> opcion;
 
-        while (opcion < 1 || opcion > 10)
+        // Show classes
+        printArray(classesNames);
+        std::cout << classesNumber + 1 << ". Return" << std::endl;
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > classesNumber + 1)
         {
-            std::cout << "Opcion no valida" << std::endl;
-            std::cin >> opcion;
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
         }
 
-        if (opcion != 10)
+        // If the option is valid, show the class
+        if (option != classesNumber + 1)
         {
-            limpiarPantalla();
-            clases[opcion - 1].mostrarClase();
-            pausa();
+            // Clear the screen
+            cleanScreen();
+
+            // Show the class
+            std::cout << classes[option - 1].toString() << std::endl;
+            pause();
         }
 
-    } while (opcion != 10);
+    } while (option != 10);
 
-    delete[] clases;
+    // Delete the arrays
+    delete[] classes;
+    delete[] classesNames;
 }
 
 /**
- * @brief Function to show the statistics encyclopedia menu
- * 
+ * @brief Function to show the weapons encyclopedia menu
+ *
  * @param
  * @return
  */
 
-void menuArmas()
+void weaponsMenu()
 {
-    int opcion;
-    Arma *armas = inicializarArmas();
+    // Variables
+    int option;
 
+    // Arrays
+    Weapon *weapons = initWeapons();
+    std::string *weaponsNames = listWeapons();
+    int weaponsNumber = sizeof(weapons) / sizeof(weapons[0]);
+
+    // Show the weapons menu
     do
     {
-        limpiarPantalla();
-        std::cout << "Bienvenido a la enciclopedia de armas de D&D" << std::endl;
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << "Welcome to the D&D's weapons encyclopedia" << std::endl;
         std::cout << std::endl;
-        mostrarArmas(armas, 9);
-        std::cout << "10. Volver" << std::endl;
-        std::cout << "Escoge una opcion: ";
-        std::cin >> opcion;
 
-        while (opcion < 1 || opcion > 10)
+        // Show weapons
+        printArray(weaponsNames);
+        std::cout << weaponsNumber + 1 << ". Return" << std::endl;
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > weaponsNumber + 1)
         {
-            std::cout << "Opcion no valida" << std::endl;
-            std::cin >> opcion;
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
         }
 
-        if (opcion != 10)
+        // If the option is valid, show the weapon
+        if (option != weaponsNumber + 1)
         {
-            limpiarPantalla();
-            armas[opcion - 1].mostrarDatos();
-            pausa();
+            // Clear the screen
+            cleanScreen();
+
+            // Show the weapon
+            std::cout << weapons[option - 1].toString() << std::endl;
+            pause();
         }
 
-    } while (opcion != 10);
+    } while (option != weaponsNumber + 1);
 
-    delete[] armas;
+    // Delete the arrays
+    delete[] weapons;
+    delete[] weaponsNames;
 }
 
 /**
  * @brief Function to show the armor encyclopedia menu
- * 
+ *
  * @param
  * @return
  */
 
-void menuArmaduras()
+void armorMenu()
 {
-    int opcion;
-    Armadura *armaduras = inicializarArmaduras();
+    // Variables
+    int option;
 
+    // Arrays
+    Armor *armors = initArmors();
+    std::string *armorsNames = listArmors();
+    int armorsNumber = sizeof(armors) / sizeof(armors[0]);
+
+    // Show the armors menu
     do
     {
-        limpiarPantalla();
-        std::cout << "Bienvenido a la enciclopedia de armaduras de D&D" << std::endl;
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << "Welcome to the D&D's armors encyclopedia" << std::endl;
         std::cout << std::endl;
-        mostrarArmaduras(armaduras, 9);
-        std::cout << "10. Volver" << std::endl;
-        std::cout << "Escoge una opcion: ";
-        std::cin >> opcion;
 
-        while (opcion < 1 || opcion > 10)
+        // Show armors
+        printArray(armorsNames);
+        std::cout << armorsNumber + 1 << ". Return" << std::endl;
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > armorsNumber + 1)
         {
-            std::cout << "Opcion no valida" << std::endl;
-            std::cin >> opcion;
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
         }
 
-        if (opcion != 10)
+        // If the option is valid, show the armor
+        if (option != armorsNumber + 1)
         {
-            limpiarPantalla();
-            armaduras[opcion - 1].mostrarDatos();
-            pausa();
+            // Clear the screen
+            cleanScreen();
+
+            // Show the armor
+            std::cout << armors[option - 1].toString() << std::endl;
+            pause();
         }
 
-    } while (opcion != 10);
+    } while (option != 10);
 
-    delete[] armaduras;
+    // Delete the arrays
+    delete[] armors;
+    delete[] armorsNames;
 }
 
 /**
  * @brief Function to show the encyclopedia menu
- * 
+ *
  * @param
  * @return
  */
 
-void menuEnciclopedia()
+void encyclopediaMenu()
 {
-    int opcion;
+    // Variables
+    int option;
 
+    // Show the encyclopedia menu
     do
     {
-        limpiarPantalla();
+        // Clear the screen
+        cleanScreen();
+
+        // Title
         std::cout << "Bienvenido a la enciclopedia de D&D" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Razas" << std::endl;
-        std::cout << "2. Clases" << std::endl;
-        std::cout << "3. Armas" << std::endl;
-        std::cout << "4. Armaduras" << std::endl;
-        std::cout << "5. Volver" << std::endl;
-        std::cout << "Escoge una opcion: ";
-        std::cin >> opcion;
 
-        while (opcion < 1 || opcion > 5)
+        // Show the options
+        std::cout << "1. Races" << std::endl;
+        std::cout << "2. Classes" << std::endl;
+        std::cout << "3. Weapons" << std::endl;
+        std::cout << "4. Armors" << std::endl;
+        std::cout << "5. Return" << std::endl;
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > 5)
         {
-            std::cout << "Opcion no valida" << std::endl;
-            std::cin >> opcion;
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
         }
 
-        switch (opcion)
+        // If the option is valid, show the encyclopedia
+        switch (option)
         {
         case 1:
-            menuRazas();
+            racesMenu();
             break;
         case 2:
-            menuClases();
+            classesMenu();
             break;
         case 3:
-            menuArmas();
+            weaponsMenu();
             break;
         case 4:
-            menuArmaduras();
+            armorMenu();
             break;
         }
 
-    } while (opcion != 5);
+    } while (option != 5);
 }
 
 #endif // End of the MENU_H preprocessor

@@ -1,70 +1,72 @@
 /**
- * DnD Character Creator
- * Diego Antonio Garcia Padilla
- * A01710777
- * 02/12/2022
- */
-
-/**
- * @brief This program was created for the course of Object Oriented Computational Thinking, and consists of a character creator for the board game Dungeons and Dragons.
- *
- * The program is divided into 4 main parts:
- * 1. The main menu, where the user can create a character, see the character's information, see the encyclopedia or exit the program.
- * 2. The character creation menu, where the user can choose
- * 3. The encyclopedia, where the user can see the information
- * 4. The character information menu, where the user can see the information of the character created.
+ * @file main.cpp
+ * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
+ * @brief This program is a character creator for the D&D game.
+ * @version 0.1
+ * @date 2022-12-21
+ * 
+ * @copyright Copyright (c) 2022
  * 
  */
+
+#ifndef MAIN_H // If the preprocessor MAIN_H is not defined
+#define MAIN_H // Define the preprocessor MAIN_H
 
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
 
-#include "headers/Menu.h"          // Library for menus
-#include "headers/Inicializador.h" // Library for initializers
-#include "headers/Funciones.h"     // Library for functions
-#include "headers/Personaje.h"     // Library for the character class
+#include "headers/Menu.h"        // Library for menus
+#include "headers/Initializer.h" // Library for initializers
+#include "headers/Functions.h"   // Library for functions
+#include "headers/Character.h"   // Library for the character class
 
+// Main function
 int main()
 {
     // Variables
-    int opcion, opcionEnciclopedia;
-    Personaje personaje;
+    int mainOption;
+    Character character;
 
     // Main menu loop
     do
     {
-        menuPrincipal();
-        std::cin >> opcion;
-        limpiarPantalla();
-        switch (opcion)
+        // Show the main menu
+        mainMenu();
+        std::cin >> mainOption;
+        cleanScreen();
+
+        // Switch for the main menu
+        switch (mainOption)
         {
         case 1:
-            crearPersonaje(personaje);
-            pausa();
+            createCharacter(character);
+            pause();
             break;
         case 2:
-            if (personaje.getNombre() == " ")
+            if (character.getName() == "Character")
             {
-                std::cout << "No hay ningun personaje creado" << std::endl;
+                std::cout << "There is no character to show" << std::endl;
             }
             else
             {
-                personaje.mostrarPersonaje();
+                std::cout << character.toString() << std::endl;
             }
-            pausa();
+            pause();
             break;
         case 3:
-            menuEnciclopedia();
+            encyclopediaMenu();
             break;
         case 4:
-            std::cout << "Gracias por usar el creador de personajes de D&D" << std::endl;
-            pausa();
+            std::cout << "Goodbye adventurer. See you soon..." << std::endl;
+            pause();
             break;
         default:
-            std::cout << "Opcion no valida" << std::endl;
-            pausa();
+            std::cout << "Invalid option" << std::endl;
+            pause();
             break;
         }
-        limpiarPantalla();
-    } while (opcion != 4);
+        cleanScreen();
+    } while (mainOption != 4);
 }
+
+#endif // End of the preprocessor MAIN_H
