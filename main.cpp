@@ -14,6 +14,8 @@
 
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
+#include <cstdlib>  // Library for system functions
+#include <vector>   // Library for vectors
 
 #include "headers/Menu.h"        // Library for menus
 #include "headers/Initializer.h" // Library for initializers

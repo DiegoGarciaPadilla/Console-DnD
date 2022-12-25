@@ -15,6 +15,7 @@
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
 #include <cstdlib>  // Library for system functions
+#include <vector>   // Library for vectors
 
 #include "Initializer.h" // Include the Initializer file
 #include "Race.h"          // Include the race class
@@ -51,23 +52,20 @@ void pause()
 }
 
 /**
- * @brief Function to print an array
+ * @brief Function to print a vector
  *
- * @param array
+ * @param vector
  * @return
  */
 
-void printArray(std::string *array)
+void printVector(std::vector<std::string> v)
 {
-    // Get the size of the array
-    int size = sizeof(array) / sizeof(array[0]);
-
-    // Print the array
-    for (int i = 0; i < size; i++)
+    for (auto i = v.begin(); i != v.end(); i++)
     {
-        std::cout << i + 1 << ". " << array[i] << std::endl;
+        std::cout << i - v.begin() + 1 << ". " << *i << std::endl;
     }
 }
+
 
 /**
  * @brief Function to create a character with the data entered by the user
@@ -86,11 +84,11 @@ void createCharacter(Character &character)
     Race race;
     int option;
 
-    // Arrays
-    std::string *genders = listGenders();
-    std::string *alignments = listAlignments();
-    std::string *races = listRaces();
-    std::string *classes = listClasses(); 
+    // Vectors
+    std::vector<std::string> genders = listGenders();
+    std::vector<std::string> alignments = listAlignments();
+    std::vector<std::string> races = listRaces();
+    std::vector<std::string> classes = listClasses();
     
     // Clear the screen
     cleanScreen();
@@ -107,7 +105,7 @@ void createCharacter(Character &character)
 
     // Set the gender
     std::cout << "Gender: " << std::endl;
-    printArray(genders);
+    printVector(genders);
     std::cin >> option;
     while (option < 1 || option > 3)
     {
@@ -130,7 +128,7 @@ void createCharacter(Character &character)
 
     // Set the alignment
     std::cout << "Alignment: " << std::endl;
-    printArray(alignments);
+    printVector(alignments);
     std::cin >> option;
     while (option < 1 || option > 9)
     {
@@ -142,7 +140,7 @@ void createCharacter(Character &character)
 
     // Set the race
     std::cout << "Race: " << std::endl;
-    printArray(races);
+    printVector(races);
     std::cin >> option;
     while (option < 1 || option > 9)
     {

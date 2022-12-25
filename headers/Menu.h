@@ -14,6 +14,8 @@
 
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
+#include <cstdlib>  // Library for system functions
+#include <vector>   // Library for vectors
 
 #include "Functions.h"   // Include the functions file
 #include "Initializer.h" // Include the Initializer file
@@ -59,8 +61,8 @@ void racesMenu()
 
     // Arrays
     Race *races = initRaces();
-    std::string *racesNames = listRaces();
-    int racesNumber = sizeof(races) / sizeof(races[0]);
+    std::vector<std::string> racesNames = listRaces();
+    int racesNumber = racesNames.size();
 
     // Show the races menu
     do
@@ -73,7 +75,7 @@ void racesMenu()
         std::cout << std::endl;
 
         // Show races
-        printArray(racesNames);
+        printVector(racesNames);
         std::cout << racesNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -98,9 +100,8 @@ void racesMenu()
 
     } while (option != racesNumber + 1);
 
-    // Delete the arrays
+    // Delete the array
     delete[] races;
-    delete[] racesNames;
 }
 
 /**
@@ -117,8 +118,8 @@ void classesMenu()
 
     // Arrays
     Class *classes = initClasses();
-    std::string *classesNames = listClasses();
-    int classesNumber = sizeof(classes) / sizeof(classes[0]);
+    std::vector<std::string> classesNames = listClasses();
+    int classesNumber = classesNames.size();
 
     // Show the classes menu
     do
@@ -131,7 +132,7 @@ void classesMenu()
         std::cout << std::endl;
 
         // Show classes
-        printArray(classesNames);
+        printVector(classesNames);
         std::cout << classesNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -154,11 +155,10 @@ void classesMenu()
             pause();
         }
 
-    } while (option != 10);
+    } while (option != classesNumber + 1);
 
-    // Delete the arrays
+    // Delete the array
     delete[] classes;
-    delete[] classesNames;
 }
 
 /**
@@ -175,8 +175,8 @@ void weaponsMenu()
 
     // Arrays
     Weapon *weapons = initWeapons();
-    std::string *weaponsNames = listWeapons();
-    int weaponsNumber = sizeof(weapons) / sizeof(weapons[0]);
+    std::vector<std::string> weaponsNames = listWeapons();
+    int weaponsNumber = weaponsNames.size();
 
     // Show the weapons menu
     do
@@ -189,7 +189,7 @@ void weaponsMenu()
         std::cout << std::endl;
 
         // Show weapons
-        printArray(weaponsNames);
+        printVector(weaponsNames);
         std::cout << weaponsNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -214,9 +214,8 @@ void weaponsMenu()
 
     } while (option != weaponsNumber + 1);
 
-    // Delete the arrays
+    // Delete the array
     delete[] weapons;
-    delete[] weaponsNames;
 }
 
 /**
@@ -233,8 +232,8 @@ void armorMenu()
 
     // Arrays
     Armor *armors = initArmors();
-    std::string *armorsNames = listArmors();
-    int armorsNumber = sizeof(armors) / sizeof(armors[0]);
+    std::vector<std::string> armorsNames = listArmors();
+    int armorsNumber = armorsNames.size();
 
     // Show the armors menu
     do
@@ -247,7 +246,7 @@ void armorMenu()
         std::cout << std::endl;
 
         // Show armors
-        printArray(armorsNames);
+        printVector(armorsNames);
         std::cout << armorsNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -270,11 +269,10 @@ void armorMenu()
             pause();
         }
 
-    } while (option != 10);
+    } while (option != armorsNumber + 1);
 
-    // Delete the arrays
+    // Delete the array
     delete[] armors;
-    delete[] armorsNames;
 }
 
 /**

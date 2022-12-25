@@ -29,21 +29,21 @@
  * @brief Function to get the list of genders
  *
  * @param
- * @return list
+ * @return vector
  */
 
-std::string *listGenders()
+std::vector<std::string> listGenders()
 {
-    // Create the array of strings
-    std::string *list;
+    // Create the vector of strings
+    std::vector<std::string> genders;
 
-    // Add genders to the array
-    list[0] = "Male";
-    list[1] = "Female";
-    list[2] = "Other";
+    // Add genders to the vector
+    genders.push_back("Male");
+    genders.push_back("Woman");
+    genders.push_back("Other");
 
-    // Return array of genders
-    return list;
+    // Return the vector of genders
+    return genders;
 }
 
 // Alignments
@@ -52,27 +52,27 @@ std::string *listGenders()
  * @brief Function to get the list of alignments
  *
  * @param
- * @return list
+ * @return vector
  */
 
-std::string *listAlignments()
+std::vector<std::string> listAlignments()
 {
-    // Create the array of strings
-    std::string *list;
+    // Create the vector of strings
+    std::vector<std::string> alignments;
 
-    // Add alignments to the array
-    list[0] = "Lawful Good";
-    list[1] = "Neutral Good";
-    list[2] = "Chaotic Good";
-    list[3] = "Lawful Neutral";
-    list[4] = "True Neutral";
-    list[5] = "Chaotic Neutral";
-    list[6] = "Lawful Evil";
-    list[7] = "Neutral Evil";
-    list[8] = "Chaotic Evil";
+    // Add alignments to the vector
+    alignments.push_back("Lawful Good");
+    alignments.push_back("Neutral Good");
+    alignments.push_back("Chaotic Good");
+    alignments.push_back("Lawful Neutral");
+    alignments.push_back("Neutral");
+    alignments.push_back("Chaotic Neutral");
+    alignments.push_back("Lawful Evil");
+    alignments.push_back("Neutral Evil");
+    alignments.push_back("Chaotic Evil");
 
-    // Return array of alignments
-    return list;
+    // Return the vector of alignments
+    return alignments;
 }
 
 // Weapons
@@ -139,31 +139,31 @@ Weapon *initWeapons()
  * @brief Function to get the list of weapons
  *
  * @param
- * @return list
+ * @return vector
  */
 
-std::string *listWeapons()
+std::vector<std::string> listWeapons()
 {
+    // Create the vector of strings
+    std::vector<std::string> weapons;
+
     // Create the array of weapons
-    Weapon *weapons = initWeapons();
+    Weapon *weaponsArray = initWeapons();
 
     // Get the number of weapons
-    int numWeapons = sizeof(weapons) / sizeof(weapons[0]);
+    int numWeapons = sizeof(weaponsArray) / sizeof(weaponsArray[0]);
 
-    // Create the array of strings
-    std::string *list;
-
-    // Add the weapons to the array
+    // Add weapons to the vector
     for (int i = 0; i < numWeapons; i++)
     {
-        list[i] = weapons[i].toString();
+        weapons.push_back(weaponsArray[i].getName());
     }
 
-    // Delete the weapons array
-    delete[] weapons;
+    // Delete the array of weapons
+    delete[] weaponsArray;
 
-    // Return the array of strings
-    return list;
+    // Return the vector of weapons
+    return weapons;
 }
 
 // Armors
@@ -230,31 +230,31 @@ Armor *initArmors()
  * @brief Function to get the list of armors
  *
  * @param
- * @return list
+ * @return std::vector
  */
 
-std::string *listArmors()
+std::vector<std::string> listArmors()
 {
+    // Create the vector of strings
+    std::vector<std::string> armors;
+
     // Create the array of armors
-    Armor *armors = initArmors();
+    Armor *armorsArray = initArmors();
 
     // Get the number of armors
-    int numArmors = sizeof(armors) / sizeof(armors[0]);
+    int numArmors = sizeof(armorsArray) / sizeof(armorsArray[0]);
 
-    // Create the array of strings
-    std::string *list;
-
-    // Add the armors to the array
+    // Add armors to the vector
     for (int i = 0; i < numArmors; i++)
     {
-        list[i] = armors[i].toString();
+        armors.push_back(armorsArray[i].getName());
     }
 
-    // Delete the armors array
-    delete[] armors;
+    // Delete the array of armors
+    delete[] armorsArray;
 
-    // Return the array of strings
-    return list;
+    // Return the vector of armors
+    return armors;
 }
 
 // Races
@@ -321,31 +321,31 @@ Race *initRaces()
  * @brief Function to get the list of races
  *
  * @param
- * @return list
+ * @return vector
  */
 
-std::string *listRaces()
+std::vector<std::string> listRaces()
 {
+    // Create the vector of strings
+    std::vector<std::string> races;
+
     // Create the array of races
-    Race *races = initRaces();
+    Race *racesArray = initRaces();
 
     // Get the number of races
-    int numRaces = sizeof(races) / sizeof(races[0]);
+    int numRaces = sizeof(racesArray) / sizeof(racesArray[0]);
 
-    // Create the array of strings
-    std::string *list;
-
-    // Add the races to the array
+    // Add races to the vector
     for (int i = 0; i < numRaces; i++)
     {
-        list[i] = races[i].toString();
+        races.push_back(racesArray[i].getName());
     }
 
-    // Delete races array
-    delete[] races;
+    // Delete the array
+    delete[] racesArray;
 
-    // Return the array of strings
-    return list;
+    // Return the vector of races
+    return races;
 }
 
 // Classes
@@ -417,31 +417,31 @@ Class *initClasses()
  * @brief Function to get the list of classes
  *
  * @param
- * @return list
+ * @return vector
  */
 
-std::string *listClasses()
+std::vector<std::string> listClasses()
 {
+    // Create the vector of strings
+    std::vector<std::string> classes;
+
     // Create the array of classes
-    Class *classes = initClasses();
+    Class *classesArray = initClasses();
 
     // Get the number of classes
-    int numClasses = sizeof(classes) / sizeof(classes[0]);
+    int numClasses = sizeof(classesArray) / sizeof(classesArray[0]);
 
-    // Create the array of strings
-    std::string *list;
-
-    // Add the classes to the array
+    // Add classes to the vector
     for (int i = 0; i < numClasses; i++)
     {
-        list[i] = classes[i].toString();
+        classes.push_back(classesArray[i].getName());
     }
 
-    // Delete classes array
-    delete[] classes;
+    // Delete the array
+    delete[] classesArray;
 
-    // Return the array of strings
-    return list;
+    // Return the vector of classes
+    return classes;
 }
 
 #endif // End of the INITIALIZER_H preprocessor
