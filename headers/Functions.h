@@ -58,11 +58,11 @@ void pause()
  * @return
  */
 
-void printVector(std::vector<std::string> v)
+void printStringVector(std::vector<std::string> v)
 {
-    for (auto i = v.begin(); i != v.end(); i++)
+    for (int i = 0; i < v.size(); i++)
     {
-        std::cout << i - v.begin() + 1 << ". " << *i << std::endl;
+        std::cout << i + 1 << ". " << v[i] << std::endl;
     }
 }
 
@@ -105,7 +105,7 @@ void createCharacter(Character &character)
 
     // Set the gender
     std::cout << "Gender: " << std::endl;
-    printVector(genders);
+    printStringVector(genders);
     std::cin >> option;
     while (option < 1 || option > 3)
     {
@@ -128,7 +128,7 @@ void createCharacter(Character &character)
 
     // Set the alignment
     std::cout << "Alignment: " << std::endl;
-    printVector(alignments);
+    printStringVector(alignments);
     std::cin >> option;
     while (option < 1 || option > 9)
     {
@@ -140,7 +140,7 @@ void createCharacter(Character &character)
 
     // Set the race
     std::cout << "Race: " << std::endl;
-    printVector(races);
+    printStringVector(races);
     std::cin >> option;
     while (option < 1 || option > 9)
     {

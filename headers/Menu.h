@@ -75,7 +75,7 @@ void racesMenu()
         std::cout << std::endl;
 
         // Show races
-        printVector(racesNames);
+        printStringVector(racesNames);
         std::cout << racesNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -129,7 +129,7 @@ void classesMenu()
         std::cout << std::endl;
 
         // Show classes
-        printVector(classesNames);
+        printStringVector(classesNames);
         std::cout << classesNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -183,7 +183,7 @@ void weaponsMenu()
         std::cout << std::endl;
 
         // Show weapons
-        printVector(weaponsNames);
+        printStringVector(weaponsNames);
         std::cout << weaponsNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
@@ -237,7 +237,7 @@ void armorMenu()
         std::cout << std::endl;
 
         // Show armors
-        printVector(armorsNames);
+        printStringVector(armorsNames);
         std::cout << armorsNumber + 1 << ". Return" << std::endl;
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
