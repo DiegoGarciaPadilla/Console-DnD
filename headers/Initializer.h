@@ -94,11 +94,14 @@ std::vector<Weapon> initWeapons()
     {
         // If the file was not opened correctly, show an error message
         std::cout << "There was an error opening the file" << std::endl;
-        return nullptr;
+        return std::vector<Weapon>();
     }
 
     // Create the vector of weapons
     std::vector<Weapon> weapons;
+
+    // Line of the file
+    std::string line;
 
     // Read the file line by line
     int i = 0;
@@ -142,20 +145,17 @@ std::vector<std::string> listWeapons()
     // Create the vector of strings
     std::vector<std::string> weapons;
 
-    // Create the array of weapons
-    Weapon *weaponsArray = initWeapons();
+    // Create the vector of weapons
+    std::vector<Weapon> weaponsArray = initWeapons();
 
     // Get the number of weapons
-    int numWeapons = sizeof(weaponsArray) / sizeof(weaponsArray[0]);
+    int numWeapons = weaponsArray.size();
 
     // Add weapons to the vector
     for (int i = 0; i < numWeapons; i++)
     {
         weapons.push_back(weaponsArray[i].getName());
     }
-
-    // Delete the array of weapons
-    delete[] weaponsArray;
 
     // Return the vector of weapons
     return weapons;
@@ -180,11 +180,14 @@ std::vector<Armor> initArmors()
     {
         // If the file was not opened correctly, show an error message
         std::cout << "There was an error opening the file" << std::endl;
-        return nullptr;
+        return std::vector<Armor>();
     }
 
     // Create the vector of armors
     std::vector<Armor> armors;
+
+    // Line of the file
+    std::string line;
 
     // Read the file line by line
     int i = 0;
@@ -228,8 +231,8 @@ std::vector<std::string> listArmors()
     // Create the vector of strings
     std::vector<std::string> armors;
 
-    // Create the array of armors
-    Armor *armorsArray = initArmors();
+    // Create the vector of armors
+    std::vector<Armor> armorsArray = initArmors();
 
     // Get the number of armors
     int numArmors = sizeof(armorsArray) / sizeof(armorsArray[0]);
@@ -239,9 +242,6 @@ std::vector<std::string> listArmors()
     {
         armors.push_back(armorsArray[i].getName());
     }
-
-    // Delete the array of armors
-    delete[] armorsArray;
 
     // Return the vector of armors
     return armors;
@@ -266,11 +266,14 @@ std::vector<Race> initRaces()
     {
         // If the file was not opened correctly, show an error message
         std::cout << "There was an error opening the file" << std::endl;
-        return nullptr;
+        return std::vector<Race>();
     }
 
     // Create the vector of races
-    std::<Race> races;
+    std::vector<Race> races;
+
+    // Line of the file
+    std::string line;
 
     // Read the file line by line
     int i = 0;
@@ -289,7 +292,7 @@ std::vector<Race> initRaces()
         Race race(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
 
         // Add the race to the vector
-        races.push_back(race)
+        races.push_back(race);
 
         // Increase the counter
         i++;
@@ -314,8 +317,8 @@ std::vector<std::string> listRaces()
     // Create the vector of strings
     std::vector<std::string> races;
 
-    // Create the array of races
-    Race *racesArray = initRaces();
+    // Create the vector of races
+    std::vector<Race> racesArray = initRaces();
 
     // Get the number of races
     int numRaces = sizeof(racesArray) / sizeof(racesArray[0]);
@@ -325,9 +328,6 @@ std::vector<std::string> listRaces()
     {
         races.push_back(racesArray[i].getName());
     }
-
-    // Delete the array
-    delete[] racesArray;
 
     // Return the vector of races
     return races;
@@ -357,11 +357,14 @@ std::vector<Class> initClasses()
     {
         // If the file was not opened correctly, show an error message
         std::cout << "There was an error opening the file" << std::endl;
-        return nullptr;
+        return std::vector<Class>();
     }
 
     // Create the vector of classes
     std::vector<Class> classes;
+
+    // Line of the file
+    std::string line;
 
     // Read the file line by line
     int i = 0;
@@ -405,8 +408,8 @@ std::vector<std::string> listClasses()
     // Create the vector of strings
     std::vector<std::string> classes;
 
-    // Create the array of classes
-    Class *classesArray = initClasses();
+    // Create the vector of classes
+    std::vector<Class> classesArray = initClasses();
 
     // Get the number of classes
     int numClasses = sizeof(classesArray) / sizeof(classesArray[0]);
@@ -416,9 +419,6 @@ std::vector<std::string> listClasses()
     {
         classes.push_back(classesArray[i].getName());
     }
-
-    // Delete the array
-    delete[] classesArray;
 
     // Return the vector of classes
     return classes;

@@ -298,14 +298,11 @@ std::string Character::toString()
 
 void Character::defineRace(int option)
 {
-    // Initialize races array
-    Race *races = initRaces();
+    // Initialize races vector
+    std::vector<Race> races = initRaces();
 
     // Set race
     race = races[option];
-
-    // Delete array
-    delete[] races;
 }
 
 /**
@@ -328,14 +325,11 @@ void Character::defineStats()
 
 void Character::defineClass(int option)
 {
-    // Initialize classes array
-    Class *classes = initClasses();
+    // Initialize classes vector
+    std::vector<Class> classes = initClasses();
 
     // Set class
     clss = classes[option];
-
-    // Delete array
-    delete[] classes;
 }
 
 #endif // End of PERSONAJE_H preprocessor

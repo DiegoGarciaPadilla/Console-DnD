@@ -60,9 +60,9 @@ void racesMenu()
     int option;
 
     // Arrays
-    Race *races = initRaces();
+    std::vector<Race> races = initRaces();
     std::vector<std::string> racesNames = listRaces();
-    int racesNumber = racesNames.size();
+    int racesNumber = races.size();
 
     // Show the races menu
     do
@@ -99,9 +99,6 @@ void racesMenu()
         }
 
     } while (option != racesNumber + 1);
-
-    // Delete the array
-    delete[] races;
 }
 
 /**
@@ -117,9 +114,9 @@ void classesMenu()
     int option;
 
     // Arrays
-    Class *classes = initClasses();
+    std::vector<Class> classes = initClasses();
     std::vector<std::string> classesNames = listClasses();
-    int classesNumber = classesNames.size();
+    int classesNumber = classes.size();
 
     // Show the classes menu
     do
@@ -156,9 +153,6 @@ void classesMenu()
         }
 
     } while (option != classesNumber + 1);
-
-    // Delete the array
-    delete[] classes;
 }
 
 /**
@@ -174,9 +168,9 @@ void weaponsMenu()
     int option;
 
     // Arrays
-    Weapon *weapons = initWeapons();
+    std::vector<Weapon> weapons = initWeapons();
     std::vector<std::string> weaponsNames = listWeapons();
-    int weaponsNumber = weaponsNames.size();
+    int weaponsNumber = weapons.size();
 
     // Show the weapons menu
     do
@@ -213,9 +207,6 @@ void weaponsMenu()
         }
 
     } while (option != weaponsNumber + 1);
-
-    // Delete the array
-    delete[] weapons;
 }
 
 /**
@@ -231,9 +222,9 @@ void armorMenu()
     int option;
 
     // Arrays
-    Armor *armors = initArmors();
+    std::vector<Armor> armors = initArmors();
     std::vector<std::string> armorsNames = listArmors();
-    int armorsNumber = armorsNames.size();
+    int armorsNumber = armors.size();
 
     // Show the armors menu
     do
@@ -270,9 +261,6 @@ void armorMenu()
         }
 
     } while (option != armorsNumber + 1);
-
-    // Delete the array
-    delete[] armors;
 }
 
 /**
