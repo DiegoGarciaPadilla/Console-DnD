@@ -23,6 +23,7 @@
 #include "Class.h"       // Include the class class
 #include "Weapon.h"      // Include the weapon class
 #include "Armor.h"       // Include the armor class
+#include "Ascii.h"       // Include the ascii art file
 
 // Functions
 
@@ -39,8 +40,7 @@ void mainMenu()
     cleanScreen();
 
     // Show the main menu
-    std::cout << "Welcome to the D&D character creator" << std::endl;
-    std::cout << std::endl;
+    std::cout << readAscii("ascii/title.txt") << std::endl;
     std::cout << "1. Create character" << std::endl;
     std::cout << "2. Show character" << std::endl;
     std::cout << "3. D&D encyclopedia" << std::endl;
