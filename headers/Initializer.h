@@ -235,7 +235,7 @@ std::vector<std::string> listArmors()
     std::vector<Armor> armorsArray = initArmors();
 
     // Get the number of armors
-    int numArmors = sizeof(armorsArray) / sizeof(armorsArray[0]);
+    int numArmors = armorsArray.size();
 
     // Add armors to the vector
     for (int i = 0; i < numArmors; i++)
@@ -321,7 +321,7 @@ std::vector<std::string> listRaces()
     std::vector<Race> racesArray = initRaces();
 
     // Get the number of races
-    int numRaces = sizeof(racesArray) / sizeof(racesArray[0]);
+    int numRaces = racesArray.size();
 
     // Add races to the vector
     for (int i = 0; i < numRaces; i++)
@@ -412,7 +412,7 @@ std::vector<std::string> listClasses()
     std::vector<Class> classesArray = initClasses();
 
     // Get the number of classes
-    int numClasses = sizeof(classesArray) / sizeof(classesArray[0]);
+    int numClasses = classesArray.size();
 
     // Add classes to the vector
     for (int i = 0; i < numClasses; i++)
