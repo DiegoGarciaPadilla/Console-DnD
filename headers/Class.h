@@ -135,6 +135,7 @@ std::string Class::toString()
 
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
+    ss << std::endl;
     ss << "Initial weapon: " << std::endl;
     ss << initialWeapon.toString() << std::endl;
     ss << "Initial armor: " << std::endl;
