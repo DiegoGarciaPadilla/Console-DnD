@@ -1,4 +1,3 @@
-9
 Warrior|All warriors share a masterful command of weapons and armor, and an exhaustive knowledge of combat skills. In addition, they are closely associated with death, both dealing it out and staring it down in defiance.
 Barbarian|Barbarians are warriors who have been driven mad by battle, and have lost their minds. They are the most brutal of warriors, and the easiest to control. They are the most prone to madness, and at the same time, the most prone to death.
 Scout|Far from the bustle of cities and towns, beyond the defenses that keep the farthest farms protected from the terrors of nature, amidst dense roadless forests and across vast, empty plains, the scouts keep their never-ending watch.

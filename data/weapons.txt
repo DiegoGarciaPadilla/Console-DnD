@@ -1,4 +1,3 @@
-9
 Rusty sword|It's a wooden sword, with a rusty steel blade. It doesn't seem very useful.|2|0|Sword|Wood and steel|6
 Rusty axe|It's a wooden axe, with a rusty steel blade. It doesn't seem very useful.|3|0|Axe|Wood and steel|6
 Wooden bow|It's a wooden bow, with a leather string. It doesn't seem very useful.|1|0|Bow|Wood and leather|6
