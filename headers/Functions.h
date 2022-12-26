@@ -136,7 +136,7 @@ void createCharacter(Character &character)
         std::cin >> option;
     }
     std::cout << std::endl;
-    character.setAlignment(option - 1);
+    character.setAlignment(alignments[option - 1]);
 
     // Set the race
     std::cout << "Race: " << std::endl;

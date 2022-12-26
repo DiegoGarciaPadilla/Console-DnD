@@ -226,16 +226,12 @@ void Character::setAge(int age)
 /**
  * @brief Set the Alignment attribute
  * 
- * @param option 
+ * @param alignment 
  */
 
-void Character::setAlignment(int option)
+void Character::setAlignment(std::string alignment)
 {
-    // Create the array of alignments
-    std::vector<std::string> alignments = listAlignments();
-
-    // Set the alignment
-    alignment = alignments[option];
+    this->alignment = alignment;
 }
 
 /**
