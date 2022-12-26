@@ -81,10 +81,10 @@ std::vector<std::string> listAlignments()
  * @brief Function to initialize weapons array
  *
  * @param
- * @return armas
+ * @return vector
  */
 
-Weapon *initWeapons()
+std::vector<Weapon> initWeapons()
 {
     // Open the file
     std::ifstream file("./data/weapons.txt");
@@ -97,13 +97,8 @@ Weapon *initWeapons()
         return nullptr;
     }
 
-    // Read the first line to get the number of weapons
-    std::string line;
-    std::getline(file, line);
-    int numWeapons = std::stoi(line);
-
-    // Create the array of weapons
-    Weapon *weapons = new Weapon[numWeapons];
+    // Create the vector of weapons
+    std::vector<Weapon> weapons;
 
     // Read the file line by line
     int i = 0;
@@ -121,8 +116,8 @@ Weapon *initWeapons()
         // Create the weapon
         Weapon weapon(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
 
-        // Add the weapon to the array
-        weapons[i] = weapon;
+        // Add the weapon to the vector
+        weapons.push_back(weapon);
 
         // Increase the counter
         i++;
@@ -131,7 +126,7 @@ Weapon *initWeapons()
     // Close the file
     file.close();
 
-    // Return the array of weapons
+    // Return the vector of weapons
     return weapons;
 }
 
@@ -172,10 +167,10 @@ std::vector<std::string> listWeapons()
  * @brief Function to initialize armors array
  *
  * @param
- * @return armors
+ * @return vector
  */
 
-Armor *initArmors()
+std::vector<Armor> initArmors()
 {
     // Open the file
     std::ifstream file("./data/armors.txt");
@@ -188,13 +183,8 @@ Armor *initArmors()
         return nullptr;
     }
 
-    // Read the first line to get the number of armors
-    std::string line;
-    std::getline(file, line);
-    int numArmors = std::stoi(line);
-
-    // Create the array of armors
-    Armor *armors = new Armor[numArmors];
+    // Create the vector of armors
+    std::vector<Armor> armors;
 
     // Read the file line by line
     int i = 0;
@@ -212,8 +202,8 @@ Armor *initArmors()
         // Create the armor
         Armor armor(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
 
-        // Add the armor to the array
-        armors[i] = armor;
+        // Add the armor to the vector
+        armors.push_back(armor);
 
         // Increase the counter
         i++;
@@ -222,7 +212,7 @@ Armor *initArmors()
     // Close the file
     file.close();
 
-    // Return the array of armors
+    // Return the vector of armors
     return armors;
 }
 
@@ -263,10 +253,10 @@ std::vector<std::string> listArmors()
  * @brief Function to initialize races array
  *
  * @param
- * @return races
+ * @return vector
  */
 
-Race *initRaces()
+std::vector<Race> initRaces()
 {
     // Open the file
     std::ifstream file("./data/races.txt");
@@ -279,13 +269,8 @@ Race *initRaces()
         return nullptr;
     }
 
-    // Read the first line to get the number of races
-    std::string line;
-    std::getline(file, line);
-    int numRaces = std::stoi(line);
-
-    // Create the array of races
-    Race *races = new Race[numRaces];
+    // Create the vector of races
+    std::<Race> races;
 
     // Read the file line by line
     int i = 0;
@@ -303,8 +288,8 @@ Race *initRaces()
         // Create the race
         Race race(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
 
-        // Add the race to the array
-        races[i] = race;
+        // Add the race to the vector
+        races.push_back(race)
 
         // Increase the counter
         i++;
@@ -354,15 +339,15 @@ std::vector<std::string> listRaces()
  * @brief Function to initialize classes array
  *
  * @param
- * @return classes
+ * @return vector
  */
 
-Class *initClasses()
+std::vector<Class> initClasses()
 {
 
-    // Initialize the weapons and armors arrays
-    Weapon *weapons = initWeapons();
-    Armor *armors = initArmors();
+    // Initialize the weapons and armors vectors
+    std::vector<Weapon> weapons = initWeapons();
+    std::vector<Armor> armors = initArmors();
 
     // Open the file
     std::ifstream file("./data/classes.txt");
@@ -375,13 +360,8 @@ Class *initClasses()
         return nullptr;
     }
 
-    // Read the first line to get the number of classes
-    std::string line;
-    std::getline(file, line);
-    int numClasses = std::stoi(line);
-
-    // Create the array of classes
-    Class *classes = new Class[numClasses];
+    // Create the vector of classes
+    std::vector<Class> classes;
 
     // Read the file line by line
     int i = 0;
@@ -399,8 +379,8 @@ Class *initClasses()
         // Create the class
         Class cl(tokens[0], tokens[1], weapons[i], armors[i]);
 
-        // Add the class to the array
-        classes[i] = cl;
+        // Add the class to the vector
+        classes.push_back(cl);
 
         // Increase the counter
         i++;
