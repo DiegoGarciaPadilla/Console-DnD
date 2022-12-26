@@ -152,6 +152,7 @@ void createCharacter(Character &character)
 
     // Set the class
     std::cout << "Class: " << std::endl;
+    printStringVector(classes);
     std::cin >> option;
     while (option < 1 || option > 9)
     {
