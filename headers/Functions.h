@@ -93,18 +93,23 @@ void createCharacter(Character &character)
     // Clear the screen
     cleanScreen();
 
-    // Title
-    std::cout << "CHARACTER CREATOR" << std::endl;
-    std::cout << std::endl;
+    // Introduction
+    std::cout << "Hello adventurer! Welcome to the world of D&D!" << std::endl;
+    std::cout << "I'm going to ask you some questions to create your character." << std::endl;
+    std::cout << "Are you ready? " << std::endl;
+    pause();
+
+    // Clear the screen
+    cleanScreen();
 
     // Set the name
-    std::cout << "Name: ";
+    std::cout << "What is your name? ";
     getline(std::cin >> std::ws, name);
     std::cout << std::endl;
     character.setName(name);
 
     // Set the gender
-    std::cout << "Gender: " << std::endl;
+    std::cout << "What gender do you identify with? " << std::endl;
     printStringVector(genders);
     std::cin >> option;
     while (option < 1 || option > 3)
@@ -112,8 +117,19 @@ void createCharacter(Character &character)
         std::cout << "Invalid option" << std::endl;
         std::cin >> option;
     }
+    // If the user chooses the option 3, it will ask for the specific gender
+    if (option == 3)
+    {
+        std::string specificGender;
+        std::cout << "Can you specify it? " << std::endl;
+        getline(std::cin >> std::ws, specificGender);
+        character.setGender(specificGender);
+    }
+    else
+    {
+        character.setGender(genders[option - 1]);
+    }
     std::cout << std::endl;
-    character.setGender(genders[option - 1]);
 
     // Set the age
     std::cout << "Age: ";
