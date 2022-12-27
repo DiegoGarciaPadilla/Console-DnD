@@ -12,10 +12,6 @@
 #ifndef ASCII_H // If the preprocessor ASCII_H is not defined
 #define ASCII_H // Define the preprocessor ASCII_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 /**
  * @brief Function to read the ASCII art from a file and return it as a string
  *

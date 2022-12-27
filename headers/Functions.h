@@ -12,11 +12,6 @@
 #ifndef FUNCTIONS_H // If the preprocessor FUNCTIONS_H is not defined
 #define FUNCTIONS_H // Define the preprocessor FUNCTIONS_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <cstdlib>  // Library for system functions
-#include <vector>   // Library for vectors
-
 #include "Initializer.h" // Include the Initializer file
 #include "Race.h"          // Include the race class
 #include "Class.h"         // Include the class class

@@ -12,10 +12,6 @@
 #ifndef CHARACTER_H // If the preprocessor CHARACTER_H is not defined
 #define CHARACTER_H // Define the preprocessor CHARACTER_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 #include "Race.h"        // Include races class
 #include "Class.h"       // Include classes class
 #include "Stats.h"       // Include statistics class

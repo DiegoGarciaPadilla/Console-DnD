@@ -12,10 +12,6 @@
 #ifndef RACE_H // If the preprocessor RACE_H is not defined
 #define RACE_H // Define the preprocessor RACE_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 class Race
 {
 private:

@@ -12,12 +12,6 @@
 #ifndef INITIALIZER_H // If the preprocessor INITIALIZER_H is not defined
 #define INITIALIZER_H // Define the preprocessor INITIALIZER_H
 
-#include <iostream> // Library for input and output
-#include <fstream>  // Library for file input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-#include <vector>   // Library for vectors
-
 #include "Weapon.h" // Include the weapon class
 #include "Armor.h"  // Include the armor class
 #include "Race.h"   // Include the race class

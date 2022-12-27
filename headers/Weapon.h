@@ -11,11 +11,6 @@
 
 #ifndef WEAPON_H // If the WEAPON_H preprocessor is not defined
 #define WEAPON_H // Define the WEAPON_H preprocessor
-
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 #include "Object.h" // Include the object class
 
 class Weapon : public Object

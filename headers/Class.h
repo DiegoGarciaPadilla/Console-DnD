@@ -12,10 +12,6 @@
 #ifndef CLASS_H // If the CLASS_H preprocessor is not defined
 #define CLASS_H // Define the CLASS_H preprocessor
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 #include "Weapon.h" // Include the weapon class
 #include "Armor.h"  // Include the armor class
 

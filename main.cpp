@@ -14,6 +14,8 @@
 
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
+#include <sstream>  // Library for string streams
+#include <fstream>  // Library for file streams
 #include <cstdlib>  // Library for system functions
 #include <vector>   // Library for vectors
 

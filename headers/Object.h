@@ -12,10 +12,6 @@
 #ifndef OBJECT_H // If the preprocessor OBJECT_H is not defined
 #define OBJECT_H // Define the preprocessor OBJECT_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 class Object
 {
 protected:

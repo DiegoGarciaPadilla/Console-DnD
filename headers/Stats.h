@@ -12,10 +12,6 @@
 #ifndef STATS_H // If the STATS_H preprocessor is not defined
 #define STATS_H // Define the STATS_H preprocessor
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 #include "Race.h" // Include the race class
 
 class Stats

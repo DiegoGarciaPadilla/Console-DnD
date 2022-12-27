@@ -12,10 +12,6 @@
 #ifndef ARMOR_H // If the ARMOR_H preprocessor is not defined
 #define ARMOR_H // Define the ARMOR_H preprocessor
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <sstream>  // Library for string streams
-
 #include "Object.h" // Include the object class
 
 class Armor : public Object

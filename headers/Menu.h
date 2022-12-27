@@ -12,11 +12,6 @@
 #ifndef MENU_H // If the preprocessor MENU_H is not defined
 #define MENU_H // Define the preprocessor MENU_H
 
-#include <iostream> // Library for input and output
-#include <string>   // Library for strings
-#include <cstdlib>  // Library for system functions
-#include <vector>   // Library for vectors
-
 #include "Functions.h"   // Include the functions file
 #include "Initializer.h" // Include the Initializer file
 #include "Race.h"        // Include the race class
