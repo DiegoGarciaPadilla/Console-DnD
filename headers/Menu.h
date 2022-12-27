@@ -282,7 +282,7 @@ void encyclopediaMenu()
         cleanScreen();
 
         // Title
-        std::cout << "Bienvenido a la enciclopedia de D&D" << std::endl;
+        std::cout << "Welcome to the D&D's encyclopedia" << std::endl;
         std::cout << std::endl;
 
         // Show the options
