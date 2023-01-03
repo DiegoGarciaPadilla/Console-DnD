@@ -4,12 +4,12 @@
  * @brief This file contains the implementation of the Character class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Character.h"
+#include "headers/Character.h" // Include the header file
 
 // Constructors
 
@@ -79,7 +79,7 @@ std::string Character::getAlignment()
 
 /**
  * @brief Get the Race attribute
- * 
+ *
  * @return Race
  */
 
@@ -90,7 +90,7 @@ Race Character::getRace()
 
 /**
  * @brief Get the Class attribute
- * 
+ *
  * @return Class
  */
 
@@ -101,7 +101,7 @@ Class Character::getClass()
 
 /**
  * @brief Get the Stats attribute
- * 
+ *
  * @return Stats
  */
 
@@ -112,7 +112,7 @@ Stats Character::getStats()
 
 /**
  * @brief Get the Weapon attribute
- * 
+ *
  * @return Weapon
  */
 
@@ -123,7 +123,7 @@ Weapon Character::getWeapon()
 
 /**
  * @brief Get the Armor attribute
- * 
+ *
  * @return Armor
  */
 
@@ -147,8 +147,8 @@ void Character::setName(std::string name)
 
 /**
  * @brief Set the Gender attribute
- * 
- * @param gender 
+ *
+ * @param gender
  */
 
 void Character::setGender(std::string gender)
@@ -158,8 +158,8 @@ void Character::setGender(std::string gender)
 
 /**
  * @brief Set the Age attribute
- * 
- * @param age 
+ *
+ * @param age
  */
 
 void Character::setAge(int age)
@@ -169,8 +169,8 @@ void Character::setAge(int age)
 
 /**
  * @brief Set the Alignment attribute
- * 
- * @param alignment 
+ *
+ * @param alignment
  */
 
 void Character::setAlignment(std::string alignment)
@@ -180,8 +180,8 @@ void Character::setAlignment(std::string alignment)
 
 /**
  * @brief Set the Weapon attribute
- * 
- * @param weapon 
+ *
+ * @param weapon
  */
 
 void Character::setWeapon(Weapon weapon)
@@ -191,8 +191,8 @@ void Character::setWeapon(Weapon weapon)
 
 /**
  * @brief Set the Armor attribute
- * 
- * @param armor 
+ *
+ * @param armor
  */
 
 void Character::setArmor(Armor armor)
@@ -235,8 +235,8 @@ std::string Character::toString()
 
 /**
  * @brief Define the race of the character
- * 
- * @param option 
+ *
+ * @param option
  * @return
  */
 
@@ -251,7 +251,7 @@ void Character::defineRace(int option)
 
 /**
  * @brief Define the stats of the character
- * 
+ *
  * @return
  */
 
@@ -262,8 +262,8 @@ void Character::defineStats()
 
 /**
  * @brief Define the class of the character
- * 
- * @param option 
+ *
+ * @param option
  * @return
  */
 

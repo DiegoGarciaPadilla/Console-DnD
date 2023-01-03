@@ -4,12 +4,12 @@
  * @brief This file contains the implementation of the Weapon class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Weapon.h"
+#include "headers/Weapon.h" // Include the header file
 
 // Constructors
 

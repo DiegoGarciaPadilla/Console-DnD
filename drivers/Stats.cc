@@ -4,12 +4,12 @@
  * @brief This file contains the implementation of the Stats class.
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Stats.h"
+#include "headers/Stats.h" // Include the header file
 
 // Constructors
 
@@ -30,8 +30,8 @@ Stats::Stats()
 
 /**
  * @brief Construct a new Stats:: Stats object
- * 
- * @param race 
+ *
+ * @param race
  */
 
 Stats::Stats(Race race)
@@ -48,8 +48,8 @@ Stats::Stats(Race race)
 
 /**
  * @brief Get the Strength attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getStrength()
@@ -59,8 +59,8 @@ int Stats::getStrength()
 
 /**
  * @brief Get the Dexterity attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getDexterity()
@@ -70,8 +70,8 @@ int Stats::getDexterity()
 
 /**
  * @brief Get the Constitution attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getConstitution()
@@ -81,8 +81,8 @@ int Stats::getConstitution()
 
 /**
  * @brief Get the Intelligence attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getIntelligence()
@@ -92,8 +92,8 @@ int Stats::getIntelligence()
 
 /**
  * @brief Get the Wisdom attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getWisdom()
@@ -103,8 +103,8 @@ int Stats::getWisdom()
 
 /**
  * @brief Get the Charisma attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Stats::getCharisma()
@@ -116,8 +116,8 @@ int Stats::getCharisma()
 
 /**
  * @brief Set the Strength attribute
- * 
- * @param strength 
+ *
+ * @param strength
  */
 
 void Stats::setStrength(int strength)
@@ -127,8 +127,8 @@ void Stats::setStrength(int strength)
 
 /**
  * @brief Set the Dexterity attribute
- * 
- * @param dexterity 
+ *
+ * @param dexterity
  */
 
 void Stats::setDexterity(int dexterity)
@@ -138,8 +138,8 @@ void Stats::setDexterity(int dexterity)
 
 /**
  * @brief Set the Constitution attribute
- * 
- * @param constitution 
+ *
+ * @param constitution
  */
 
 void Stats::setConstitution(int constitution)
@@ -149,8 +149,8 @@ void Stats::setConstitution(int constitution)
 
 /**
  * @brief Set the Intelligence attribute
- * 
- * @param intelligence 
+ *
+ * @param intelligence
  */
 
 void Stats::setIntelligence(int intelligence)
@@ -160,8 +160,8 @@ void Stats::setIntelligence(int intelligence)
 
 /**
  * @brief Set the Wisdom attribute
- * 
- * @param wisdom 
+ *
+ * @param wisdom
  */
 
 void Stats::setWisdom(int wisdom)
@@ -171,8 +171,8 @@ void Stats::setWisdom(int wisdom)
 
 /**
  * @brief Set the Charisma attribute
- * 
- * @param charisma 
+ *
+ * @param charisma
  */
 
 void Stats::setCharisma(int charisma)
@@ -184,8 +184,8 @@ void Stats::setCharisma(int charisma)
 
 /**
  * @brief Get the Stats object as a string
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Stats::toString()

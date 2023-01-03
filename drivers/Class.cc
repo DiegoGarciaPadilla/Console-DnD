@@ -4,18 +4,18 @@
  * @brief This file contains the implementation of the Class class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Class.h"
+#include "headers/Class.h" // Include the header file
 
 // Constructors
 
 /**
  * @brief Construct a new Class:: Class object
- * 
+ *
  */
 
 Class::Class()
@@ -28,11 +28,11 @@ Class::Class()
 
 /**
  * @brief Construct a new Class:: Class object
- * 
- * @param name 
- * @param description 
- * @param initialWeapon 
- * @param initialArmor 
+ *
+ * @param name
+ * @param description
+ * @param initialWeapon
+ * @param initialArmor
  */
 
 Class::Class(std::string name, std::string description, Weapon initialWeapon, Armor initialArmor)
@@ -47,8 +47,8 @@ Class::Class(std::string name, std::string description, Weapon initialWeapon, Ar
 
 /**
  * @brief Returns the name of the class
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Class::getName()
@@ -58,8 +58,8 @@ std::string Class::getName()
 
 /**
  * @brief Returns the description of the class
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Class::getDescription()
@@ -69,8 +69,8 @@ std::string Class::getDescription()
 
 /**
  * @brief Returns the initial weapon of the class
- * 
- * @return Weapon 
+ *
+ * @return Weapon
  */
 
 Weapon Class::getInitialWeapon()
@@ -80,8 +80,8 @@ Weapon Class::getInitialWeapon()
 
 /**
  * @brief Returns the initial armor of the class
- * 
- * @return Armor 
+ *
+ * @return Armor
  */
 
 Armor Class::getInitialArmor()
@@ -93,8 +93,8 @@ Armor Class::getInitialArmor()
 
 /**
  * @brief Returns a string with the information of the class
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Class::toString()

@@ -4,12 +4,12 @@
  * @brief This file contains the implementation of the Race class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Race.h"
+#include "headers/Race.h" // Include the header file
 
 // Constructors
 
@@ -59,8 +59,8 @@ Race::Race(std::string name, std::string description, int strengthModifier, int 
 
 /**
  * @brief Get the Name attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Race::getName()
@@ -70,8 +70,8 @@ std::string Race::getName()
 
 /**
  * @brief Get the Description attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Race::getDescription()
@@ -81,8 +81,8 @@ std::string Race::getDescription()
 
 /**
  * @brief Get the Strength Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getStrengthModifier()
@@ -92,8 +92,8 @@ int Race::getStrengthModifier()
 
 /**
  * @brief Get the Dexterity Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getDexterityModifier()
@@ -103,8 +103,8 @@ int Race::getDexterityModifier()
 
 /**
  * @brief Get the Constitution Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getConstitutionModifier()
@@ -114,8 +114,8 @@ int Race::getConstitutionModifier()
 
 /**
  * @brief Get the Intelligence Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getIntelligenceModifier()
@@ -125,8 +125,8 @@ int Race::getIntelligenceModifier()
 
 /**
  * @brief Get the Wisdom Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getWisdomModifier()
@@ -136,8 +136,8 @@ int Race::getWisdomModifier()
 
 /**
  * @brief Get the Charisma Modifier attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Race::getCharismaModifier()

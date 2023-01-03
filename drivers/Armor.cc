@@ -4,18 +4,18 @@
  * @brief This file contains the implementation of the Armor class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Armor.h"
+#include "headers/Armor.h" // Include the header file
 
 // Constructors
 
 /**
  * @brief Construct a new Armor:: Armor object
- * 
+ *
  */
 
 Armor::Armor()
@@ -31,14 +31,14 @@ Armor::Armor()
 
 /**
  * @brief Construct a new Armor:: Armor object
- * 
- * @param name 
- * @param description 
- * @param weight 
- * @param value 
- * @param subtype 
- * @param material 
- * @param defense 
+ *
+ * @param name
+ * @param description
+ * @param weight
+ * @param value
+ * @param subtype
+ * @param material
+ * @param defense
  */
 
 Armor::Armor(std::string name, std::string description, int weight, int value, std::string subtype, std::string material, int defense)
@@ -56,8 +56,8 @@ Armor::Armor(std::string name, std::string description, int weight, int value, s
 
 /**
  * @brief Get the Defense attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Armor::getDefense()
@@ -69,8 +69,8 @@ int Armor::getDefense()
 
 /**
  * @brief Set the Defense attribute
- * 
- * @param defense 
+ *
+ * @param defense
  */
 
 void Armor::setDefense(int defense)
@@ -82,8 +82,8 @@ void Armor::setDefense(int defense)
 
 /**
  * @brief Get the Armor object as a string
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Armor::toString()

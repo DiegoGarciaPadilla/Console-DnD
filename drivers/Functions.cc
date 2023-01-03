@@ -9,11 +9,11 @@
  *
  */
 
-#include "Initializer.cc"
-#include "Race.cc"
-#include "Class.cc"
-#include "Stats.cc"
-#include "Character.cc"
+#include "Initializer.cc" // Include the Initializer file
+#include "Race.cc"        // Include the Race class
+#include "Class.cc"       // Include the Class class
+#include "Stats.cc"       // Include the Stats class
+#include "Character.cc"   // Include the Character class
 
 // General functions
 

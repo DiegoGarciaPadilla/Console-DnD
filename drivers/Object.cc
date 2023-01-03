@@ -4,18 +4,18 @@
  * @brief This file contains the implementation of the Object class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "headers/Object.h"
+#include "headers/Object.h" // Include the header file
 
 // Constructors
 
 /**
  * @brief Construct a new Object:: Object object
- * 
+ *
  */
 
 Object::Object()
@@ -31,14 +31,14 @@ Object::Object()
 
 /**
  * @brief Construct a new Object:: Object object
- * 
- * @param name 
- * @param description 
- * @param weight 
- * @param value 
- * @param type 
- * @param subtype 
- * @param material 
+ *
+ * @param name
+ * @param description
+ * @param weight
+ * @param value
+ * @param type
+ * @param subtype
+ * @param material
  */
 
 Object::Object(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material)
@@ -56,8 +56,8 @@ Object::Object(std::string name, std::string description, int weight, int value,
 
 /**
  * @brief Get the Name attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Object::getName()
@@ -67,8 +67,8 @@ std::string Object::getName()
 
 /**
  * @brief Get the Description attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Object::getDescription()
@@ -78,7 +78,7 @@ std::string Object::getDescription()
 
 /**
  * @brief Get the Weight attribute
- * 
+ *
  * @return int
  */
 
@@ -89,7 +89,7 @@ int Object::getWeight()
 
 /**
  * @brief Get the Value attribute
- * 
+ *
  * @return int
  */
 
@@ -100,8 +100,8 @@ int Object::getValue()
 
 /**
  * @brief Get the Type attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Object::getType()
@@ -111,8 +111,8 @@ std::string Object::getType()
 
 /**
  * @brief Get the Subtype attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Object::getSubtype()
@@ -122,8 +122,8 @@ std::string Object::getSubtype()
 
 /**
  * @brief Get the Material attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Object::getMaterial()
@@ -135,8 +135,8 @@ std::string Object::getMaterial()
 
 /**
  * @brief Set the Name attribute
- * 
- * @param name 
+ *
+ * @param name
  */
 
 void Object::setName(std::string name)
@@ -146,8 +146,8 @@ void Object::setName(std::string name)
 
 /**
  * @brief Set the Description attribute
- * 
- * @param description 
+ *
+ * @param description
  */
 
 void Object::setDescription(std::string description)
@@ -157,8 +157,8 @@ void Object::setDescription(std::string description)
 
 /**
  * @brief Set the Weight attribute
- * 
- * @param weight 
+ *
+ * @param weight
  */
 
 void Object::setWeight(int weight)
@@ -168,8 +168,8 @@ void Object::setWeight(int weight)
 
 /**
  * @brief Set the Value attribute
- * 
- * @param value 
+ *
+ * @param value
  */
 
 void Object::setValue(int value)
@@ -179,8 +179,8 @@ void Object::setValue(int value)
 
 /**
  * @brief Set the Type attribute
- * 
- * @param type 
+ *
+ * @param type
  */
 
 void Object::setType(std::string type)
@@ -190,8 +190,8 @@ void Object::setType(std::string type)
 
 /**
  * @brief Set the Subtype attribute
- * 
- * @param subtype 
+ *
+ * @param subtype
  */
 
 void Object::setSubtype(std::string subtype)
@@ -201,8 +201,8 @@ void Object::setSubtype(std::string subtype)
 
 /**
  * @brief Set the Material attribute
- * 
- * @param material 
+ *
+ * @param material
  */
 
 void Object::setMaterial(std::string material)

@@ -9,10 +9,10 @@
  *
  */
 
-#include "Weapon.h"
-#include "Armor.h"
-#include "Race.h"
-#include "Class.h"
+#include "Weapon.cc" // Include the Weapon class
+#include "Armor.cc"  // Include the Armor class
+#include "Race.cc"   // Include the Race class
+#include "Class.cc"  // Include the Class class
 
 // Genders
 
