@@ -1,7 +1,7 @@
 /**
- * @file Object.h
+ * @file Item.h
  * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
- * @brief
+ * @brief This file contains the declaration of the Item class
  * @version 0.1
  * @date 2022-12-17
  *
@@ -9,10 +9,10 @@
  *
  */
 
-#ifndef OBJECT_H // If the preprocessor OBJECT_H is not defined
-#define OBJECT_H // Define the preprocessor OBJECT_H
+#ifndef ITEM_H // If the preprocessor ITEM_H is not defined
+#define ITEM_H // Define the preprocessor ITEM_H
 
-class Object
+class Item
 {
 protected:
     // Attributes
@@ -26,8 +26,8 @@ protected:
 
 public:
     // Constructors
-    Object();
-    Object(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material);
+    Item();
+    Item(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material);
 
     // Getters
     std::string getName();
@@ -51,4 +51,4 @@ public:
     std::string toString();
 };
 
-#endif // End of OBJECT_H preprossesor
+#endif // End of ITEM_H preprossesor

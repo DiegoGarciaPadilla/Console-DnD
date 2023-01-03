@@ -12,9 +12,9 @@
 #ifndef ARMOR_H // If the ARMOR_H preprocessor is not defined
 #define ARMOR_H // Define the ARMOR_H preprocessor
 
-#include "../drivers/Object.cc" // Include the object class
+#include "../drivers/Item.cc" // Include the object class
 
-class Armor : public Object
+class Armor : public Item
 {
 private:
     // Attributes

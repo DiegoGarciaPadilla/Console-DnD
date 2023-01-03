@@ -1,7 +1,7 @@
 /**
- * @file Object.cc
+ * @file Item.cc
  * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
- * @brief This file contains the implementation of the Object class
+ * @brief This file contains the implementation of the Item class
  * @version 0.1
  * @date 2023-01-02
  *
@@ -9,31 +9,31 @@
  *
  */
 
-#ifndef OBJECT_CC // If the file is not defined
-#define OBJECT_CC // Define the file
+#ifndef ITEM_CC // If the file is not defined
+#define ITEM_CC // Define the file
 
-#include "../headers/Object.h" // Include the header file
+#include "../headers/Item.h" // Include the header file
 
 // Constructors
 
 /**
- * @brief Construct a new Object:: Object object
+ * @brief Construct a new Item:: Item object
  *
  */
 
-Object::Object()
+Item::Item()
 {
-    name = "Object";
+    name = "Item";
     description = "This is an object";
     weight = 0;
     value = 0;
-    type = "Object";
-    subtype = "Object";
-    material = "Object";
+    type = "Item";
+    subtype = "Item";
+    material = "Item";
 }
 
 /**
- * @brief Construct a new Object:: Object object
+ * @brief Construct a new Item:: Item object
  *
  * @param name
  * @param description
@@ -44,7 +44,7 @@ Object::Object()
  * @param material
  */
 
-Object::Object(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material)
+Item::Item(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material)
 {
     this->name = name;
     this->description = description;
@@ -63,7 +63,7 @@ Object::Object(std::string name, std::string description, int weight, int value,
  * @return std::string
  */
 
-std::string Object::getName()
+std::string Item::getName()
 {
     return name;
 }
@@ -74,7 +74,7 @@ std::string Object::getName()
  * @return std::string
  */
 
-std::string Object::getDescription()
+std::string Item::getDescription()
 {
     return description;
 }
@@ -85,7 +85,7 @@ std::string Object::getDescription()
  * @return int
  */
 
-int Object::getWeight()
+int Item::getWeight()
 {
     return weight;
 }
@@ -96,7 +96,7 @@ int Object::getWeight()
  * @return int
  */
 
-int Object::getValue()
+int Item::getValue()
 {
     return value;
 }
@@ -107,7 +107,7 @@ int Object::getValue()
  * @return std::string
  */
 
-std::string Object::getType()
+std::string Item::getType()
 {
     return type;
 }
@@ -118,7 +118,7 @@ std::string Object::getType()
  * @return std::string
  */
 
-std::string Object::getSubtype()
+std::string Item::getSubtype()
 {
     return subtype;
 }
@@ -129,7 +129,7 @@ std::string Object::getSubtype()
  * @return std::string
  */
 
-std::string Object::getMaterial()
+std::string Item::getMaterial()
 {
     return material;
 }
@@ -142,7 +142,7 @@ std::string Object::getMaterial()
  * @param name
  */
 
-void Object::setName(std::string name)
+void Item::setName(std::string name)
 {
     this->name = name;
 }
@@ -153,7 +153,7 @@ void Object::setName(std::string name)
  * @param description
  */
 
-void Object::setDescription(std::string description)
+void Item::setDescription(std::string description)
 {
     this->description = description;
 }
@@ -164,7 +164,7 @@ void Object::setDescription(std::string description)
  * @param weight
  */
 
-void Object::setWeight(int weight)
+void Item::setWeight(int weight)
 {
     this->weight = weight;
 }
@@ -175,7 +175,7 @@ void Object::setWeight(int weight)
  * @param value
  */
 
-void Object::setValue(int value)
+void Item::setValue(int value)
 {
     this->value = value;
 }
@@ -186,7 +186,7 @@ void Object::setValue(int value)
  * @param type
  */
 
-void Object::setType(std::string type)
+void Item::setType(std::string type)
 {
     this->type = type;
 }
@@ -197,7 +197,7 @@ void Object::setType(std::string type)
  * @param subtype
  */
 
-void Object::setSubtype(std::string subtype)
+void Item::setSubtype(std::string subtype)
 {
     this->subtype = subtype;
 }
@@ -208,14 +208,14 @@ void Object::setSubtype(std::string subtype)
  * @param material
  */
 
-void Object::setMaterial(std::string material)
+void Item::setMaterial(std::string material)
 {
     this->material = material;
 }
 
 // Methods
 
-std::string Object::toString()
+std::string Item::toString()
 {
     std::stringstream ss;
 
@@ -230,4 +230,4 @@ std::string Object::toString()
     return ss.str();
 }
 
-#endif // End of the preprocessor OBJECT_CC
+#endif // End of the preprocessor ITEM_CC
