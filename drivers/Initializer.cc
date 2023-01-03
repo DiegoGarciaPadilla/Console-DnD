@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef INITIALIZER_CC // If the file is not defined
+#define INITIALIZER_CC // Define the file
+
 #include "Weapon.cc" // Include the Weapon class
 #include "Armor.cc"  // Include the Armor class
 #include "Race.cc"   // Include the Race class
@@ -414,3 +417,5 @@ std::vector<std::string> listClasses()
     // Return the vector of classes
     return classes;
 }
+
+#endif // End of the preprocessor INITIALIZER_CC

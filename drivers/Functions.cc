@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef FUNCTIONS_CC // If the file is not defined
+#define FUNCTIONS_CC // Define the file
+
 #include "Initializer.cc" // Include the Initializer file
 #include "Race.cc"        // Include the Race class
 #include "Class.cc"       // Include the Class class
@@ -175,3 +178,5 @@ void createCharacter(Character &character)
 
     return;
 }
+
+#endif // End of the preprocessor FUNCTIONS_CC

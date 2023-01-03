@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef OBJECT_CC // If the file is not defined
+#define OBJECT_CC // Define the file
+
 #include "../headers/Object.h" // Include the header file
 
 // Constructors
@@ -226,3 +229,5 @@ std::string Object::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor OBJECT_CC

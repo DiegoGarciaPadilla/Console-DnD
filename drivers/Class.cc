@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef CLASS_CC // If the file is not defined
+#define CLASS_CC // Define the file
+
 #include "../headers/Class.h" // Include the header file
 
 // Constructors
@@ -111,3 +114,5 @@ std::string Class::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor CLASS_CC

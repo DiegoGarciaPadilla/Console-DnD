@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef RACE_CC // If the file is not defined
+#define RACE_CC // Define the file
+
 #include "../headers/Race.h" // Include the header file
 
 // Constructors
@@ -162,3 +165,5 @@ std::string Race::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor RACE_CC

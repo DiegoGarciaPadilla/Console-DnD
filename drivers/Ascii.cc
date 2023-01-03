@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef ASCII_CC // If the file is not defined
+#define ASCII_CC // Define the file
+
 /**
  * @brief Function to read the ASCII art from a file and return it as a string
  *
@@ -46,3 +49,5 @@ std::string readAscii(std::string fileName)
     // Return the string
     return ascii;
 }
+
+#endif // End of the preprocessor ASCII_CC

@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef CHARACTER_CC // If the file is not defined
+#define CHARACTER_CC // Define the file
+
 #include "../headers/Character.h" // Include the header file
 
 // Constructors
@@ -275,3 +278,5 @@ void Character::defineClass(int option)
     // Set class
     clss = classes[option];
 }
+
+#endif // End of the preprocessor CHARACTER_CC

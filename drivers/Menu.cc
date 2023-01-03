@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef MENU_CC // If the file is not defined
+#define MENU_CC // Define the file
+
 #include "Ascii.cc"       // Include the Ascii file
 #include "Initializer.cc" // Include the Initializer file
 #include "Functions.cc"   // Include the Functions file
@@ -306,3 +309,5 @@ void encyclopediaMenu()
 
     } while (option != 5);
 }
+
+#endif // End of the preprocessor MENU_CC

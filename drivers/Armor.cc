@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef ARMOR_CC
+#define ARMOR_CC
+
 #include "../headers/Armor.h" // Include the header file
 
 // Constructors
@@ -101,3 +104,5 @@ std::string Armor::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor ARMOR_CC

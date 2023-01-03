@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef WEAPON_CC // If the file is not defined
+#define WEAPON_CC // Define the file
+
 #include "../headers/Weapon.h" // Include the header file
 
 // Constructors
@@ -101,3 +104,5 @@ std::string Weapon::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor WEAPON_CC

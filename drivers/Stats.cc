@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef STATS_CC // If the file is not defined
+#define STATS_CC // Define the file
+
 #include "../headers/Stats.h" // Include the header file
 
 // Constructors
@@ -201,3 +204,5 @@ std::string Stats::toString()
 
     return ss.str();
 }
+
+#endif // End of the preprocessor STATS_CC
