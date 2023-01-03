@@ -9,6 +9,10 @@
  *
  */
 
+#include "Ascii.cc"       // Include the Ascii file
+#include "Initializer.cc" // Include the Initializer file
+#include "Functions.cc"   // Include the Functions file
+
 /**
  * @brief Function to show the main menu
  *
