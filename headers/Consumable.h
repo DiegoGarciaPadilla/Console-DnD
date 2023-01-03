@@ -12,13 +12,13 @@
 #ifndef CONSUMABLE_H // If the preprocessor CONSUMABLE_H is not defined
 #define CONSUMABLE_H // Define the preprocessor CONSUMABLE_H
 
-#include "drivers/Object.cc" // Include the Object class
+#include "../drivers/Item.cc" // Include the Item class
 
-class Consumable : public Object
+class Consumable : public Item
 {
 private:
     // Attributes
-    type = "Consumable";
+    std::string type = "Consumable";
     std::string effect;
     int health;
     int mana;

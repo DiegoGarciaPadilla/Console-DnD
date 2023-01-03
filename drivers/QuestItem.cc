@@ -93,4 +93,8 @@ std::string QuestItem::toString()
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;
     ss << "Quest: " << quest << std::endl;
+
+    return ss.str();
 }
+
+#endif // End of the preprocessor QUESTITEM_CC
