@@ -1,24 +1,19 @@
 /**
- * @file Functions.h
+ * @file Functions.cc
  * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
  * @brief This file contains the functions that are used in the game.
  * @version 0.1
- * @date 2022-12-21
- * 
- * @copyright Copyright (c) 2022
- * 
+ * @date 2023-01-02
+ *
+ * @copyright Copyright (c) 2023
+ *
  */
 
-#ifndef FUNCTIONS_H // If the preprocessor FUNCTIONS_H is not defined
-#define FUNCTIONS_H // Define the preprocessor FUNCTIONS_H
-
-#include "Initializer.h" // Include the Initializer file
-#include "Race.h"          // Include the race class
-#include "Class.h"         // Include the class class
-#include "Stats.h"  // Include the statistics class
-#include "Character.h"     // Include the character class
-
-// Functions
+#include "Initializer.cc"
+#include "Race.cc"
+#include "Class.cc"
+#include "Stats.cc"
+#include "Character.cc"
 
 // General functions
 
@@ -61,7 +56,6 @@ void printStringVector(std::vector<std::string> v)
     }
 }
 
-
 /**
  * @brief Function to create a character with the data entered by the user
  *
@@ -84,7 +78,7 @@ void createCharacter(Character &character)
     std::vector<std::string> alignments = listAlignments();
     std::vector<std::string> races = listRaces();
     std::vector<std::string> classes = listClasses();
-    
+
     // Clear the screen
     cleanScreen();
 
@@ -181,5 +175,3 @@ void createCharacter(Character &character)
 
     return;
 }
-
-#endif // End of the preprocessor FUNCTIONS_H

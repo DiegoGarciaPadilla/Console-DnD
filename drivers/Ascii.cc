@@ -1,16 +1,13 @@
 /**
- * @file Ascii.h
+ * @file Ascii.cc
  * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
- * @brief This file contains the ASCII art of the game.
+ * @brief This file contains the functions that print the ASCII art.
  * @version 0.1
- * @date 2022-12-26
- *
- * @copyright Copyright (c) 2022
- *
+ * @date 2023-01-02
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
-
-#ifndef ASCII_H // If the preprocessor ASCII_H is not defined
-#define ASCII_H // Define the preprocessor ASCII_H
 
 /**
  * @brief Function to read the ASCII art from a file and return it as a string
@@ -49,5 +46,3 @@ std::string readAscii(std::string fileName)
     // Return the string
     return ascii;
 }
-
-#endif // End of the preprocessor ASCII_H

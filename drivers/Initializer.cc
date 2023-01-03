@@ -1,21 +1,18 @@
 /**
- * @file Initializer.h
+ * @file Initializer.cc
  * @author Diego Antonio Garcia Padilla (github.com/DiegoGarciaPadilla)
  * @brief This file contains the functions that initialize the arrays of the game.
  * @version 0.1
- * @date 2022-12-21
+ * @date 2023-01-02
  *
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2023
  *
  */
 
-#ifndef INITIALIZER_H // If the preprocessor INITIALIZER_H is not defined
-#define INITIALIZER_H // Define the preprocessor INITIALIZER_H
-
-#include "Weapon.h" // Include the weapon class
-#include "Armor.h"  // Include the armor class
-#include "Race.h"   // Include the race class
-#include "Class.h"  // Include the class class
+#include "Weapon.h"
+#include "Armor.h"
+#include "Race.h"
+#include "Class.h"
 
 // Genders
 
@@ -417,5 +414,3 @@ std::vector<std::string> listClasses()
     // Return the vector of classes
     return classes;
 }
-
-#endif // End of the INITIALIZER_H preprocessor
