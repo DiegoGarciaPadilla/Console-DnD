@@ -30,8 +30,8 @@ private:
     Race race;
     Class clss;
     Stats stats;
-    Weapon weapon;
-    Armor armor;
+    Weapon equippedWeapon;
+    Armor equippedArmor;
 
 public:
     // Constructors
@@ -45,16 +45,16 @@ public:
     Race getRace();
     Class getClass();
     Stats getStats();
-    Weapon getWeapon();
-    Armor getArmor();
+    Weapon getEquippedWeapon();
+    Armor getEquippedArmor();
 
     // Setters
     void setName(std::string name);
     void setGender(std::string gender);
     void setAge(int age);
     void setAlignment(std::string alignment);
-    void setWeapon(Weapon weapon);
-    void setArmor(Armor armor);
+    void setEquippedWeapon(Weapon weapon);
+    void setEquippedArmor(Armor armor);
 
     // Methods
     std::string toString();

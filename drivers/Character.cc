@@ -30,8 +30,8 @@ Character::Character()
     race = Race();
     clss = Class();
     stats = Stats(race);
-    weapon = clss.getInitialWeapon();
-    armor = clss.getInitialArmor();
+    equippedWeapon = clss.getInitialWeapon();
+    equippedArmor = clss.getInitialArmor();
 }
 
 // Getters
@@ -114,25 +114,25 @@ Stats Character::getStats()
 }
 
 /**
- * @brief Get the Weapon attribute
+ * @brief Get the EquipedWeapon attribute
  *
  * @return Weapon
  */
 
-Weapon Character::getWeapon()
+Weapon Character::getEquippedWeapon()
 {
-    return weapon;
+    return equippedWeapon;
 }
 
 /**
- * @brief Get the Armor attribute
+ * @brief Get the EquipedArmor attribute
  *
  * @return Armor
  */
 
-Armor Character::getArmor()
+Armor Character::getEquippedArmor()
 {
-    return armor;
+    return equippedArmor;
 }
 
 // Setters
@@ -182,25 +182,25 @@ void Character::setAlignment(std::string alignment)
 }
 
 /**
- * @brief Set the Weapon attribute
+ * @brief Set the EquippedWeapon attribute
  *
- * @param weapon
+ * @param equippedWeapon
  */
 
-void Character::setWeapon(Weapon weapon)
+void Character::setEquippedWeapon(Weapon equippedWeapon)
 {
-    this->weapon = weapon;
+    this->equippedWeapon = equippedWeapon;
 }
 
 /**
- * @brief Set the Armor attribute
+ * @brief Set the EquippedArmor attribute
  *
- * @param armor
+ * @param equippedArmor
  */
 
-void Character::setArmor(Armor armor)
+void Character::setEquippedArmor(Armor equippedArmor)
 {
-    this->armor = armor;
+    this->equippedArmor = equippedArmor;
 }
 
 // Methods
@@ -226,12 +226,15 @@ std::string Character::toString()
 
     ss << "STATS" << std::endl;
     ss << stats.toString() << std::endl;
+    ss << std::endl;
 
-    ss << "WEAPON" << std::endl;
-    ss << weapon.toString() << std::endl;
+    ss << "EQUIPPED WEAPON" << std::endl;
+    ss << equippedWeapon.toString() << std::endl;
+    ss << std::endl;
 
-    ss << "ARMOR" << std::endl;
-    ss << armor.toString() << std::endl;
+    ss << "EQUIPPED ARMOR" << std::endl;
+    ss << equippedArmor.toString() << std::endl;
+    ss << std::endl;
 
     return ss.str();
 }
@@ -277,6 +280,12 @@ void Character::defineClass(int option)
 
     // Set class
     clss = classes[option];
+
+    // Set initial weapon
+    equippedWeapon = clss.getInitialWeapon();
+
+    // Set initial armor
+    equippedArmor = clss.getInitialArmor();
 }
 
 #endif // End of the preprocessor CHARACTER_CC
