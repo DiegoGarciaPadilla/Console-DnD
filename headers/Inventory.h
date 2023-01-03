@@ -12,6 +12,11 @@
 #ifndef INVENTORY_H // If the preprocessor INVENTORY_H is not defined
 #define INVENTORY_H // Define the preprocessor INVENTORY_H
 
+#include "../drivers/Weapon.cc" // Include the Weapon class
+#include "../drivers/Armor.cc" // Include the Armor class
+#include "../drivers/Consumable.cc" // Include the Consumable class
+#include "../drivers/QuestItem.cc" // Include the QuestItem class
+
 class Inventory
 {
 private:
