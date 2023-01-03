@@ -17,9 +17,7 @@ class Inventory
 private:
     // Attributes
     int maxWeight;
-    int maxItems;
     int currentWeight;
-    int currentItems;
     std::vector<Weapon> weapons;
     std::vector<Armor> armors;
     std::vector<Consumable> consumables;
@@ -28,31 +26,25 @@ private:
 public:
     // Constructors
     Inventory();
-    Inventory(int maxWeight, int maxItems);
+    Inventory(int maxWeight);
 
     // Getters
     int getMaxWeight();
-    int getMaxItems();
     int getCurrentWeight();
-    int getCurrentItems();
-    std::vector<Weapon> getWeapons();
-    std::vector<Armor> getArmors();
-    std::vector<Consumable> getConsumables();
-    std::vector<QuestItem> getQuestItems();
 
     // Setters
-    void setMaxWeight(int maxWeight);
-    void setMaxItems(int maxItems);
-    void setCurrentWeight(int currentWeight);
-    void setCurrentItems(int currentItems);
-    void setWeapons(std::vector<Weapon> weapons);
-    void setArmors(std::vector<Armor> armors);
-    void setConsumables(std::vector<Consumable> consumables);
-    void setQuestItems(std::vector<QuestItem> questItems);
+
+    // There are no setters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
 
     // Methods
-    void addItem(Item item);
-    void removeItem(Item item);
+    void addWeapon(Weapon weapon);
+    void addArmor(Armor armor);
+    void addConsumable(Consumable consumable);
+    void addQuestItem(QuestItem questItem);
+    void removeWeapon(Weapon weapon);
+    void removeArmor(Armor armor);
+    void removeConsumable(Consumable consumable);
+    void removeQuestItem(QuestItem questItem);
     void showInventory();
 };
 
