@@ -4,9 +4,9 @@
  * @brief This program is a character creator for the D&D game.
  * @version 0.1
  * @date 2022-12-21
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #ifndef MAIN_H // If the preprocessor MAIN_H is not defined
@@ -19,10 +19,10 @@
 #include <cstdlib>  // Library for system functions
 #include <vector>   // Library for vectors
 
-#include "headers/Menu.h"        // Library for menus
-#include "headers/Initializer.h" // Library for initializers
-#include "headers/Functions.h"   // Library for functions
-#include "headers/Character.h"   // Library for the character class
+#include "drivers/Menu.cc"        // Library for menus
+#include "drivers/Initializer.cc" // Library for initializers
+#include "drivers/Functions.cc"   // Library for functions
+#include "drivers/Character.cc"   // Library for the character class
 
 // Main function
 int main()
