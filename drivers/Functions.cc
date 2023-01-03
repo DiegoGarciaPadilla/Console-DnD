@@ -12,6 +12,12 @@
 #ifndef FUNCTIONS_CC // If the file is not defined
 #define FUNCTIONS_CC // Define the file
 
+#include <iostream> // Include input and output library
+#include <string>   // Include string library
+#include <sstream>  // Include string stream library
+#include <cstdlib>  // Include system library
+#include <vector>   // Include vector library
+
 #include "Initializer.cc" // Include the Initializer file
 #include "Race.cc"        // Include the Race class
 #include "Class.cc"       // Include the Class class
@@ -175,8 +181,6 @@ void createCharacter(Character &character)
     std::cout << "The stats are generated randomly." << std::endl;
     character.defineStats();
     std::cout << std::endl;
-
-    return;
 }
 
 #endif // End of the preprocessor FUNCTIONS_CC
