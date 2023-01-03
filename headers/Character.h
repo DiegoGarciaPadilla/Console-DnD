@@ -12,9 +12,14 @@
 #ifndef CHARACTER_H // If the preprocessor CHARACTER_H is not defined
 #define CHARACTER_H // Define the preprocessor CHARACTER_H
 
+#include <string>  // Include string library
+#include <sstream> // Include string stream library
+#include <vector>  // Include vector library
+
 #include "../drivers/Race.cc"        // Include races class
 #include "../drivers/Class.cc"       // Include classes class
 #include "../drivers/Stats.cc"       // Include statistics class
+#include "../drivers/Inventory.cc"   // Include inventory class
 #include "../drivers/Weapon.cc"      // Include weapons class
 #include "../drivers/Armor.cc"       // Include armor class
 #include "../drivers/Initializer.cc" // Include initializer class
@@ -30,6 +35,7 @@ private:
     Race race;
     Class clss;
     Stats stats;
+    Inventory inventory;
     Weapon equippedWeapon;
     Armor equippedArmor;
 
@@ -38,29 +44,21 @@ public:
     Character();
 
     // Getters
-    std::string getName();
-    std::string getGender();
-    int getAge();
-    std::string getAlignment();
-    Race getRace();
-    Class getClass();
-    Stats getStats();
-    Weapon getEquippedWeapon();
-    Armor getEquippedArmor();
+
+    // There are no getters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
 
     // Setters
     void setName(std::string name);
     void setGender(std::string gender);
     void setAge(int age);
     void setAlignment(std::string alignment);
-    void setEquippedWeapon(Weapon weapon);
-    void setEquippedArmor(Armor armor);
 
     // Methods
     std::string toString();
     void defineRace(int option);
     void defineStats();
     void defineClass(int option);
+    void openInventory();
 };
 
 #endif // End of PERSONAJE_H preprocessor

@@ -12,6 +12,10 @@
 #ifndef CHARACTER_CC // If the file is not defined
 #define CHARACTER_CC // Define the file
 
+#include <string>  // Include string library
+#include <sstream> // Include string stream library
+#include <vector>  // Include vector library
+
 #include "../headers/Character.h" // Include the header file
 
 // Constructors
@@ -36,104 +40,7 @@ Character::Character()
 
 // Getters
 
-/**
- * @brief Get the Name attribute
- *
- * @return std::string
- */
-
-std::string Character::getName()
-{
-    return name;
-}
-
-/**
- * @brief Get the Gender attribute
- *
- * @return std::string
- */
-
-std::string Character::getGender()
-{
-    return gender;
-}
-
-/**
- * @brief Get the Age attribute
- *
- * @return int
- */
-
-int Character::getAge()
-{
-    return age;
-}
-
-/**
- * @brief Get the Alignment attribute
- *
- * @return std::string
- */
-
-std::string Character::getAlignment()
-{
-    return alignment;
-}
-
-/**
- * @brief Get the Race attribute
- *
- * @return Race
- */
-
-Race Character::getRace()
-{
-    return race;
-}
-
-/**
- * @brief Get the Class attribute
- *
- * @return Class
- */
-
-Class Character::getClass()
-{
-    return clss;
-}
-
-/**
- * @brief Get the Stats attribute
- *
- * @return Stats
- */
-
-Stats Character::getStats()
-{
-    return stats;
-}
-
-/**
- * @brief Get the EquipedWeapon attribute
- *
- * @return Weapon
- */
-
-Weapon Character::getEquippedWeapon()
-{
-    return equippedWeapon;
-}
-
-/**
- * @brief Get the EquipedArmor attribute
- *
- * @return Armor
- */
-
-Armor Character::getEquippedArmor()
-{
-    return equippedArmor;
-}
+// There are no getters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
 
 // Setters
 
@@ -179,28 +86,6 @@ void Character::setAge(int age)
 void Character::setAlignment(std::string alignment)
 {
     this->alignment = alignment;
-}
-
-/**
- * @brief Set the EquippedWeapon attribute
- *
- * @param equippedWeapon
- */
-
-void Character::setEquippedWeapon(Weapon equippedWeapon)
-{
-    this->equippedWeapon = equippedWeapon;
-}
-
-/**
- * @brief Set the EquippedArmor attribute
- *
- * @param equippedArmor
- */
-
-void Character::setEquippedArmor(Armor equippedArmor)
-{
-    this->equippedArmor = equippedArmor;
 }
 
 // Methods
@@ -286,6 +171,18 @@ void Character::defineClass(int option)
 
     // Set initial armor
     equippedArmor = clss.getInitialArmor();
+}
+
+/**
+ * @brief Method to open the inventory
+ * 
+ */
+
+void Character::openInventory()
+{
+    std::cout << "INVENTORY" << std::endl;
+    std::cout << std::endl;
+    std::cout << inventory.toString() << std::endl;
 }
 
 #endif // End of the preprocessor CHARACTER_CC
