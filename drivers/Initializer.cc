@@ -12,6 +12,13 @@
 #ifndef INITIALIZER_CC // If the file is not defined
 #define INITIALIZER_CC // Define the file
 
+#include <iostream> // Include input and output library
+#include <string>   // Include string library
+#include <sstream>  // Include string stream library
+#include <fstream>  // Include file stream library
+#include <cstdlib>  // Include system library
+#include <vector>   // Include vector library
+
 #include "Weapon.cc" // Include the Weapon class
 #include "Armor.cc"  // Include the Armor class
 #include "Race.cc"   // Include the Race class
@@ -81,7 +88,7 @@ std::vector<std::string> listAlignments()
 std::vector<Weapon> initWeapons()
 {
     // Open the file
-    std::ifstream file("./data/weapons.txt");
+    std::ifstream file("../data/weapons.txt");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -167,7 +174,7 @@ std::vector<std::string> listWeapons()
 std::vector<Armor> initArmors()
 {
     // Open the file
-    std::ifstream file("./data/armors.txt");
+    std::ifstream file("../data/armors.txt");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -253,7 +260,7 @@ std::vector<std::string> listArmors()
 std::vector<Race> initRaces()
 {
     // Open the file
-    std::ifstream file("./data/races.txt");
+    std::ifstream file("../data/races.txt");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -344,7 +351,7 @@ std::vector<Class> initClasses()
     std::vector<Armor> armors = initArmors();
 
     // Open the file
-    std::ifstream file("./data/classes.txt");
+    std::ifstream file("../data/classes.txt");
 
     // Check if the file was opened correctly
     if (!file.is_open())
