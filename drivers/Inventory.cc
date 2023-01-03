@@ -192,25 +192,34 @@ void Inventory::removeQuestItem(QuestItem questItem)
 
 void Inventory::showInventory()
 {
+    int itemNum = 1;
+
     std::cout << "Weapons: " << std::endl;
     for (int i = 0; i < weapons.size(); i++)
     {
-       std:: cout << i + 1 << ". " << weapons[i].getName() << std::endl;
+       std:: cout << itemNum << ". " << weapons[i].getName() << std::endl;
+        itemNum++;
     }
+
     std::cout << "Armors: " << std::endl;
     for (int i = 0; i < armors.size(); i++)
     {
-        std::cout << i + 1 << ". " << armors[i].getName() << std::endl;
+        std::cout << itemNum << ". " << armors[i].getName() << std::endl;
+        itemNum++;
     }
+
     std::cout << "Consumables: " << std::endl;
     for (int i = 0; i < consumables.size(); i++)
     {
-        std::cout << i + 1 << ". " << consumables[i].getName() << std::endl;
+        std::cout << itemNum << ". " << consumables[i].getName() << std::endl;
+        itemNum++;
     }
+
     std::cout << "Quest Items: " << std::endl;
     for (int i = 0; i < questItems.size(); i++)
     {
-        std::cout << i + 1 << ". " << questItems[i].getName() << std::endl;
+        std::cout << itemNum << ". " << questItems[i].getName() << std::endl;
+        itemNum++;
     }
 }
 
