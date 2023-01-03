@@ -11,7 +11,8 @@
 
 #ifndef WEAPON_H // If the WEAPON_H preprocessor is not defined
 #define WEAPON_H // Define the WEAPON_H preprocessor
-#include "Object.h" // Include the object class
+
+#include "../drivers/Object.cc" // Include the object class
 
 class Weapon : public Object
 {

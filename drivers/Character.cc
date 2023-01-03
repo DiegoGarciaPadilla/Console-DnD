@@ -9,7 +9,7 @@
  *
  */
 
-#include "headers/Character.h" // Include the header file
+#include "../headers/Character.h" // Include the header file
 
 // Constructors
 

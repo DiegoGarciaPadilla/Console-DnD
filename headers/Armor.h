@@ -12,7 +12,7 @@
 #ifndef ARMOR_H // If the ARMOR_H preprocessor is not defined
 #define ARMOR_H // Define the ARMOR_H preprocessor
 
-#include "Object.h" // Include the object class
+#include "../drivers/Object.cc" // Include the object class
 
 class Armor : public Object
 {

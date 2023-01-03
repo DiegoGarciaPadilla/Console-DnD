@@ -12,12 +12,12 @@
 #ifndef CHARACTER_H // If the preprocessor CHARACTER_H is not defined
 #define CHARACTER_H // Define the preprocessor CHARACTER_H
 
-#include "Race.h"        // Include races class
-#include "Class.h"       // Include classes class
-#include "Stats.h"       // Include statistics class
-#include "Weapon.h"      // Include weapons class
-#include "Armor.h"       // Include armor class
-#include "Initializer.h" // Include initializer class
+#include "../drivers/Race.cc"        // Include races class
+#include "../drivers/Class.cc"       // Include classes class
+#include "../drivers/Stats.cc"       // Include statistics class
+#include "../drivers/Weapon.cc"      // Include weapons class
+#include "../drivers/Armor.cc"       // Include armor class
+#include "../drivers/Initializer.cc" // Include initializer class
 
 class Character
 {

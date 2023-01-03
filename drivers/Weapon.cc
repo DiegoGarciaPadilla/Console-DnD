@@ -9,7 +9,7 @@
  *
  */
 
-#include "headers/Weapon.h" // Include the header file
+#include "../headers/Weapon.h" // Include the header file
 
 // Constructors
 

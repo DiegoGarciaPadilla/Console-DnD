@@ -9,7 +9,7 @@
  *
  */
 
-#include "headers/Stats.h" // Include the header file
+#include "../headers/Stats.h" // Include the header file
 
 // Constructors
 
