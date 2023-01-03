@@ -175,14 +175,92 @@ void Character::defineClass(int option)
 
 /**
  * @brief Method to open the inventory
- * 
+ *
  */
 
-void Character::openInventory()
+void Character::showInventory()
 {
-    std::cout << "INVENTORY" << std::endl;
-    std::cout << std::endl;
-    std::cout << inventory.toString() << std::endl;
+    inventory.showInventory();
+}
+
+/**
+ * @brief Method to add a weapon to the inventory
+ *
+ */
+
+void Character::addWeapon(Weapon weapon)
+{
+    inventory.addWeapon(weapon);
+}
+
+/**
+ * @brief Method to add an armor to the inventory
+ *
+ */
+
+void Character::addArmor(Armor armor)
+{
+    inventory.addArmor(armor);
+}
+
+/**
+ * @brief Method to add a consumable to the inventory
+ *
+ */
+
+void Character::addConsumable(Consumable consumable)
+{
+    inventory.addConsumable(consumable);
+}
+
+/**
+ * @brief Method to add a quest item to the inventory
+ *
+ */
+
+void Character::addQuestItem(QuestItem questItem)
+{
+    inventory.addQuestItem(questItem);
+}
+
+/**
+ * @brief Method to remove a weapon from the inventory
+ *
+ */
+
+void Character::removeWeapon(Weapon weapon)
+{
+    inventory.removeWeapon(weapon);
+}
+
+/**
+ * @brief Method to remove an armor from the inventory
+ *
+ */
+
+void Character::removeArmor(Armor armor)
+{
+    inventory.removeArmor(armor);
+}
+
+/**
+ * @brief Method to remove a consumable from the inventory
+ *
+ */
+
+void Character::removeConsumable(Consumable consumable)
+{
+    inventory.removeConsumable(consumable);
+}
+
+/**
+ * @brief Method to remove a quest item from the inventory
+ *
+ */
+
+void Character::removeQuestItem(QuestItem questItem)
+{
+    inventory.removeQuestItem(questItem);
 }
 
 #endif // End of the preprocessor CHARACTER_CC

@@ -55,10 +55,23 @@ public:
 
     // Methods
     std::string toString();
+
     void defineRace(int option);
     void defineStats();
     void defineClass(int option);
-    void openInventory();
+
+    void showInventory();
+
+    void addWeapon(Weapon weapon);
+    void addArmor(Armor armor);
+    void addConsumable(Consumable consumable);
+    void addQuestItem(QuestItem questItem);
+
+    void removeWeapon(Weapon weapon);
+    void removeArmor(Armor armor);
+    void removeConsumable(Consumable consumable);
+    void removeQuestItem(QuestItem questItem);
+
 };
 
 #endif // End of PERSONAJE_H preprocessor
