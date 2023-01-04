@@ -37,6 +37,10 @@ private:
     int mana;
     int stamina;
 
+    int maxHealth;
+    int maxMana;
+    int maxStamina;
+
     Race race;
     Class clss;
     Stats stats;
@@ -57,6 +61,9 @@ public:
     int getHealth();
     int getMana();
     int getStamina();
+    int getMaxHealth();
+    int getMaxMana();
+    int getMaxStamina();
 
     // Setters
     void setName(std::string name);
@@ -66,6 +73,9 @@ public:
     void setHealth(int health);
     void setMana(int mana);
     void setStamina(int stamina);
+    void setMaxHealth(int maxHealth);
+    void setMaxMana(int maxMana);
+    void setMaxStamina(int maxStamina);
 
     // Methods
     void createCharacter();
@@ -90,6 +100,8 @@ public:
 
     void equipWeapon(Weapon weapon);
     void equipArmor(Armor armor);
+
+    void useConsumable(Consumable consumable);
 
     void unequipWeapon();
     void unequipArmor();

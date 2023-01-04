@@ -37,6 +37,10 @@ Character::Character()
     mana = 100;
     stamina = 100;
 
+    maxHealth = 100;
+    maxMana = 100;
+    maxStamina = 100;
+
     race = Race();
     clss = Class();
     stats = Stats(race);
@@ -60,8 +64,8 @@ std::string Character::getName()
 
 /**
  * @brief Get the Gender attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Character::getGender()
@@ -71,8 +75,8 @@ std::string Character::getGender()
 
 /**
  * @brief Get the Age attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Character::getAge()
@@ -82,8 +86,8 @@ int Character::getAge()
 
 /**
  * @brief Get the Alignment attribute
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Character::getAlignment()
@@ -93,8 +97,8 @@ std::string Character::getAlignment()
 
 /**
  * @brief Get the Health attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Character::getHealth()
@@ -104,8 +108,8 @@ int Character::getHealth()
 
 /**
  * @brief Get the Mana attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Character::getMana()
@@ -115,13 +119,46 @@ int Character::getMana()
 
 /**
  * @brief Get the Stamina attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Character::getStamina()
 {
     return stamina;
+}
+
+/**
+ * @brief Get the Max Health attribute
+ *
+ * @return int
+ */
+
+int Character::getMaxHealth()
+{
+    return maxHealth;
+}
+
+/**
+ * @brief Get the Max Mana attribute
+ *
+ * @return int
+ */
+
+int Character::getMaxMana()
+{
+    return maxMana;
+}
+
+/**
+ * @brief Get the Max Stamina attribute
+ *
+ * @return int
+ */
+
+int Character::getMaxStamina()
+{
+    return maxStamina;
 }
 
 // Setters
@@ -201,6 +238,39 @@ void Character::setMana(int mana)
 void Character::setStamina(int stamina)
 {
     this->stamina = stamina;
+}
+
+/**
+ * @brief Set the Max Health attribute
+ *
+ * @param maxHealth
+ */
+
+void Character::setMaxHealth(int maxHealth)
+{
+    this->maxHealth = maxHealth;
+}
+
+/**
+ * @brief Set the Max Mana attribute
+ *
+ * @param maxMana
+ */
+
+void Character::setMaxMana(int maxMana)
+{
+    this->maxMana = maxMana;
+}
+
+/**
+ * @brief Set the Max Stamina attribute
+ *
+ * @param maxStamina
+ */
+
+void Character::setMaxStamina(int maxStamina)
+{
+    this->maxStamina = maxStamina;
 }
 
 // Methods
@@ -556,7 +626,7 @@ void Character::showInventory()
                     // Equip the armor
                     equipArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
                 }
-                else 
+                else
                 {
                     // Message
                     std::cout << "Unimplemented." << std::endl;
@@ -743,6 +813,105 @@ void Character::equipArmor(Armor armor)
     else
     {
         std::cout << "The armor is not in the inventory." << std::endl;
+    }
+}
+
+/**
+ * @brief Method to use a consumable
+ *
+ */
+
+void Character::useConsumable(Consumable consumable)
+{
+    // Check if the consumable is in the inventory
+    if (inventory.hasConsumable(consumable))
+    {
+        // Check if the consumable improves the health
+        if (consumable.getHealth() > 0)
+        {
+            // Check if the health is already full
+            if (health == maxHealth)
+            {
+                std::cout << "The health is already full." << std::endl;
+            }
+            else
+            {
+                // Check if the health will be full after using the consumable
+                if (health + consumable.getHealth() > maxHealth)
+                {
+                    // Set the health to the maximum
+                    health = maxHealth;
+                }
+                else
+                {
+                    // Increase the health
+                    health += consumable.getHealth();
+                }
+
+                // Remove the consumable from the inventory
+                removeConsumableFromInventory(consumable);
+                std::cout << "The health has been increased." << std::endl;
+            }
+        }
+        // Check if the consumable improves the mana
+        else if (consumable.getMana() > 0)
+        {
+            // Check if the mana is already full
+            if (mana == maxMana)
+            {
+                std::cout << "The mana is already full." << std::endl;
+            }
+            else
+            {
+                // Check if the mana will be full after using the consumable
+                if (mana + consumable.getMana() > maxMana)
+                {
+                    // Set the mana to the maximum
+                    mana = maxMana;
+                }
+                else
+                {
+                    // Increase the mana
+                    mana += consumable.getMana();
+                }
+
+                // Remove the consumable from the inventory
+                removeConsumableFromInventory(consumable);
+                std::cout << "The mana has been increased." << std::endl;
+            }
+        }
+        // Check if the consumable improves the stamina
+        else if (consumable.getStamina() > 0)
+        {
+            // Check if the stamina is already full
+            if (stamina == maxStamina)
+            {
+                std::cout << "The stamina is already full." << std::endl;
+            }
+            else
+            {
+                // Check if the stamina will be full after using the consumable
+                if (stamina + consumable.getStamina() > maxStamina)
+                {
+                    // Set the stamina to the maximum
+                    stamina = maxStamina;
+                }
+                else
+                {
+                    // Increase the stamina
+                    stamina += consumable.getStamina();
+                }
+
+                // Remove the consumable from the inventory
+                removeConsumableFromInventory(consumable);
+                std::cout << "The stamina has been increased." << std::endl;
+            }
+        }
+    }
+    else
+    {
+        // Tell the user that the consumable is not in the inventory
+        std::cout << "The consumable is not in the inventory." << std::endl;
     }
 }
 
