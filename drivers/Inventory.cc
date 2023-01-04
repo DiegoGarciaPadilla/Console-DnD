@@ -83,6 +83,50 @@ int Inventory::getCurrentWeight()
     return currentWeight;
 }
 
+/**
+ * @brief Get the Weapons object
+ *
+ * @return vector
+ */
+
+std::vector<Weapon> Inventory::getWeapons()
+{
+    return weapons;
+}
+
+/**
+ * @brief Get the Armors object
+ *
+ * @return vector
+ */
+
+std::vector<Armor> Inventory::getArmors()
+{
+    return armors;
+}
+
+/**
+ * @brief Get the Consumables object
+ *
+ * @return vector
+ */
+
+std::vector<Consumable> Inventory::getConsumables()
+{
+    return consumables;
+}
+
+/**
+ * @brief Get the Quest Items object
+ *
+ * @return vector
+ */
+
+std::vector<QuestItem> Inventory::getQuestItems()
+{
+    return questItems;
+}
+
 // Setters
 
 /**
@@ -94,6 +138,72 @@ int Inventory::getCurrentWeight()
 void Inventory::setGold(int gold)
 {
     this->gold = gold;
+}
+
+/**
+ * @brief Set the Max Weight object
+ *
+ * @param maxWeight
+ */
+
+void Inventory::setMaxWeight(int maxWeight)
+{
+    this->maxWeight = maxWeight;
+}
+
+/**
+ * @brief Set the Current Weight object
+ *
+ * @param currentWeight
+ */
+
+void Inventory::setCurrentWeight(int currentWeight)
+{
+    this->currentWeight = currentWeight;
+}
+
+/**
+ * @brief Set the Weapons object
+ *
+ * @param weapons
+ */
+
+void Inventory::setWeapons(std::vector<Weapon> weapons)
+{
+    this->weapons = weapons;
+}
+
+/**
+ * @brief Set the Armors object
+ *
+ * @param armors
+ */
+
+void Inventory::setArmors(std::vector<Armor> armors)
+{
+    this->armors = armors;
+}
+
+/**
+ * @brief Set the Consumables object
+ *
+ * @param consumables
+ */
+
+void Inventory::setConsumables(std::vector<Consumable> consumables)
+{
+    this->consumables = consumables;
+}
+
+/**
+ * @brief Set the Quest Items object
+ *
+ * @param questItems
+ */
+
+void Inventory::setQuestItems(std::vector<QuestItem> questItems)
+{
+    this->questItems = questItems;
 }
 
 // Methods
@@ -284,194 +394,6 @@ bool Inventory::hasQuestItem(QuestItem questItem)
         }
     }
     return false;
-}
-
-/**
- * @brief Show the inventory
- *
- */
-
-void Inventory::showInventory()
-{
-    // Variables
-    int option = 0;
-    int itemNum = 1;
-
-    do
-    {
-        // Reset the item number
-        itemNum = 1;
-
-        // Clear the screen
-        cleanScreen();
-
-        // Title
-        std::cout << readAsciiArt("ascii/inventory.txt") << std::endl;
-
-        // Gold
-        std::cout << "Gold: " << gold << std::endl;
-        std::cout << std::endl;
-
-        // Current and max weight
-        std::cout << "Current Weight: " << currentWeight << std::endl;
-        std::cout << "Max Weight: " << maxWeight << std::endl;
-        std::cout << std::endl;
-
-        // Weapons
-        if (weapons.size() > 0)
-        {
-            std::cout << "Weapons: " << std::endl;
-            for (int i = 0; i < weapons.size(); i++)
-            {
-                std::cout << itemNum << ". " << weapons[i].getName() << std::endl;
-                itemNum++;
-            }
-            std::cout << std::endl;
-        }
-
-        // Armors
-        if (armors.size() > 0)
-        {
-            std::cout << "Armors: " << std::endl;
-            for (int i = 0; i < armors.size(); i++)
-            {
-                std::cout << itemNum << ". " << armors[i].getName() << std::endl;
-                itemNum++;
-            }
-            std::cout << std::endl;
-        }
-
-        // Consumables
-        if (consumables.size() > 0)
-        {
-            std::cout << "Consumables: " << std::endl;
-            for (int i = 0; i < consumables.size(); i++)
-            {
-                std::cout << itemNum << ". " << consumables[i].getName() << std::endl;
-                itemNum++;
-            }
-            std::cout << std::endl;
-        }
-
-        // Quest Items
-        if (questItems.size() > 0)
-        {
-            std::cout << "Quest Items: " << std::endl;
-            for (int i = 0; i < questItems.size(); i++)
-            {
-                std::cout << itemNum << ". " << questItems[i].getName() << std::endl;
-                itemNum++;
-            }
-            std::cout << std::endl;
-        }
-
-        // Exit
-        std::cout << itemNum << ". Exit" << std::endl;
-        std::cout << std::endl;
-
-        // Get the option
-        std::cout << "Enter an option: ";
-        std::cin >> option;
-        std::cout << std::endl;
-
-        // Check the option
-        if (option != itemNum)
-        {
-            // Clear the screen
-            cleanScreen();
-
-            // Variables
-            int itemOption = 0;
-
-            // Check the option
-            if (option <= weapons.size())
-            {
-                // Show the weapon
-                std::cout << weapons[option - 1].toString() << std::endl;
-            }
-            else if (option <= weapons.size() + armors.size())
-            {
-                // Show the armor
-                std::cout << armors[option - weapons.size() - 1].toString() << std::endl;
-            }
-            else if (option <= weapons.size() + armors.size() + consumables.size())
-            {
-                // Show the consumable
-                std::cout << consumables[option - weapons.size() - armors.size() - 1].toString() << std::endl;
-            }
-            else if (option <= weapons.size() + armors.size() + consumables.size() + questItems.size())
-            {
-                // Show the quest item
-                std::cout << questItems[option - weapons.size() - armors.size() - consumables.size() - 1].toString() << std::endl;
-            }
-
-            // Get the item option
-            std::cout << "1. Use / Equip" << std::endl;
-            std::cout << "2. Drop" << std::endl;
-            std::cout << "3. Return" << std::endl;
-            std::cout << std::endl;
-            std::cout << "Enter an option: ";
-            std::cin >> itemOption;
-            std::cout << std::endl;
-
-            // Clear the screen
-            cleanScreen();
-
-            // Check the item option
-            switch (itemOption)
-            {
-            case 1:
-                std::cout << "Use / Equip" << std::endl;
-                std::cout << "Not implemented yet" << std::endl;
-                std::cout << std::endl;
-                pause();
-                break;
-            case 2:
-                if (option <= weapons.size())
-                {
-                    // Title
-                    std::cout << "Drop " << weapons[option - 1].getName() << std::endl;
-
-                    // Drop the weapon
-                    removeWeapon(weapons[option - 1]);
-                }
-                else if (option <= weapons.size() + armors.size())
-                {
-                    // Title
-                    std::cout << "Drop " << armors[option - weapons.size() - 1].getName() << std::endl;
-
-                    // Drop the armor
-                    removeArmor(armors[option - weapons.size() - 1]);
-                }
-                else if (option <= weapons.size() + armors.size() + consumables.size())
-                {
-                    // Title
-                    std::cout << "Drop " << consumables[option - weapons.size() - armors.size() - 1].getName() << std::endl;
-
-                    // Drop the consumable
-                    removeConsumable(consumables[option - weapons.size() - armors.size() - 1]);
-                }
-                else if (option <= weapons.size() + armors.size() + consumables.size() + questItems.size())
-                {
-                    // Title
-                    std::cout << "Drop " << questItems[option - weapons.size() - armors.size() - consumables.size() - 1].getName() << std::endl;
-
-                    // Drop the quest item
-                    removeQuestItem(questItems[option - weapons.size() - armors.size() - consumables.size() - 1]);
-                }
-
-                // Wait for the user to press enter
-                pause();
-
-                break;
-            case 3:
-                break;
-            default:
-                break;
-            }
-        }
-
-    } while (option != itemNum);
 }
 
 #endif // End of the preprocessor INVENTORY_CC

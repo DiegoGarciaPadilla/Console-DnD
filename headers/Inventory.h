@@ -38,12 +38,19 @@ public:
     int getGold();
     int getMaxWeight();
     int getCurrentWeight();
+    std::vector<Weapon> getWeapons();
+    std::vector<Armor> getArmors();
+    std::vector<Consumable> getConsumables();
+    std::vector<QuestItem> getQuestItems();
 
     // Setters
-
-    // There is only one setter for the gold attribute.
-
     void setGold(int gold);
+    void setMaxWeight(int maxWeight);
+    void setCurrentWeight(int currentWeight);
+    void setWeapons(std::vector<Weapon> weapons);
+    void setArmors(std::vector<Armor> armors);
+    void setConsumables(std::vector<Consumable> consumables);
+    void setQuestItems(std::vector<QuestItem> questItems);
 
     // Methods
     void addWeapon(Weapon weapon);
@@ -60,8 +67,6 @@ public:
     bool hasArmor(Armor armor);
     bool hasConsumable(Consumable consumable);
     bool hasQuestItem(QuestItem questItem);
-    
-    void showInventory();
 };
 
 #endif // End of the preprocessor INVENTORY_H
