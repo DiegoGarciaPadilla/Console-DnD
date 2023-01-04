@@ -55,6 +55,11 @@ public:
     void removeArmor(Armor armor);
     void removeConsumable(Consumable consumable);
     void removeQuestItem(QuestItem questItem);
+
+    bool hasWeapon(Weapon weapon);
+    bool hasArmor(Armor armor);
+    bool hasConsumable(Consumable consumable);
+    bool hasQuestItem(QuestItem questItem);
     
     void showInventory();
 };

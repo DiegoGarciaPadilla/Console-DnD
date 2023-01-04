@@ -219,6 +219,74 @@ void Inventory::removeQuestItem(QuestItem questItem)
 }
 
 /**
+ * @brief Check if the weapon is in the inventory
+ *
+ */
+
+bool Inventory::hasWeapon(Weapon weapon)
+{
+    for (int i = 0; i < weapons.size(); i++)
+    {
+        if (weapons[i].getName() == weapon.getName())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * @brief Check if the armor is in the inventory
+ *
+ */
+
+bool Inventory::hasArmor(Armor armor)
+{
+    for (int i = 0; i < armors.size(); i++)
+    {
+        if (armors[i].getName() == armor.getName())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * @brief Check if the consumable is in the inventory
+ *
+ */
+
+bool Inventory::hasConsumable(Consumable consumable)
+{
+    for (int i = 0; i < consumables.size(); i++)
+    {
+        if (consumables[i].getName() == consumable.getName())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * @brief Check if the quest item is in the inventory
+ *
+ */
+
+bool Inventory::hasQuestItem(QuestItem questItem)
+{
+    for (int i = 0; i < questItems.size(); i++)
+    {
+        if (questItems[i].getName() == questItem.getName())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * @brief Show the inventory
  *
  */
