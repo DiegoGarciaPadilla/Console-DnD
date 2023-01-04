@@ -17,6 +17,7 @@
 #include <vector>  // Include vector library
 
 #include "../headers/Character.h" // Include the header file
+#include "Initializer.cc"         // Include the Initializer file
 
 // Constructors
 
@@ -89,6 +90,124 @@ void Character::setAlignment(std::string alignment)
 }
 
 // Methods
+
+/**
+ * @brief Function to create a character with the data entered by the user
+ *
+ * @param character
+ * @return
+ */
+
+void Character::createCharacter()
+{
+    // Variables
+    std::string name;
+    std::string gender;
+    int age;
+    std::string alignment;
+    Race race;
+    int option;
+
+    // Vectors
+    std::vector<std::string> genders = listGenders();
+    std::vector<std::string> alignments = listAlignments();
+    std::vector<std::string> races = listRaces();
+    std::vector<std::string> classes = listClasses();
+
+    // Clear the screen
+    cleanScreen();
+
+    // Introduction
+    std::cout << "Hello adventurer! Welcome to the world of D&D!" << std::endl;
+    std::cout << "I'm going to ask you some questions to create your character." << std::endl;
+    std::cout << "Are you ready? " << std::endl;
+    pause();
+
+    // Clear the screen
+    cleanScreen();
+
+    // Set the name
+    std::cout << "What is your name? ";
+    getline(std::cin >> std::ws, name);
+    std::cout << std::endl;
+    this->name = name;
+
+    // Set the gender
+    std::cout << "What gender do you identify with? " << std::endl;
+    printStringVector(genders);
+    std::cin >> option;
+    while (option < 1 || option > 3)
+    {
+        std::cout << "Invalid option" << std::endl;
+        std::cin >> option;
+    }
+    // If the user chooses the option 3, it will ask for the specific gender
+    if (option == 3)
+    {
+        std::string specificGender;
+        std::cout << "Can you specify it? " << std::endl;
+        getline(std::cin >> std::ws, specificGender);
+        this->gender = specificGender;
+    }
+    else
+    {
+        this->gender = genders[option - 1];
+    }
+    std::cout << std::endl;
+
+    // Set the age
+    std::cout << "Age: ";
+    std::cin >> age;
+    while (age < 0)
+    {
+        std::cout << "Invalid age" << std::endl;
+        std::cin >> age;
+    }
+    std::cout << std::endl;
+    this->age = age;
+
+    // Set the alignment
+    std::cout << "Alignment: " << std::endl;
+    printStringVector(alignments);
+    std::cin >> option;
+    while (option < 1 || option > 9)
+    {
+        std::cout << "Invalid option" << std::endl;
+        std::cin >> option;
+    }
+    std::cout << std::endl;
+    this->alignment = alignments[option - 1];
+
+    // Set the race
+    std::cout << "Race: " << std::endl;
+    printStringVector(races);
+    std::cin >> option;
+    while (option < 1 || option > 9)
+    {
+        std::cout << "Invalid option" << std::endl;
+        std::cin >> option;
+    }
+    std::cout << std::endl;
+    this->defineRace(option - 1);
+
+    // Set the class
+    std::cout << "Class: " << std::endl;
+    printStringVector(classes);
+    std::cin >> option;
+    while (option < 1 || option > 9)
+    {
+        std::cout << "Invalid option" << std::endl;
+        std::cin >> option;
+    }
+    std::cout << std::endl;
+    this->defineClass(option - 1);
+
+    // Set the stats
+    std::cout << "Stats:" << std::endl;
+    std::cout << "The stats are generated randomly." << std::endl;
+    this->defineStats();
+    std::cout << std::endl;
+}
 
 /**
  * @brief Get the string representation of the object

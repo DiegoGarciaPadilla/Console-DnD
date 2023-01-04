@@ -54,6 +54,8 @@ public:
     void setAlignment(std::string alignment);
 
     // Methods
+    void createCharacter();
+
     std::string toString();
 
     void defineRace(int option);
