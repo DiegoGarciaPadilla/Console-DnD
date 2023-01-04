@@ -23,13 +23,13 @@
 
 Armor::Armor()
 {
-    name = "Wooden armor";
-    description = "It's a wooden armor, with some rusty steel plates. It doesn't seem very useful.";
-    weight = 2;
+    name = "None";
+    description = "None";
+    weight = 0;
     value = 0;
-    subtype = "Armor";
-    material = "Wood and steel";
-    defense = 6;
+    subtype = "None";
+    material = "None";
+    defense = 0;
 }
 
 /**

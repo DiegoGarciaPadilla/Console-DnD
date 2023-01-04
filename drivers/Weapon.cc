@@ -23,13 +23,13 @@
 
 Weapon::Weapon()
 {
-    name = "Rusty sword";
-    description = "It's a wooden sword, with a rusty steel blade. It doesn't seem very useful.";
-    weight = 2;
+    name = "None";
+    description = "None";
+    weight = 0;
     value = 0;
-    subtype = "Sword";
-    material = "Wood and steel";
-    damage = 6;
+    subtype = "None";
+    material = "None";
+    damage = 0;
 }
 
 /**
