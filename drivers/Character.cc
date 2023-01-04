@@ -293,13 +293,201 @@ void Character::defineClass(int option)
 }
 
 /**
- * @brief Method to open the inventory
+ * @brief Show the inventory
  *
  */
 
 void Character::showInventory()
 {
-    inventory.showInventory();
+    // Variables
+    int option = 0;
+    int itemNum = 1;
+
+    do
+    {
+        // Reset the item number
+        itemNum = 1;
+
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << readAsciiArt("ascii/inventory.txt") << std::endl;
+
+        // Gold
+        std::cout << "Gold: " << inventory.getGold() << std::endl;
+        std::cout << std::endl;
+
+        // Current and max weight
+        std::cout << "Current Weight: " << inventory.getCurrentWeight() << std::endl;
+        std::cout << "Max Weight: " << inventory.getMaxWeight() << std::endl;
+        std::cout << std::endl;
+
+        // Weapons
+        if (inventory.getWeapons().size() > 0)
+        {
+            std::cout << "Weapons: " << std::endl;
+            for (int i = 0; i < inventory.getWeapons().size(); i++)
+            {
+                std::cout << itemNum << ". " << inventory.getWeapons()[i].getName() << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Armors
+        if (inventory.getArmors().size() > 0)
+        {
+            std::cout << "Armors: " << std::endl;
+            for (int i = 0; i < inventory.getArmors().size(); i++)
+            {
+                std::cout << itemNum << ". " << inventory.getArmors()[i].getName() << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Consumables
+        if (inventory.getConsumables().size() > 0)
+        {
+            std::cout << "Consumables: " << std::endl;
+            for (int i = 0; i < inventory.getConsumables().size(); i++)
+            {
+                std::cout << itemNum << ". " << inventory.getConsumables()[i].getName() << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Quest Items
+        if (inventory.getQuestItems().size() > 0)
+        {
+            std::cout << "Quest Items: " << std::endl;
+            for (int i = 0; i < inventory.getQuestItems().size(); i++)
+            {
+                std::cout << itemNum << ". " << inventory.getQuestItems()[i].getName() << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Exit
+        std::cout << itemNum << ". Exit" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter an option: ";
+        std::cin >> option;
+        std::cout << std::endl;
+
+        // Check the option
+        if (option != itemNum)
+        {
+            // Clear the screen
+            cleanScreen();
+
+            // Variables
+            int itemOption = 0;
+
+            // Check the option
+            if (option <= inventory.getWeapons().size())
+            {
+                // Show the weapon
+                std::cout << inventory.getWeapons()[option - 1].toString() << std::endl;
+            }
+            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+            {
+                // Show the armor
+                std::cout << inventory.getArmors()[option - inventory.getWeapons().size() - 1].toString() << std::endl;
+            }
+            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
+            {
+                // Show the consumable
+                std::cout << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].toString() << std::endl;
+            }
+            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+            {
+                // Show the quest item
+                std::cout << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1].toString() << std::endl;
+            }
+
+            // Get the item option
+            std::cout << "1. Use / Equip" << std::endl;
+            std::cout << "2. Drop" << std::endl;
+            std::cout << "3. Return" << std::endl;
+            std::cout << std::endl;
+            std::cout << "Enter an option: ";
+            std::cin >> itemOption;
+            std::cout << std::endl;
+
+            // Clear the screen
+            cleanScreen();
+
+            // Check the item option
+            switch (itemOption)
+            {
+            case 1:
+                // Check the option
+                if (option <= inventory.getWeapons().size())
+                {
+                    // Message
+                    std::cout << "You equipped the " << inventory.getWeapons()[option - 1].getName() << "." << std::endl;
+                    // Equip the weapon
+                    equipWeapon(inventory.getWeapons()[option - 1]);
+                }
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+                {
+                    // Message
+                    std::cout << "You equipped the " << inventory.getArmors()[option - inventory.getWeapons().size() - 1].getName() << "." << std::endl;
+                    // Equip the armor
+                    equipArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
+                }
+                else 
+                {
+                    // Message
+                    std::cout << "Unimplemented." << std::endl;
+                }
+                break;
+            case 2:
+                if (option <= inventory.getWeapons().size())
+                {
+                    // Message
+                    std::cout << "You dropped the " << inventory.getWeapons()[option - 1].getName() << "." << std::endl;
+                    // Drop the weapon
+                    inventory.removeWeapon(inventory.getWeapons()[option - 1]);
+                }
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+                {
+                    // Message
+                    std::cout << "You dropped the " << inventory.getArmors()[option - inventory.getWeapons().size() - 1].getName() << "." << std::endl;
+                    // Drop the armor
+                    inventory.removeArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
+                }
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
+                {
+                    // Message
+                    std::cout << "You dropped the " << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].getName() << "." << std::endl;
+                    // Drop the consumable
+                    inventory.removeConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
+                }
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+                {
+                    // Message
+                    std::cout << "You dropped the " << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1].getName() << "." << std::endl;
+                    // Drop the quest item
+                    inventory.removeQuestItem(inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1]);
+                }
+                // Pause
+                pause();
+                break;
+            case 3:
+                break;
+            default:
+                break;
+            }
+        }
+
+    } while (option != itemNum);
 }
 
 /**
