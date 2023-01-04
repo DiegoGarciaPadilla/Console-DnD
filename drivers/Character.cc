@@ -32,16 +32,97 @@ Character::Character()
     gender = "Male";
     age = 18;
     alignment = "True Neutral";
+
+    health = 100;
+    mana = 100;
+    stamina = 100;
+
     race = Race();
     clss = Class();
     stats = Stats(race);
+
     equippedWeapon = clss.getInitialWeapon();
     equippedArmor = clss.getInitialArmor();
 }
 
 // Getters
 
-// There are no getters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
+/**
+ * @brief Get the Name attribute
+ *
+ * @return std::string
+ */
+
+std::string Character::getName()
+{
+    return name;
+}
+
+/**
+ * @brief Get the Gender attribute
+ * 
+ * @return std::string 
+ */
+
+std::string Character::getGender()
+{
+    return gender;
+}
+
+/**
+ * @brief Get the Age attribute
+ * 
+ * @return int 
+ */
+
+int Character::getAge()
+{
+    return age;
+}
+
+/**
+ * @brief Get the Alignment attribute
+ * 
+ * @return std::string 
+ */
+
+std::string Character::getAlignment()
+{
+    return alignment;
+}
+
+/**
+ * @brief Get the Health attribute
+ * 
+ * @return int 
+ */
+
+int Character::getHealth()
+{
+    return health;
+}
+
+/**
+ * @brief Get the Mana attribute
+ * 
+ * @return int 
+ */
+
+int Character::getMana()
+{
+    return mana;
+}
+
+/**
+ * @brief Get the Stamina attribute
+ * 
+ * @return int 
+ */
+
+int Character::getStamina()
+{
+    return stamina;
+}
 
 // Setters
 
@@ -87,6 +168,39 @@ void Character::setAge(int age)
 void Character::setAlignment(std::string alignment)
 {
     this->alignment = alignment;
+}
+
+/**
+ * @brief Set the Health attribute
+ *
+ * @param health
+ */
+
+void Character::setHealth(int health)
+{
+    this->health = health;
+}
+
+/**
+ * @brief Set the Mana attribute
+ *
+ * @param mana
+ */
+
+void Character::setMana(int mana)
+{
+    this->mana = mana;
+}
+
+/**
+ * @brief Set the Stamina attribute
+ *
+ * @param stamina
+ */
+
+void Character::setStamina(int stamina)
+{
+    this->stamina = stamina;
 }
 
 // Methods

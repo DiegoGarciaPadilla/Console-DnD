@@ -32,9 +32,15 @@ private:
     std::string gender;
     int age;
     std::string alignment;
+
+    int health;
+    int mana;
+    int stamina;
+
     Race race;
     Class clss;
     Stats stats;
+
     Inventory inventory;
     Weapon equippedWeapon;
     Armor equippedArmor;
@@ -44,14 +50,22 @@ public:
     Character();
 
     // Getters
-
-    // There are no getters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
+    std::string getName();
+    std::string getGender();
+    int getAge();
+    std::string getAlignment();
+    int getHealth();
+    int getMana();
+    int getStamina();
 
     // Setters
     void setName(std::string name);
     void setGender(std::string gender);
     void setAge(int age);
     void setAlignment(std::string alignment);
+    void setHealth(int health);
+    void setMana(int mana);
+    void setStamina(int stamina);
 
     // Methods
     void createCharacter();
