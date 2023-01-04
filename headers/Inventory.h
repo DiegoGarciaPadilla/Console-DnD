@@ -21,6 +21,7 @@ class Inventory
 {
 private:
     // Attributes
+    int gold;
     int maxWeight;
     int currentWeight;
     std::vector<Weapon> weapons;
@@ -31,15 +32,18 @@ private:
 public:
     // Constructors
     Inventory();
-    Inventory(int maxWeight);
+    Inventory(int capacity);
 
     // Getters
+    int getGold();
     int getMaxWeight();
     int getCurrentWeight();
 
     // Setters
 
-    // There are no setters for this class because the attributes are going to be set in the constructor and change only when the player picks up or drops an item.
+    // There is only one setter for the gold attribute.
+
+    void setGold(int gold);
 
     // Methods
     void addWeapon(Weapon weapon);

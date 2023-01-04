@@ -30,6 +30,7 @@
 
 Inventory::Inventory()
 {
+    gold = 0;
     maxWeight = 20;
     currentWeight = 0;
 }
@@ -42,11 +43,23 @@ Inventory::Inventory()
 
 Inventory::Inventory(int capacity)
 {
+    gold = 0;
     maxWeight = capacity;
     currentWeight = 0;
 }
 
 // Getters
+
+/**
+ * @brief Get the Gold object
+ *
+ * @return int
+ */
+
+int Inventory::getGold()
+{
+    return gold;
+}
 
 /**
  * @brief Get the Max Weight object
@@ -68,6 +81,19 @@ int Inventory::getMaxWeight()
 int Inventory::getCurrentWeight()
 {
     return currentWeight;
+}
+
+// Setters
+
+/**
+ * @brief Set the Gold object
+ *
+ * @param gold
+ */
+
+void Inventory::setGold(int gold)
+{
+    this->gold = gold;
 }
 
 // Methods
@@ -213,6 +239,10 @@ void Inventory::showInventory()
 
         // Title
         std::cout << readAsciiArt("ascii/inventory.txt") << std::endl;
+
+        // Gold
+        std::cout << "Gold: " << gold << std::endl;
+        std::cout << std::endl;
 
         // Current and max weight
         std::cout << "Current Weight: " << currentWeight << std::endl;
