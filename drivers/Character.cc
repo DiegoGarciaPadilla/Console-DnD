@@ -307,7 +307,7 @@ void Character::showInventory()
  *
  */
 
-void Character::addWeapon(Weapon weapon)
+void Character::addWeaponToInventory(Weapon weapon)
 {
     inventory.addWeapon(weapon);
 }
@@ -317,7 +317,7 @@ void Character::addWeapon(Weapon weapon)
  *
  */
 
-void Character::addArmor(Armor armor)
+void Character::addArmorToInventory(Armor armor)
 {
     inventory.addArmor(armor);
 }
@@ -327,7 +327,7 @@ void Character::addArmor(Armor armor)
  *
  */
 
-void Character::addConsumable(Consumable consumable)
+void Character::addConsumableToInventory(Consumable consumable)
 {
     inventory.addConsumable(consumable);
 }
@@ -337,7 +337,7 @@ void Character::addConsumable(Consumable consumable)
  *
  */
 
-void Character::addQuestItem(QuestItem questItem)
+void Character::addQuestItemToInventory(QuestItem questItem)
 {
     inventory.addQuestItem(questItem);
 }
@@ -347,7 +347,7 @@ void Character::addQuestItem(QuestItem questItem)
  *
  */
 
-void Character::removeWeapon(Weapon weapon)
+void Character::removeWeaponFromInventory(Weapon weapon)
 {
     inventory.removeWeapon(weapon);
 }
@@ -357,7 +357,7 @@ void Character::removeWeapon(Weapon weapon)
  *
  */
 
-void Character::removeArmor(Armor armor)
+void Character::removeArmorFromInventory(Armor armor)
 {
     inventory.removeArmor(armor);
 }
@@ -367,7 +367,7 @@ void Character::removeArmor(Armor armor)
  *
  */
 
-void Character::removeConsumable(Consumable consumable)
+void Character::removeConsumableFromInventory(Consumable consumable)
 {
     inventory.removeConsumable(consumable);
 }
@@ -377,7 +377,7 @@ void Character::removeConsumable(Consumable consumable)
  *
  */
 
-void Character::removeQuestItem(QuestItem questItem)
+void Character::removeQuestItemFromInventory(QuestItem questItem)
 {
     inventory.removeQuestItem(questItem);
 }

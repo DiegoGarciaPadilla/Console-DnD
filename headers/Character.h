@@ -64,15 +64,15 @@ public:
 
     void showInventory();
 
-    void addWeapon(Weapon weapon);
-    void addArmor(Armor armor);
-    void addConsumable(Consumable consumable);
-    void addQuestItem(QuestItem questItem);
+    void addWeaponToInventory(Weapon weapon);
+    void addArmorToInventory(Armor armor);
+    void addConsumableToInventory(Consumable consumable);
+    void addQuestItemToInventory(QuestItem questItem);
 
-    void removeWeapon(Weapon weapon);
-    void removeArmor(Armor armor);
-    void removeConsumable(Consumable consumable);
-    void removeQuestItem(QuestItem questItem);
+    void removeWeaponFromInventory(Weapon weapon);
+    void removeArmorFromInventory(Armor armor);
+    void removeConsumableFromInventory(Consumable consumable);
+    void removeQuestItemFromInventory(QuestItem questItem);
 
 };
 
