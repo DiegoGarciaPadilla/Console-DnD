@@ -382,4 +382,106 @@ void Character::removeQuestItemFromInventory(QuestItem questItem)
     inventory.removeQuestItem(questItem);
 }
 
+/**
+ * @brief Method to equip a weapon
+ *
+ */
+
+void Character::equipWeapon(Weapon weapon)
+{
+    // Check if the weapon is in the inventory
+    if (inventory.hasWeapon(weapon))
+    {
+        // Check if the weapon is already equipped
+        if (equippedWeapon.getName() == weapon.getName())
+        {
+            std::cout << "The weapon is already equipped." << std::endl;
+        }
+        else
+        {
+            // Unequip the current weapon
+            unequipWeapon();
+
+            // Equip the new weapon
+            equippedWeapon = weapon;
+            std::cout << "The weapon has been equipped." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "The weapon is not in the inventory." << std::endl;
+    }
+}
+
+/**
+ * @brief Method to equip an armor
+ *
+ */
+
+void Character::equipArmor(Armor armor)
+{
+    // Check if the armor is in the inventory
+    if (inventory.hasArmor(armor))
+    {
+        // Check if the armor is already equipped
+        if (equippedArmor.getName() == armor.getName())
+        {
+            std::cout << "The armor is already equipped." << std::endl;
+        }
+        else
+        {
+            // Unequip the current armor
+            unequipArmor();
+
+            // Equip the new armor
+            equippedArmor = armor;
+            std::cout << "The armor has been equipped." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "The armor is not in the inventory." << std::endl;
+    }
+}
+
+/**
+ * @brief Method to unequip a weapon
+ *
+ */
+
+void Character::unequipWeapon()
+{
+    // Check if the weapon is equipped
+    if (equippedWeapon.getName() == "None")
+    {
+        std::cout << "The weapon is not equipped." << std::endl;
+    }
+    else
+    {
+        // Unequip the weapon
+        equippedWeapon = Weapon();
+        std::cout << "The weapon has been unequipped." << std::endl;
+    }
+}
+
+/**
+ * @brief Method to unequip an armor
+ *
+ */
+
+void Character::unequipArmor()
+{
+    // Check if the armor is equipped
+    if (equippedArmor.getName() == "None")
+    {
+        std::cout << "The armor is not equipped." << std::endl;
+    }
+    else
+    {
+        // Unequip the armor
+        equippedArmor = Armor();
+        std::cout << "The armor has been unequipped." << std::endl;
+    }
+}
+
 #endif // End of the preprocessor CHARACTER_CC

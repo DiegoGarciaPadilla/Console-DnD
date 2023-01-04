@@ -74,6 +74,11 @@ public:
     void removeConsumableFromInventory(Consumable consumable);
     void removeQuestItemFromInventory(QuestItem questItem);
 
+    void equipWeapon(Weapon weapon);
+    void equipArmor(Armor armor);
+
+    void unequipWeapon();
+    void unequipArmor();
 };
 
 #endif // End of PERSONAJE_H preprocessor
