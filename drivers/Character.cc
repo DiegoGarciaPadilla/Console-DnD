@@ -28,9 +28,9 @@
 
 Character::Character()
 {
-    name = "Character";
-    gender = "Male";
-    age = 18;
+    name = "None";
+    gender = "None";
+    age = 0;
     alignment = "True Neutral";
 
     health = 100;
