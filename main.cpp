@@ -43,11 +43,11 @@ int main()
         switch (mainOption)
         {
         case 1:
-            createCharacter(character);
+            character.createCharacter();
             pause();
             break;
         case 2:
-            if (character.getName() == "Character")
+            if (character.getName() == "None")
             {
                 std::cout << "There is no character to show" << std::endl;
             }
