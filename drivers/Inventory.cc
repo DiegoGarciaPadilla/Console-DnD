@@ -19,6 +19,7 @@
 
 #include "../headers/Inventory.h" // Include the header file
 #include "Functions.cc"           // Include the functions file
+#include "Ascii.cc"               // Include the ASCII art file
 
 // Constructors
 
@@ -211,8 +212,7 @@ void Inventory::showInventory()
         cleanScreen();
 
         // Title
-        std::cout << "INVENTORY" << std::endl;
-        std::cout << std::endl;
+        std::cout << readAsciiArt("ascii/inventory.txt") << std::endl;
 
         // Current and max weight
         std::cout << "Current Weight: " << currentWeight << std::endl;
