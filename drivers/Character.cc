@@ -626,10 +626,17 @@ void Character::showInventory()
                     // Equip the armor
                     equipArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
                 }
-                else
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
                 {
                     // Message
-                    std::cout << "Unimplemented." << std::endl;
+                    std::cout << "You used the " << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].getName() << "." << std::endl;
+                    // Use the consumable
+                    useConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
+                }
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+                {
+                    // Message
+                    std::cout << "Quest items cannot be used." << std::endl;
                 }
                 break;
             case 2:
