@@ -32,9 +32,10 @@ void mainMenu()
     std::cout << readAsciiArt("ascii/title.txt") << std::endl;
     std::cout << "1. Create character" << std::endl;
     std::cout << "2. Show character" << std::endl;
-    std::cout << "3. Show inventory" << std::endl;
-    std::cout << "4. D&D encyclopedia" << std::endl;
-    std::cout << "5. Exit" << std::endl;
+    std::cout << "3. Show equipped items" << std::endl;
+    std::cout << "4. Show inventory" << std::endl;
+    std::cout << "5. D&D encyclopedia" << std::endl;
+    std::cout << "6. Exit" << std::endl;
 }
 
 /**

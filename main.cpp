@@ -63,14 +63,25 @@ int main()
             }
             else
             {
-                character.showInventory();
+                character.showEquippedItems();
             }
             pause();
             break;
         case 4:
-            encyclopediaMenu();
+            if (character.getName() == "None")
+            {
+                std::cout << "There is no character to show" << std::endl;
+            }
+            else
+            {
+                character.showInventory();
+            }
+            pause();
             break;
         case 5:
+            encyclopediaMenu();
+            break;
+        case 6:
             std::cout << "Goodbye adventurer. See you soon..." << std::endl;
             pause();
             break;
@@ -80,7 +91,7 @@ int main()
             break;
         }
         cleanScreen();
-    } while (mainOption != 4);
+    } while (mainOption != 6);
 }
 
 #endif // End of the preprocessor MAIN_H

@@ -91,6 +91,7 @@ public:
     void defineClass(int option);
 
     void showInventory();
+    void showEquippedItems();
 
     void addWeaponToInventory(Weapon weapon);
     void addArmorToInventory(Armor armor);

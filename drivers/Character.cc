@@ -718,6 +718,118 @@ void Character::showInventory()
 }
 
 /**
+ * @brief Method to show the equipped items
+ *
+ */
+
+void Character::showEquippedItems()
+{
+    // Variables
+    int option;
+    int itemOption;
+
+    do
+    {
+        // Clear the screen
+        cleanScreen();
+
+        // Show the equipped items
+        std::cout << "Equipped Items" << std::endl;
+        std::cout << std::endl;
+
+        // Show the equipped weapon
+        std::cout << "Weapon: " << std::endl;
+        std::cout << "1. " << equippedWeapon.getName() << std::endl;
+        std::cout << std::endl;
+
+        // Show the equipped armor
+        std::cout << "Armor: " << std::endl;
+        std::cout << "2. " << equippedArmor.getName() << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "3. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter an option: " << std::endl;
+        std::cin >> option;
+
+        // Check the option
+        if (option == 3)
+        {
+            // Return
+            return;
+        }
+        else
+        {
+            // Clear the screen
+            cleanScreen();
+
+            // Show the equipped items
+            if (option == 1)
+            {
+                // Show the equipped weapon
+                std::cout << "Weapon: " << std::endl;
+                std::cout << equippedWeapon.toString() << std::endl;
+                std::cout << std::endl;
+
+                // Show options
+                std::cout << "1. Unequip" << std::endl;
+                std::cout << "2. Return" << std::endl;
+
+                // Get the option
+                std::cout << "Enter an option: " << std::endl;
+                std::cin >> itemOption;
+
+                // Check the option
+                if (itemOption == 1)
+                {
+                    // Clear the screen
+                    cleanScreen();
+
+                    // Unequip the weapon
+                    unequipWeapon();
+
+                    // Pause
+                    pause();
+                }
+            }
+            else if (option == 2)
+            {
+                // Show the equipped armor
+                std::cout << "Armor: " << std::endl;
+                std::cout << equippedArmor.toString() << std::endl;
+                std::cout << std::endl;
+
+                // Show options
+                std::cout << "1. Unequip" << std::endl;
+                std::cout << "2. Return" << std::endl;
+
+                // Get the option
+                std::cout << "Enter an option: " << std::endl;
+                std::cin >> itemOption;
+
+                // Check the option
+                if (itemOption == 1)
+                {
+                    // Clear the screen
+                    cleanScreen();
+
+                    // Unequip the armor
+                    unequipArmor();
+
+                    // Pause
+                    pause();
+                }
+            }
+
+        }
+
+    } while (option != 3);
+}
+
+/**
  * @brief Method to add a weapon to the inventory
  *
  */
@@ -973,6 +1085,7 @@ void Character::unequipWeapon()
     else
     {
         // Unequip the weapon
+        inventory.addWeapon(equippedWeapon);
         equippedWeapon = Weapon();
         std::cout << "The weapon has been unequipped." << std::endl;
     }
@@ -993,6 +1106,7 @@ void Character::unequipArmor()
     else
     {
         // Unequip the armor
+        inventory.addArmor(equippedArmor);
         equippedArmor = Armor();
         std::cout << "The armor has been unequipped." << std::endl;
     }
