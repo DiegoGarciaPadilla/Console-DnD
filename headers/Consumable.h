@@ -40,7 +40,6 @@ public:
     // There are no setters because the attributes are constant
 
     // Methods
-    void useConsumable();
     std::string toString();
 };
 

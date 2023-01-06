@@ -99,17 +99,18 @@ int Consumable::getMana()
     return mana;
 }
 
-// Methods
-
 /**
- * @brief Use the consumable
+ * @brief Get the Stamina attribute
  * 
+ * @return int 
  */
 
-void Consumable::useConsumable()
+int Consumable::getStamina()
 {
-    std::cout << effect << std::endl;
+    return stamina;
 }
+
+// Methods
 
 /**
  * @brief Get the string representation of the object
