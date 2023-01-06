@@ -29,7 +29,7 @@ void mainMenu()
     cleanScreen();
 
     // Show the main menu
-    std::cout << readAsciiArt("ascii/title.txt") << std::endl;
+    std::cout << readAsciiArt("asciiArt/title.txt") << std::endl;
     std::cout << "1. Create character" << std::endl;
     std::cout << "2. Show character" << std::endl;
     std::cout << "3. Show equipped items" << std::endl;

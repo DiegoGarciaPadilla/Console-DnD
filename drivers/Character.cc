@@ -532,7 +532,7 @@ void Character::showInventory()
         cleanScreen();
 
         // Title
-        std::cout << readAsciiArt("ascii/inventory.txt") << std::endl;
+        std::cout << readAsciiArt("asciiArt/inventory.txt") << std::endl;
 
         // Gold
         std::cout << "Gold: " << inventory.getGold() << std::endl;
