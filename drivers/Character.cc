@@ -18,6 +18,7 @@
 
 #include "../headers/Character.h" // Include the header file
 #include "Initializer.cc"         // Include the Initializer file
+#include "Functions.cc"           // Include the Functions file
 
 // Constructors
 

@@ -58,9 +58,19 @@ int main()
             pause();
             break;
         case 3:
-            encyclopediaMenu();
+            if (character.getName() == "None")
+            {
+                std::cout << "There is no character to show" << std::endl;
+            }
+            else
+            {
+                character.showInventory();
+            }
             break;
         case 4:
+            encyclopediaMenu();
+            break;
+        case 5:
             std::cout << "Goodbye adventurer. See you soon..." << std::endl;
             pause();
             break;
