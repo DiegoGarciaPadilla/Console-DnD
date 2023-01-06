@@ -65,6 +65,7 @@ int main()
             {
                 character.showInventory();
             }
+            pause();
             break;
         case 4:
             encyclopediaMenu();
