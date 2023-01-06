@@ -20,7 +20,6 @@
 #include <vector>   // Library for vectors
 
 #include "drivers/Menu.cc"        // Library for menus
-#include "drivers/Initializer.cc" // Library for initializers
 #include "drivers/Functions.cc"   // Library for functions
 #include "drivers/Character.cc"   // Library for the character class
 

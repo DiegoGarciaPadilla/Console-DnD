@@ -22,7 +22,6 @@
 #include "../drivers/Inventory.cc"   // Include inventory class
 #include "../drivers/Weapon.cc"      // Include weapons class
 #include "../drivers/Armor.cc"       // Include armor class
-#include "../drivers/Initializer.cc" // Include initializer class
 
 class Character
 {
@@ -46,6 +45,7 @@ private:
     Stats stats;
 
     Inventory inventory;
+    
     Weapon equippedWeapon;
     Armor equippedArmor;
 
