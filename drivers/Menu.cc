@@ -30,6 +30,8 @@ void mainMenu()
 
     // Show the main menu
     std::cout << readAsciiArt("asciiArt/title.txt") << std::endl;
+
+    // Show the options
     std::cout << "1. Create character" << std::endl;
     std::cout << "2. Show character" << std::endl;
     std::cout << "3. Show equipped items" << std::endl;
@@ -273,8 +275,7 @@ void encyclopediaMenu()
         cleanScreen();
 
         // Title
-        std::cout << "Welcome to the D&D's encyclopedia" << std::endl;
-        std::cout << std::endl;
+        std::cout << readAsciiArt("asciiArt/encyclopedia.txt") << std::endl;
 
         // Show the options
         std::cout << "1. Races" << std::endl;
