@@ -650,22 +650,16 @@ void Character::showInventory()
                 // Check the option
                 if (option <= inventory.getWeapons().size())
                 {
-                    // Message
-                    std::cout << "You equipped the " << inventory.getWeapons()[option - 1].getName() << "." << std::endl;
                     // Equip the weapon
                     equipWeapon(inventory.getWeapons()[option - 1]);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
                 {
-                    // Message
-                    std::cout << "You equipped the " << inventory.getArmors()[option - inventory.getWeapons().size() - 1].getName() << "." << std::endl;
                     // Equip the armor
                     equipArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
                 {
-                    // Message
-                    std::cout << "You used the " << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].getName() << "." << std::endl;
                     // Use the consumable
                     useConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
                 }
@@ -674,33 +668,27 @@ void Character::showInventory()
                     // Message
                     std::cout << "Quest items cannot be used." << std::endl;
                 }
+                // Pause
+                pause();
                 break;
             case 2:
                 if (option <= inventory.getWeapons().size())
                 {
-                    // Message
-                    std::cout << "You dropped the " << inventory.getWeapons()[option - 1].getName() << "." << std::endl;
                     // Drop the weapon
                     inventory.removeWeapon(inventory.getWeapons()[option - 1]);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
                 {
-                    // Message
-                    std::cout << "You dropped the " << inventory.getArmors()[option - inventory.getWeapons().size() - 1].getName() << "." << std::endl;
                     // Drop the armor
                     inventory.removeArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
                 {
-                    // Message
-                    std::cout << "You dropped the " << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].getName() << "." << std::endl;
                     // Drop the consumable
                     inventory.removeConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
                 {
-                    // Message
-                    std::cout << "You dropped the " << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1].getName() << "." << std::endl;
                     // Drop the quest item
                     inventory.removeQuestItem(inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1]);
                 }
@@ -823,7 +811,6 @@ void Character::showEquippedItems()
                     pause();
                 }
             }
-
         }
 
     } while (option != 3);
@@ -926,11 +913,12 @@ void Character::equipWeapon(Weapon weapon)
         }
         else
         {
-            // Unequip the current weapon
-            unequipWeapon();
-
             // Equip the new weapon
             equippedWeapon = weapon;
+
+            // Delete the weapon from the inventory
+            removeWeaponFromInventory(weapon);
+
             std::cout << "The weapon has been equipped." << std::endl;
         }
     }
@@ -957,11 +945,12 @@ void Character::equipArmor(Armor armor)
         }
         else
         {
-            // Unequip the current armor
-            unequipArmor();
-
             // Equip the new armor
             equippedArmor = armor;
+
+            // Delete the armor from the inventory
+            removeArmorFromInventory(armor);
+
             std::cout << "The armor has been equipped." << std::endl;
         }
     }
@@ -1080,7 +1069,7 @@ void Character::unequipWeapon()
     // Check if the weapon is equipped
     if (equippedWeapon.getName() == "None")
     {
-        std::cout << "The weapon is not equipped." << std::endl;
+        std::cout << "There is no weapon equipped." << std::endl;
     }
     else
     {
@@ -1101,7 +1090,7 @@ void Character::unequipArmor()
     // Check if the armor is equipped
     if (equippedArmor.getName() == "None")
     {
-        std::cout << "The armor is not equipped." << std::endl;
+        std::cout << "There is no armor equipped." << std::endl;
     }
     else
     {
