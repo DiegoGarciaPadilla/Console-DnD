@@ -404,7 +404,8 @@ std::string Character::toString()
 {
     std::stringstream ss;
 
-    ss << "CHARACTER" << std::endl;
+    ss << readAsciiArt("asciiArt/myCharacter.txt") << std::endl;
+
     ss << "Name: " << name << std::endl;
     ss << "Gender: " << gender << std::endl;
     ss << "Age: " << age << std::endl;
