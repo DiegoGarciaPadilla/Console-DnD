@@ -82,6 +82,10 @@ public:
 
     std::string toString();
 
+    int getGold();
+    void setGold(int gold);
+    void addGold(int gold);
+
     void defineRace(int option);
     void defineStats();
     void defineClass(int option);

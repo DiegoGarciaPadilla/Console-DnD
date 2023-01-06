@@ -429,6 +429,41 @@ std::string Character::toString()
 }
 
 /**
+ * @brief Get the gold of the character from the inventory
+ *
+ * @return int
+ */
+
+int Character::getGold()
+{
+    return inventory.getGold();
+}
+
+/**
+ * @brief Set the gold of the character
+ *
+ * @param gold
+ * @return
+ */
+
+void Character::setGold(int gold)
+{
+    inventory.setGold(gold);
+}
+
+/**
+ * @brief Add gold to the character
+ *
+ * @param gold
+ * @return
+ */
+
+void Character::addGold(int gold)
+{
+    inventory.setGold(inventory.getGold() + gold);
+}
+
+/**
  * @brief Define the race of the character
  *
  * @param option
