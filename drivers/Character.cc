@@ -721,9 +721,8 @@ void Character::showEquippedItems()
         // Clear the screen
         cleanScreen();
 
-        // Show the equipped items
-        std::cout << "Equipped Items" << std::endl;
-        std::cout << std::endl;
+        // Title
+        std::cout << readAsciiArt("asciiArt/equipment.txt") << std::endl;
 
         // Show the equipped weapon
         std::cout << "Weapon: " << std::endl;
