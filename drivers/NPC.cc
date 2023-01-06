@@ -9,6 +9,9 @@
  * 
  */
 
+#ifndef NPC_CC // If the file is not defined
+#define NPC_CC // Define the file
+
 #include "../headers/NPC.h" // Include the NPC header file
 #include "Functions.cc"     // Include the functions file
 
@@ -249,3 +252,5 @@ void NPC::talk()
     // Print the NPC response
     std::cout << this->responses[randomDialogue][option - 1] << std::endl;
 }
+
+#endif // End of the preprocessor NPC_CC
