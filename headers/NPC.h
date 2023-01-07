@@ -20,7 +20,7 @@
 
 class NPC
 {
-private:
+protected:
     // Attributes
     std::string name;
     std::string description;
