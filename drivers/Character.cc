@@ -817,6 +817,50 @@ void Character::showEquippedItems()
 }
 
 /**
+ * @brief Get the character's weapons in the inventory
+ * 
+ * @return std::vector<Weapon>  
+ */
+
+std::vector<Weapon> Character::getWeapons()
+{
+    return inventory.getWeapons();
+}
+
+/**
+ * @brief Get the character's armors in the inventory
+ * 
+ * @return std::vector<Armor>  
+ */
+
+std::vector<Armor> Character::getArmors()
+{
+    return inventory.getArmors();
+}
+
+/**
+ * @brief Get the character's consumables in the inventory
+ * 
+ * @return std::vector<Consumable>  
+ */
+
+std::vector<Consumable> Character::getConsumables()
+{
+    return inventory.getConsumables();
+}
+
+/**
+ * @brief Get the character's quest items in the inventory
+ * 
+ * @return std::vector<QuestItem>  
+ */
+
+std::vector<QuestItem> Character::getQuestItems()
+{
+    return inventory.getQuestItems();
+}
+
+/**
  * @brief Method to add a weapon to the inventory
  *
  */

@@ -93,6 +93,11 @@ public:
     void showInventory();
     void showEquippedItems();
 
+    std::vector<Weapon> getWeapons();
+    std::vector<Armor> getArmors();
+    std::vector<Consumable> getConsumables();
+    std::vector<QuestItem> getQuestItems();
+
     void addWeaponToInventory(Weapon weapon);
     void addArmorToInventory(Armor armor);
     void addConsumableToInventory(Consumable consumable);
