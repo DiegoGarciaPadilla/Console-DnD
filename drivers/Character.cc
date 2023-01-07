@@ -419,11 +419,25 @@ std::string Character::toString()
     ss << std::endl;
 
     ss << "EQUIPPED WEAPON" << std::endl;
-    ss << equippedWeapon.toString() << std::endl;
+    if (equippedWeapon.getName() == "None")
+    {
+        ss << "No weapon equipped" << std::endl;
+    }
+    else
+    {
+        ss << equippedWeapon.toString() << std::endl;
+    }
     ss << std::endl;
 
     ss << "EQUIPPED ARMOR" << std::endl;
-    ss << equippedArmor.toString() << std::endl;
+    if (equippedArmor.getName() == "None")
+    {
+        ss << "No armor equipped" << std::endl;
+    }
+    else
+    {
+        ss << equippedArmor.toString() << std::endl;
+    }
     ss << std::endl;
 
     return ss.str();
