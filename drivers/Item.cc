@@ -26,7 +26,7 @@ Item::Item()
     name = "Item";
     description = "This is an object";
     weight = 0;
-    value = 0;
+    price = 0;
     type = "Item";
     subtype = "Item";
     material = "Item";
@@ -38,18 +38,18 @@ Item::Item()
  * @param name
  * @param description
  * @param weight
- * @param value
+ * @param price
  * @param type
  * @param subtype
  * @param material
  */
 
-Item::Item(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material)
+Item::Item(std::string name, std::string description, int weight, int price, std::string type, std::string subtype, std::string material)
 {
     this->name = name;
     this->description = description;
     this->weight = weight;
-    this->value = value;
+    this->price = price;
     this->type = type;
     this->subtype = subtype;
     this->material = material;
@@ -91,14 +91,14 @@ int Item::getWeight()
 }
 
 /**
- * @brief Get the Value attribute
+ * @brief Get the Price attribute
  *
  * @return int
  */
 
-int Item::getValue()
+int Item::getPrice()
 {
-    return value;
+    return price;
 }
 
 /**
@@ -170,14 +170,14 @@ void Item::setWeight(int weight)
 }
 
 /**
- * @brief Set the Value attribute
+ * @brief Set the Price attribute
  *
  * @param value
  */
 
-void Item::setValue(int value)
+void Item::setPrice(int price)
 {
-    this->value = value;
+    this->price = price;
 }
 
 /**
@@ -222,7 +222,7 @@ std::string Item::toString()
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Weight: " << weight << std::endl;
-    ss << "Value: " << value << std::endl;
+    ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;

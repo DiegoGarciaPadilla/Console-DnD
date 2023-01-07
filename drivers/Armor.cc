@@ -26,7 +26,7 @@ Armor::Armor()
     name = "None";
     description = "None";
     weight = 0;
-    value = 0;
+    price = 0;
     subtype = "None";
     material = "None";
     defense = 0;
@@ -38,18 +38,18 @@ Armor::Armor()
  * @param name
  * @param description
  * @param weight
- * @param value
+ * @param price
  * @param subtype
  * @param material
  * @param defense
  */
 
-Armor::Armor(std::string name, std::string description, int weight, int value, std::string subtype, std::string material, int defense)
+Armor::Armor(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int defense)
 {
     this->name = name;
     this->description = description;
     this->weight = weight;
-    this->value = value;
+    this->price = price;
     this->subtype = subtype;
     this->material = material;
     this->defense = defense;
@@ -96,7 +96,7 @@ std::string Armor::toString()
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Weight: " << weight << std::endl;
-    ss << "Value: " << value << std::endl;
+    ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;

@@ -19,7 +19,7 @@ protected:
     std::string name;
     std::string description;
     int weight;
-    int value;
+    int price;
     std::string type;
     std::string subtype;
     std::string material;
@@ -27,13 +27,13 @@ protected:
 public:
     // Constructors
     Item();
-    Item(std::string name, std::string description, int weight, int value, std::string type, std::string subtype, std::string material);
+    Item(std::string name, std::string description, int weight, int price, std::string type, std::string subtype, std::string material);
 
     // Getters
     std::string getName();
     std::string getDescription();
     int getWeight();
-    int getValue();
+    int getPrice();
     std::string getType();
     std::string getSubtype();
     std::string getMaterial();
@@ -42,7 +42,7 @@ public:
     void setName(std::string name);
     void setDescription(std::string description);
     void setWeight(int weight);
-    void setValue(int value);
+    void setPrice(int value);
     void setType(std::string type);
     void setSubtype(std::string subtype);
     void setMaterial(std::string material);

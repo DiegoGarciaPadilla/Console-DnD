@@ -26,7 +26,7 @@ QuestItem::QuestItem()
     name = "QuestItem";
     description = "This is a quest item";
     weight = 0;
-    value = 0;
+    price = 0;
     type = "QuestItem";
     subtype = "QuestItem";
     material = "QuestItem";
@@ -39,18 +39,18 @@ QuestItem::QuestItem()
  * @param name 
  * @param description 
  * @param weight 
- * @param value 
+ * @param price 
  * @param subtype 
  * @param material 
  * @param quest 
  */
 
-QuestItem::QuestItem(std::string name, std::string description, int weight, int value, std::string subtype, std::string material, std::string quest)
+QuestItem::QuestItem(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string quest)
 {
     this->name = name;
     this->description = description;
     this->weight = weight;
-    this->value = value;
+    this->price = price;
     this->subtype = subtype;
     this->material = material;
     this->quest = quest;
@@ -88,7 +88,7 @@ std::string QuestItem::toString()
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Weight: " << weight << std::endl;
-    ss << "Value: " << value << std::endl;
+    ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;

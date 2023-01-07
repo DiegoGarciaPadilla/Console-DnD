@@ -27,7 +27,7 @@ private:
 public:
     // Constructors
     Consumable();
-    Consumable(std::string name, std::string description, int weight, int value, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina);
+    Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina);
 
     // Getters
     std::string getEffect();

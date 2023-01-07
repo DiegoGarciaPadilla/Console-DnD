@@ -26,7 +26,7 @@ Consumable::Consumable()
     name = "Potion";
     description = "It's a potion. It's probably useful.";
     weight = 1;
-    value = 10;
+    price = 10;
     subtype = "Potion";
     material = "Strange liquid";
     effect = "Nothing happens...";
@@ -41,7 +41,7 @@ Consumable::Consumable()
  * @param name 
  * @param description 
  * @param weight 
- * @param value 
+ * @param price 
  * @param subtype 
  * @param material 
  * @param effect  
@@ -50,12 +50,12 @@ Consumable::Consumable()
  * @param stamina
  */
 
-Consumable::Consumable(std::string name, std::string description, int weight, int value, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina)
+Consumable::Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina)
 {
     this->name = name;
     this->description = description;
     this->weight = weight;
-    this->value = value;
+    this->price = price;
     this->subtype = subtype;
     this->material = material;
     this->effect = effect;
@@ -125,7 +125,7 @@ std::string Consumable::toString()
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Weight: " << weight << std::endl;
-    ss << "Value: " << value << std::endl;
+    ss << "Price: " << price << std::endl;
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;
     ss << "Effect: " << effect << std::endl;
