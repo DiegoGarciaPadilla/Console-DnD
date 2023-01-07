@@ -103,15 +103,15 @@ public:
     void addConsumableToInventory(Consumable consumable);
     void addQuestItemToInventory(QuestItem questItem);
 
-    void removeWeaponFromInventory(Weapon weapon);
-    void removeArmorFromInventory(Armor armor);
-    void removeConsumableFromInventory(Consumable consumable);
-    void removeQuestItemFromInventory(QuestItem questItem);
+    void removeWeaponFromInventory(int index);
+    void removeArmorFromInventory(int index);
+    void removeConsumableFromInventory(int index);
+    void removeQuestItemFromInventory(int index);
 
-    void equipWeapon(Weapon weapon);
-    void equipArmor(Armor armor);
+    void equipWeapon(int index);
+    void equipArmor(int index);
 
-    void useConsumable(Consumable consumable);
+    void useConsumable(int index);
 
     void unequipWeapon();
     void unequipArmor();

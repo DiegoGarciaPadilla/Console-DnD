@@ -652,17 +652,17 @@ void Character::showInventory()
                 if (option <= inventory.getWeapons().size())
                 {
                     // Equip the weapon
-                    equipWeapon(inventory.getWeapons()[option - 1]);
+                    equipWeapon(option - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
                 {
                     // Equip the armor
-                    equipArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
+                    equipArmor(option - inventory.getWeapons().size() - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
                 {
                     // Use the consumable
-                    useConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
+                    useConsumable(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
                 {
@@ -676,22 +676,22 @@ void Character::showInventory()
                 if (option <= inventory.getWeapons().size())
                 {
                     // Drop the weapon
-                    inventory.removeWeapon(inventory.getWeapons()[option - 1]);
+                    inventory.removeWeapon(option - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
                 {
                     // Drop the armor
-                    inventory.removeArmor(inventory.getArmors()[option - inventory.getWeapons().size() - 1]);
+                    inventory.removeArmor(option - inventory.getWeapons().size() - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
                 {
                     // Drop the consumable
-                    inventory.removeConsumable(inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1]);
+                    inventory.removeConsumable(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
                 }
                 else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
                 {
                     // Drop the quest item
-                    inventory.removeQuestItem(inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1]);
+                    inventory.removeQuestItem(option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1);
                 }
                 // Pause
                 pause();
@@ -818,8 +818,8 @@ void Character::showEquippedItems()
 
 /**
  * @brief Get the character's weapons in the inventory
- * 
- * @return std::vector<Weapon>  
+ *
+ * @return std::vector<Weapon>
  */
 
 std::vector<Weapon> Character::getWeapons()
@@ -829,8 +829,8 @@ std::vector<Weapon> Character::getWeapons()
 
 /**
  * @brief Get the character's armors in the inventory
- * 
- * @return std::vector<Armor>  
+ *
+ * @return std::vector<Armor>
  */
 
 std::vector<Armor> Character::getArmors()
@@ -840,8 +840,8 @@ std::vector<Armor> Character::getArmors()
 
 /**
  * @brief Get the character's consumables in the inventory
- * 
- * @return std::vector<Consumable>  
+ *
+ * @return std::vector<Consumable>
  */
 
 std::vector<Consumable> Character::getConsumables()
@@ -851,8 +851,8 @@ std::vector<Consumable> Character::getConsumables()
 
 /**
  * @brief Get the character's quest items in the inventory
- * 
- * @return std::vector<QuestItem>  
+ *
+ * @return std::vector<QuestItem>
  */
 
 std::vector<QuestItem> Character::getQuestItems()
@@ -863,6 +863,7 @@ std::vector<QuestItem> Character::getQuestItems()
 /**
  * @brief Method to add a weapon to the inventory
  *
+ * @param weapon
  */
 
 void Character::addWeaponToInventory(Weapon weapon)
@@ -873,6 +874,7 @@ void Character::addWeaponToInventory(Weapon weapon)
 /**
  * @brief Method to add an armor to the inventory
  *
+ * @param armor
  */
 
 void Character::addArmorToInventory(Armor armor)
@@ -883,6 +885,7 @@ void Character::addArmorToInventory(Armor armor)
 /**
  * @brief Method to add a consumable to the inventory
  *
+ * @param consumable
  */
 
 void Character::addConsumableToInventory(Consumable consumable)
@@ -893,6 +896,7 @@ void Character::addConsumableToInventory(Consumable consumable)
 /**
  * @brief Method to add a quest item to the inventory
  *
+ * @param questItem
  */
 
 void Character::addQuestItemToInventory(QuestItem questItem)
@@ -903,203 +907,190 @@ void Character::addQuestItemToInventory(QuestItem questItem)
 /**
  * @brief Method to remove a weapon from the inventory
  *
+ * @param index
  */
 
-void Character::removeWeaponFromInventory(Weapon weapon)
+void Character::removeWeaponFromInventory(int index)
 {
-    inventory.removeWeapon(weapon);
+    inventory.removeWeapon(index);
 }
 
 /**
  * @brief Method to remove an armor from the inventory
  *
+ * @param index
  */
 
-void Character::removeArmorFromInventory(Armor armor)
+void Character::removeArmorFromInventory(int index)
 {
-    inventory.removeArmor(armor);
+    inventory.removeArmor(index);
 }
 
 /**
  * @brief Method to remove a consumable from the inventory
  *
+ * @param index
  */
 
-void Character::removeConsumableFromInventory(Consumable consumable)
+void Character::removeConsumableFromInventory(int index)
 {
-    inventory.removeConsumable(consumable);
+    inventory.removeConsumable(index);
 }
 
 /**
  * @brief Method to remove a quest item from the inventory
  *
+ * @param index
  */
 
-void Character::removeQuestItemFromInventory(QuestItem questItem)
+void Character::removeQuestItemFromInventory(int index)
 {
-    inventory.removeQuestItem(questItem);
+    inventory.removeQuestItem(index);
 }
 
 /**
  * @brief Method to equip a weapon
  *
+ * @param index
  */
 
-void Character::equipWeapon(Weapon weapon)
+void Character::equipWeapon(int index)
 {
-    // Check if the weapon is in the inventory
-    if (inventory.hasWeapon(weapon))
+    // Check if the weapon is equipped
+    if (equippedWeapon.getName() != "None")
     {
-        // Check if the weapon is already equipped
-        if (equippedWeapon.getName() == weapon.getName())
-        {
-            std::cout << "The weapon is already equipped." << std::endl;
-        }
-        else
-        {
-            // Equip the new weapon
-            equippedWeapon = weapon;
-
-            // Delete the weapon from the inventory
-            removeWeaponFromInventory(weapon);
-
-            std::cout << "The weapon has been equipped." << std::endl;
-        }
+        std::cout << "There is already a weapon equipped." << std::endl;
     }
     else
     {
-        std::cout << "The weapon is not in the inventory." << std::endl;
+        // Equip the weapon
+        equippedWeapon = inventory.getWeapons()[index];
+        inventory.removeWeapon(index);
+        std::cout << "The weapon has been equipped." << std::endl;
     }
 }
 
 /**
  * @brief Method to equip an armor
  *
+ * @param index
  */
 
-void Character::equipArmor(Armor armor)
+void Character::equipArmor(int index)
 {
-    // Check if the armor is in the inventory
-    if (inventory.hasArmor(armor))
+    // Check if the armor is equipped
+    if (equippedArmor.getName() != "None")
     {
-        // Check if the armor is already equipped
-        if (equippedArmor.getName() == armor.getName())
-        {
-            std::cout << "The armor is already equipped." << std::endl;
-        }
-        else
-        {
-            // Equip the new armor
-            equippedArmor = armor;
-
-            // Delete the armor from the inventory
-            removeArmorFromInventory(armor);
-
-            std::cout << "The armor has been equipped." << std::endl;
-        }
+        std::cout << "There is already an armor equipped." << std::endl;
     }
     else
     {
-        std::cout << "The armor is not in the inventory." << std::endl;
+        // Equip the armor
+        equippedArmor = inventory.getArmors()[index];
+        inventory.removeArmor(index);
+        std::cout << "The armor has been equipped." << std::endl;
     }
 }
 
 /**
  * @brief Method to use a consumable
  *
+ * @param index
  */
 
-void Character::useConsumable(Consumable consumable)
+void Character::useConsumable(int index)
 {
-    // Check if the consumable is in the inventory
-    if (inventory.hasConsumable(consumable))
+    // Check if the consumable adds health
+    if (inventory.getConsumables()[index].getHealth() > 0)
     {
-        // Check if the consumable improves the health
-        if (consumable.getHealth() > 0)
+        // Check if the character is at full health
+        if (health == maxHealth)
         {
-            // Check if the health is already full
-            if (health == maxHealth)
+            std::cout << "You are already at full health." << std::endl;
+        }
+        else
+        {
+            // Check if the character's health will be over the max health
+            if (health + inventory.getConsumables()[index].getHealth() > maxHealth)
             {
-                std::cout << "The health is already full." << std::endl;
+                // Set the character's health to the max health
+                health = maxHealth;
             }
             else
             {
-                // Check if the health will be full after using the consumable
-                if (health + consumable.getHealth() > maxHealth)
-                {
-                    // Set the health to the maximum
-                    health = maxHealth;
-                }
-                else
-                {
-                    // Increase the health
-                    health += consumable.getHealth();
-                }
-
-                // Remove the consumable from the inventory
-                removeConsumableFromInventory(consumable);
-                std::cout << "The health has been increased." << std::endl;
+                // Add the health to the character's health
+                health += inventory.getConsumables()[index].getHealth();
             }
+
+            // Message
+            std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+            std::cout << "Your health is now " << health << "." << std::endl;
+
+            // Remove the consumable from the inventory
+            inventory.removeConsumable(index);
         }
-        // Check if the consumable improves the mana
-        else if (consumable.getMana() > 0)
+        // Check if the consumable adds mana
+        if (inventory.getConsumables()[index].getMana() > 0)
         {
-            // Check if the mana is already full
+            // Check if the character is at full mana
             if (mana == maxMana)
             {
-                std::cout << "The mana is already full." << std::endl;
+                std::cout << "You are already at full mana." << std::endl;
             }
             else
             {
-                // Check if the mana will be full after using the consumable
-                if (mana + consumable.getMana() > maxMana)
+                // Check if the character's mana will be over the max mana
+                if (mana + inventory.getConsumables()[index].getMana() > maxMana)
                 {
-                    // Set the mana to the maximum
+                    // Set the character's mana to the max mana
                     mana = maxMana;
                 }
                 else
                 {
-                    // Increase the mana
-                    mana += consumable.getMana();
+                    // Add the mana to the character's mana
+                    mana += inventory.getConsumables()[index].getMana();
                 }
 
+                // Message
+                std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+                std::cout << "Your mana is now " << mana << "." << std::endl;
+
                 // Remove the consumable from the inventory
-                removeConsumableFromInventory(consumable);
-                std::cout << "The mana has been increased." << std::endl;
+                inventory.removeConsumable(index);
             }
         }
-        // Check if the consumable improves the stamina
-        else if (consumable.getStamina() > 0)
+        // Check if the consumable adds stamina
+        if (inventory.getConsumables()[index].getStamina() > 0)
         {
-            // Check if the stamina is already full
+            // Check if the character is at full stamina
             if (stamina == maxStamina)
             {
-                std::cout << "The stamina is already full." << std::endl;
+                std::cout << "You are already at full stamina." << std::endl;
             }
             else
             {
-                // Check if the stamina will be full after using the consumable
-                if (stamina + consumable.getStamina() > maxStamina)
+                // Check if the character's stamina will be over the max stamina
+                if (stamina + inventory.getConsumables()[index].getStamina() > maxStamina)
                 {
-                    // Set the stamina to the maximum
+                    // Set the character's stamina to the max stamina
                     stamina = maxStamina;
                 }
                 else
                 {
-                    // Increase the stamina
-                    stamina += consumable.getStamina();
+                    // Add the stamina to the character's stamina
+                    stamina += inventory.getConsumables()[index].getStamina();
                 }
 
+                // Message
+                std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+                std::cout << "Your stamina is now " << stamina << "." << std::endl;
+
                 // Remove the consumable from the inventory
-                removeConsumableFromInventory(consumable);
-                std::cout << "The stamina has been increased." << std::endl;
+                inventory.removeConsumable(index);
             }
         }
-    }
-    else
-    {
-        // Tell the user that the consumable is not in the inventory
-        std::cout << "The consumable is not in the inventory." << std::endl;
+
+
     }
 }
 

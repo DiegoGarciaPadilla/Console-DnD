@@ -58,15 +58,10 @@ public:
     void addConsumable(Consumable consumable);
     void addQuestItem(QuestItem questItem);
 
-    void removeWeapon(Weapon weapon);
-    void removeArmor(Armor armor);
-    void removeConsumable(Consumable consumable);
-    void removeQuestItem(QuestItem questItem);
-
-    bool hasWeapon(Weapon weapon);
-    bool hasArmor(Armor armor);
-    bool hasConsumable(Consumable consumable);
-    bool hasQuestItem(QuestItem questItem);
+    void removeWeapon(int index);
+    void removeArmor(int index);
+    void removeConsumable(int index);
+    void removeQuestItem(int index);
 };
 
 #endif // End of the preprocessor INVENTORY_H

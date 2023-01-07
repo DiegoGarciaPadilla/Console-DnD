@@ -259,141 +259,49 @@ void Inventory::addQuestItem(QuestItem questItem)
 /**
  * @brief Remove a weapon from the inventory
  *
- * @param weapon
+ * @param index
  */
 
-void Inventory::removeWeapon(Weapon weapon)
+void Inventory::removeWeapon(int index)
 {
-    for (int i = 0; i < weapons.size(); i++)
-    {
-        if (weapons[i].getName() == weapon.getName())
-        {
-            weapons.erase(weapons.begin() + i);
-            currentWeight -= weapon.getWeight();
-        }
-    }
+    currentWeight -= weapons[index].getWeight();
+    weapons.erase(weapons.begin() + index);
 }
 
 /**
  * @brief Remove an armor from the inventory
  *
- * @param armor
+ * @param index
  */
 
-void Inventory::removeArmor(Armor armor)
+void Inventory::removeArmor(int index)
 {
-    for (int i = 0; i < armors.size(); i++)
-    {
-        if (armors[i].getName() == armor.getName())
-        {
-            armors.erase(armors.begin() + i);
-            currentWeight -= armor.getWeight();
-        }
-    }
+    currentWeight -= armors[index].getWeight();
+    armors.erase(armors.begin() + index);
 }
 
 /**
  * @brief Remove a consumable from the inventory
  *
- * @param consumable
+ * @param index
  */
 
-void Inventory::removeConsumable(Consumable consumable)
+void Inventory::removeConsumable(int index)
 {
-    for (int i = 0; i < consumables.size(); i++)
-    {
-        if (consumables[i].getName() == consumable.getName())
-        {
-            consumables.erase(consumables.begin() + i);
-            currentWeight -= consumable.getWeight();
-        }
-    }
+    currentWeight -= consumables[index].getWeight();
+    consumables.erase(consumables.begin() + index);
 }
 
 /**
  * @brief Remove a quest item from the inventory
  *
- * @param questItem
+ * @param index
  */
 
-void Inventory::removeQuestItem(QuestItem questItem)
+void Inventory::removeQuestItem(int index)
 {
-    for (int i = 0; i < questItems.size(); i++)
-    {
-        if (questItems[i].getName() == questItem.getName())
-        {
-            questItems.erase(questItems.begin() + i);
-            currentWeight -= questItem.getWeight();
-        }
-    }
-}
-
-/**
- * @brief Check if the weapon is in the inventory
- *
- */
-
-bool Inventory::hasWeapon(Weapon weapon)
-{
-    for (int i = 0; i < weapons.size(); i++)
-    {
-        if (weapons[i].getName() == weapon.getName())
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-/**
- * @brief Check if the armor is in the inventory
- *
- */
-
-bool Inventory::hasArmor(Armor armor)
-{
-    for (int i = 0; i < armors.size(); i++)
-    {
-        if (armors[i].getName() == armor.getName())
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-/**
- * @brief Check if the consumable is in the inventory
- *
- */
-
-bool Inventory::hasConsumable(Consumable consumable)
-{
-    for (int i = 0; i < consumables.size(); i++)
-    {
-        if (consumables[i].getName() == consumable.getName())
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-/**
- * @brief Check if the quest item is in the inventory
- *
- */
-
-bool Inventory::hasQuestItem(QuestItem questItem)
-{
-    for (int i = 0; i < questItems.size(); i++)
-    {
-        if (questItems[i].getName() == questItem.getName())
-        {
-            return true;
-        }
-    }
-    return false;
+    currentWeight -= questItems[index].getWeight();
+    questItems.erase(questItems.begin() + index);
 }
 
 #endif // End of the preprocessor INVENTORY_CC
