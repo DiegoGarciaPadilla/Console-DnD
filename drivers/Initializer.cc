@@ -23,6 +23,7 @@
 #include "Armor.cc"  // Include the Armor class
 #include "Race.cc"   // Include the Race class
 #include "Class.cc"  // Include the Class class
+#include "Potion.cc" // Include the Potion class
 
 // Genders
 
@@ -118,7 +119,7 @@ std::vector<Weapon> initWeapons()
         }
 
         // Create the weapon
-        Weapon weapon(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        Weapon weapon(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), tokens[5], std::stoi(tokens[6]));
 
         // Add the weapon to the vector
         weapons.push_back(weapon);
@@ -204,7 +205,7 @@ std::vector<Armor> initArmors()
         }
 
         // Create the armor
-        Armor armor(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        Armor armor(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), tokens[5], std::stoi(tokens[6]));
 
         // Add the armor to the vector
         armors.push_back(armor);
@@ -423,6 +424,64 @@ std::vector<std::string> listClasses()
 
     // Return the vector of classes
     return classes;
+}
+
+// Potions
+
+/**
+ * @brief Function to initialize potions array
+ *
+ * @param
+ * @return vector
+ */
+
+std::vector<Potion> initPotions()
+{
+    // Open the file
+    std::ifstream file("data/potions.txt");
+
+    // Check if the file was opened correctly
+    if (!file.is_open())
+    {
+        // If the file was not opened correctly, show an error message
+        std::cout << "There was an error opening the file" << std::endl;
+        return std::vector<Potion>();
+    }
+
+    // Create the vector of potions
+    std::vector<Potion> potions;
+
+    // Line of the file
+    std::string line;
+
+    // Read the file line by line
+    int i = 0;
+    while (std::getline(file, line))
+    {
+        // Split the line by pipe character
+        std::stringstream ss(line);
+        std::string token;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, token, '|'))
+        {
+            tokens.push_back(token);
+        }
+
+        // Create the potion
+        Potion potion(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+
+        // Add the potion to the vector
+        potions.push_back(potion);
+
+        // Increase the counter
+        i++;
+    }
+
+    // Close the file
+    file.close();
+
+    // Return the array of potions
+    return potions;
 }
 
 #endif // End of the preprocessor INITIALIZER_CC
