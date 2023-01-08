@@ -16,7 +16,7 @@
 
 class Consumable : public Item
 {
-private:
+protected:
     // Attributes
     std::string type = "Consumable";
     std::string effect;
