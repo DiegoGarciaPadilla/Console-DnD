@@ -787,7 +787,7 @@ void Merchant::openShop(Character &character)
     int option = 0;
 
     // Print the options
-    std::cout << "Welcome to my shop." << std::endl;
+    std::cout << "I travel all over the world to sell and buy items." << std::endl;
     std::cout << "1. Buy items" << std::endl;
     std::cout << "2. Sell items" << std::endl;
     std::cout << "3. Nevermind" << std::endl;
