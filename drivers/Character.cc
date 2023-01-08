@@ -42,6 +42,9 @@ Character::Character()
     maxMana = 100;
     maxStamina = 100;
 
+    damage = 0;
+    defense = 0;
+
     race = Race();
     clss = Class();
     stats = Stats(race);
@@ -572,11 +575,11 @@ void Character::defineClass(int option)
 
     // Set initial weapon
     equippedWeapon = clss.getInitialWeapon();
-    damage = clss.getInitialWeapon().getDamage();
+    damage += clss.getInitialWeapon().getDamage();
 
     // Set initial armor
     equippedArmor = clss.getInitialArmor();
-    defense = clss.getInitialArmor().getDefense();
+    defense += clss.getInitialArmor().getDefense();
 }
 
 /**
@@ -1041,8 +1044,14 @@ void Character::equipWeapon(int index)
     {
         // Equip the weapon
         equippedWeapon = inventory.getWeapons()[index];
-        damage = equippedWeapon.getDamage();
+        
+        // Add the weapon's damage to the character's attack
+        damage += equippedWeapon.getDamage();
+
+        // Remove the weapon from the inventory
         inventory.removeWeapon(index);
+
+        // Show a message
         std::cout << "The weapon has been equipped." << std::endl;
     }
 }
@@ -1064,9 +1073,14 @@ void Character::equipArmor(int index)
     {
         // Equip the armor
         equippedArmor = inventory.getArmors()[index];
-        defense = equippedArmor.getDefense();
+        
+        // Add the armor's defense to the character's defense
+        defense += equippedArmor.getDefense();
 
+        // Remove the armor from the inventory
         inventory.removeArmor(index);
+
+        // Show a message
         std::cout << "The armor has been equipped." << std::endl;
     }
 }
@@ -1185,9 +1199,16 @@ void Character::unequipWeapon()
     }
     else
     {
+        // Reduce the damage
+        damage -= equippedWeapon.getDamage();
+        
         // Unequip the weapon
         inventory.addWeapon(equippedWeapon);
+
+        // Set the weapon to none
         equippedWeapon = Weapon();
+
+        // Show a message
         std::cout << "The weapon has been unequipped." << std::endl;
     }
 }
@@ -1206,9 +1227,16 @@ void Character::unequipArmor()
     }
     else
     {
+        // Reduce the defense
+        defense -= equippedArmor.getDefense();
+
         // Unequip the armor
         inventory.addArmor(equippedArmor);
+
+        // Set the armor to none
         equippedArmor = Armor();
+
+        // Show a message
         std::cout << "The armor has been unequipped." << std::endl;
     }
 }
