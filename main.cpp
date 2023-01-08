@@ -42,7 +42,36 @@ int main()
         switch (mainOption)
         {
         case 1:
-            character.createCharacter();
+            if (character.getName() != "None")
+            {
+                // Variables
+                int characterOption;
+
+                // Ask the user if they want to overwrite the character
+                std::cout << "There is already a character created" << std::endl;
+                std::cout << "Do you want to overwrite it?" << std::endl;
+                std::cout << "1. Yes" << std::endl;
+                std::cout << "2. No" << std::endl;
+                std::cin >> characterOption;
+
+                // Switch for the character menu
+                switch (characterOption)
+                {
+                case 1:
+                    character.createCharacter();
+                    break;
+                case 2:
+                    std::cout << "The character was not overwritten" << std::endl;
+                    break;
+                default:
+                    std::cout << "Invalid option" << std::endl;
+                    break;
+                }
+            }
+            else
+            {
+                character.createCharacter();
+            }
             pause();
             break;
         case 2:
