@@ -566,9 +566,11 @@ void Character::defineClass(int option)
 
     // Set initial weapon
     equippedWeapon = clss.getInitialWeapon();
+    damage = clss.getInitialWeapon().getDamage();
 
     // Set initial armor
     equippedArmor = clss.getInitialArmor();
+    defense = clss.getInitialArmor().getDefense();
 }
 
 /**
