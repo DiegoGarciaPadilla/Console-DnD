@@ -21,12 +21,11 @@ class Potion : public Consumable
 private:
     // Attributes
     std::string subtype = "Potion";
-    std::string material = "Glass";
 
 public:
     // Constructors
     Potion();
-    Potion(std::string name, std::string description, int weight, int price, int health, int mana, int stamina);
+    Potion(std::string name, std::string description, std::string rarity, int weight, int price, int health, int mana, int stamina);
 
     // Getters
 

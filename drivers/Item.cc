@@ -23,13 +23,13 @@
 
 Item::Item()
 {
-    name = "Item";
-    description = "This is an object";
+    name = "None";
+    description = "None";
+    rarity = "None";
     weight = 0;
     price = 0;
-    type = "Item";
-    subtype = "Item";
-    material = "Item";
+    type = "None";
+    subtype = "None";
 }
 
 /**
@@ -37,22 +37,22 @@ Item::Item()
  *
  * @param name
  * @param description
+ * @param rarity
  * @param weight
  * @param price
  * @param type
  * @param subtype
- * @param material
  */
 
-Item::Item(std::string name, std::string description, int weight, int price, std::string type, std::string subtype, std::string material)
+Item::Item(std::string name, std::string description, std::string rarity, int weight, int price, std::string type, std::string subtype)
 {
     this->name = name;
     this->description = description;
+    this->rarity = rarity;
     this->weight = weight;
     this->price = price;
     this->type = type;
     this->subtype = subtype;
-    this->material = material;
 }
 
 // Getters
@@ -77,6 +77,17 @@ std::string Item::getName()
 std::string Item::getDescription()
 {
     return description;
+}
+ 
+/**
+ * @brief  Get the Rarity attribute
+ * 
+ * @return std::string 
+ */
+
+std::string Item::getRarity()
+{
+    return rarity;
 }
 
 /**
@@ -123,17 +134,6 @@ std::string Item::getSubtype()
     return subtype;
 }
 
-/**
- * @brief Get the Material attribute
- *
- * @return std::string
- */
-
-std::string Item::getMaterial()
-{
-    return material;
-}
-
 // Setters
 
 /**
@@ -156,6 +156,17 @@ void Item::setName(std::string name)
 void Item::setDescription(std::string description)
 {
     this->description = description;
+}
+
+/**
+ * @brief Set the Rarity attribute
+ *
+ * @param rarity
+ */
+
+void Item::setRarity(std::string rarity)
+{
+    this->rarity = rarity;
 }
 
 /**
@@ -202,17 +213,6 @@ void Item::setSubtype(std::string subtype)
     this->subtype = subtype;
 }
 
-/**
- * @brief Set the Material attribute
- *
- * @param material
- */
-
-void Item::setMaterial(std::string material)
-{
-    this->material = material;
-}
-
 // Methods
 
 std::string Item::toString()
@@ -221,11 +221,11 @@ std::string Item::toString()
 
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
+    ss << "Rarity: " << rarity << std::endl;
     ss << "Weight: " << weight << std::endl;
     ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
-    ss << "Material: " << material << std::endl;
 
     return ss.str();
 }

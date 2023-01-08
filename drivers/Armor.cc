@@ -21,14 +21,8 @@
  *
  */
 
-Armor::Armor()
+Armor::Armor() : Item()
 {
-    name = "None";
-    description = "None";
-    weight = 0;
-    price = 0;
-    subtype = "None";
-    material = "None";
     defense = 0;
 }
 
@@ -37,21 +31,16 @@ Armor::Armor()
  *
  * @param name
  * @param description
+ * @param rarity
  * @param weight
  * @param price
+ * @param type
  * @param subtype
- * @param material
  * @param defense
  */
 
-Armor::Armor(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int defense)
+Armor::Armor(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int defense) : Item(name, description, rarity, weight, price, "Armor", subtype)
 {
-    this->name = name;
-    this->description = description;
-    this->weight = weight;
-    this->price = price;
-    this->subtype = subtype;
-    this->material = material;
     this->defense = defense;
 }
 
@@ -95,11 +84,11 @@ std::string Armor::toString()
 
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
+    ss << "Rarity: " << rarity << std::endl;
     ss << "Weight: " << weight << std::endl;
     ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
-    ss << "Material: " << material << std::endl;
     ss << "Defense: " << defense << std::endl;
 
     return ss.str();

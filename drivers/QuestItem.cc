@@ -21,16 +21,9 @@
  * 
  */
 
-QuestItem::QuestItem()
+QuestItem::QuestItem() : Item()
 {
-    name = "QuestItem";
-    description = "This is a quest item";
-    weight = 0;
-    price = 0;
-    type = "QuestItem";
-    subtype = "QuestItem";
-    material = "QuestItem";
-    quest = "QuestItem";
+    quest = "None";
 }
 
 /**
@@ -38,23 +31,18 @@ QuestItem::QuestItem()
  * 
  * @param name 
  * @param description 
+ * @param rarity
  * @param weight 
  * @param price 
- * @param subtype 
- * @param material 
+ * @param subtype  
  * @param quest 
  */
 
-QuestItem::QuestItem(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string quest)
+QuestItem::QuestItem(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, std::string quest) : Item(name, description, rarity, weight, price, "QuestItem", subtype)
 {
-    this->name = name;
-    this->description = description;
-    this->weight = weight;
-    this->price = price;
-    this->subtype = subtype;
-    this->material = material;
     this->quest = quest;
 }
+
 
 // Getters
 
@@ -88,10 +76,10 @@ std::string QuestItem::toString()
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Weight: " << weight << std::endl;
+    ss << "Rarity: " << rarity << std::endl;
     ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
-    ss << "Material: " << material << std::endl;
     ss << "Quest: " << quest << std::endl;
 
     return ss.str();

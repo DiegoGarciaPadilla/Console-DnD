@@ -21,14 +21,8 @@
  *
  */
 
-Consumable::Consumable()
+Consumable::Consumable() : Item()
 {
-    name = "None";
-    description = "None";
-    weight = 0;
-    price = 0;
-    subtype = "Consumable";
-    material = "None";
     health = 0;
     mana = 0;
     stamina = 0;
@@ -39,23 +33,17 @@ Consumable::Consumable()
  *
  * @param name
  * @param description
+ * @param rarity
  * @param weight
  * @param price
  * @param subtype
- * @param material
  * @param health
  * @param mana
  * @param stamina
  */
 
-Consumable::Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int health, int mana, int stamina)
+Consumable::Consumable(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int health, int mana, int stamina) : Item(name, description, rarity, weight, price, "Consumable", subtype)
 {
-    this->name = name;
-    this->description = description;
-    this->weight = weight;
-    this->price = price;
-    this->subtype = subtype;
-    this->material = material;
     this->health = health;
     this->mana = mana;
     this->stamina = stamina;
@@ -110,10 +98,10 @@ std::string Consumable::toString()
 
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
+    ss << "Rarity: " << rarity << std::endl;
     ss << "Weight: " << weight << std::endl;
     ss << "Price: " << price << std::endl;
     ss << "Subtype: " << subtype << std::endl;
-    ss << "Material: " << material << std::endl;
     ss << "Health: " << health << std::endl;
     ss << "Mana: " << mana << std::endl;
     ss << "Stamina: " << stamina << std::endl;

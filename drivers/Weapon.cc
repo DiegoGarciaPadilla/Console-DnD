@@ -21,14 +21,8 @@
  *
  */
 
-Weapon::Weapon()
+Weapon::Weapon() : Item()
 {
-    name = "None";
-    description = "None";
-    weight = 0;
-    price = 0;
-    subtype = "None";
-    material = "None";
     damage = 0;
 }
 
@@ -37,21 +31,15 @@ Weapon::Weapon()
  *
  * @param name
  * @param description
+ * @param rarity
  * @param weight
  * @param price
  * @param subtype
- * @param material
  * @param damage
  */
 
-Weapon::Weapon(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int damage)
+Weapon::Weapon(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int damage) : Item(name, description, rarity, weight, price, "Weapon", subtype)
 {
-    this->name = name;
-    this->description = description;
-    this->weight = weight;
-    this->price = price;
-    this->subtype = subtype;
-    this->material = material;
     this->damage = damage;
 }
 
@@ -95,11 +83,11 @@ std::string Weapon::toString()
 
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
+    ss << "Rarity: " << rarity << std::endl;
     ss << "Weight: " << weight << std::endl;
     ss << "Price: " << price << std::endl;
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
-    ss << "Material: " << material << std::endl;
     ss << "Damage: " << damage << std::endl;
 
     return ss.str();
