@@ -217,8 +217,10 @@ void Item::setSubtype(std::string subtype)
 
 std::string Item::toString()
 {
+    // Create a string stream
     std::stringstream ss;
 
+    // Add the attributes to the string stream
     ss << "Name: " << name << std::endl;
     ss << "Description: " << description << std::endl;
     ss << "Rarity: " << rarity << std::endl;
@@ -227,6 +229,7 @@ std::string Item::toString()
     ss << "Type: " << type << std::endl;
     ss << "Subtype: " << subtype << std::endl;
 
+    // Return the string stream as a string
     return ss.str();
 }
 

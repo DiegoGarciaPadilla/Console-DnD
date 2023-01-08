@@ -94,18 +94,21 @@ int Consumable::getStamina()
 
 std::string Consumable::toString()
 {
+    // Create a string stream
     std::stringstream ss;
 
-    ss << "Name: " << name << std::endl;
-    ss << "Description: " << description << std::endl;
-    ss << "Rarity: " << rarity << std::endl;
-    ss << "Weight: " << weight << std::endl;
-    ss << "Price: " << price << std::endl;
-    ss << "Subtype: " << subtype << std::endl;
+    // Inherit the Item::toString() method
+    std::string item = Item::toString();
+
+    // Add the Item attributes to the string stream
+    ss << item;
+
+    // Add the Consumable attributes to the string stream
     ss << "Health: " << health << std::endl;
     ss << "Mana: " << mana << std::endl;
     ss << "Stamina: " << stamina << std::endl;
-
+    
+    // Return the string stream as a string
     return ss.str();
 }
 

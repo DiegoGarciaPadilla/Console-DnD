@@ -54,13 +54,8 @@ Merchant::Merchant()
  * @return
  */
 
-Merchant::Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems)
+Merchant::Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems) : NPC(name, description, dialogues, options, responses)
 {
-    this->name = name;
-    this->description = description;
-    this->dialogues = dialogues;
-    this->options = options;
-    this->responses = responses;
     this->gold = gold;
     this->weapons = weapons;
     this->armors = armors;

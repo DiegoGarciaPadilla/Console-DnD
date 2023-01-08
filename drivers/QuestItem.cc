@@ -71,17 +71,19 @@ std::string QuestItem::getQuest()
 
 std::string QuestItem::toString()
 {
+    // Create a string stream
     std::stringstream ss;
 
-    ss << "Name: " << name << std::endl;
-    ss << "Description: " << description << std::endl;
-    ss << "Weight: " << weight << std::endl;
-    ss << "Rarity: " << rarity << std::endl;
-    ss << "Price: " << price << std::endl;
-    ss << "Type: " << type << std::endl;
-    ss << "Subtype: " << subtype << std::endl;
-    ss << "Quest: " << quest << std::endl;
+    // Inherit the Item::toString() method
+    std::string item = Item::toString();
 
+    // Add the Item attributes to the string stream
+    ss << item;
+
+    // Add the QuestItem attributes to the string stream
+    ss << "Quest: " << quest << std::endl;
+    
+    // Return the string stream as a string
     return ss.str();
 }
 

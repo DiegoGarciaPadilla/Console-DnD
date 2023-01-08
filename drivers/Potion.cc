@@ -55,20 +55,11 @@ Potion::Potion(std::string name, std::string description, std::string rarity, in
 
 std::string Potion::toString()
 {
-    std::stringstream ss;
+    // Ihnerit the toString method from the Consumable class
+    std::string consumable = Consumable::toString();
 
-    ss << "Name: " << name << std::endl;
-    ss << "Description: " << description << std::endl;
-    ss << "Rarity: " << rarity << std::endl;
-    ss << "Weight: " << weight << std::endl;
-    ss << "Price: " << price << std::endl;
-    ss << "Type: " << type << std::endl;
-    ss << "Subtype: " << subtype << std::endl;
-    ss << "Health: " << health << std::endl;
-    ss << "Mana: " << mana << std::endl;
-    ss << "Stamina: " << stamina << std::endl;
-
-    return ss.str();
+    // Return the string
+    return consumable;
 }
 
 #endif // End of the file

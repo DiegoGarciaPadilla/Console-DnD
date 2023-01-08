@@ -80,17 +80,19 @@ void Armor::setDefense(int defense)
 
 std::string Armor::toString()
 {
+    // Create a string stream
     std::stringstream ss;
 
-    ss << "Name: " << name << std::endl;
-    ss << "Description: " << description << std::endl;
-    ss << "Rarity: " << rarity << std::endl;
-    ss << "Weight: " << weight << std::endl;
-    ss << "Price: " << price << std::endl;
-    ss << "Type: " << type << std::endl;
-    ss << "Subtype: " << subtype << std::endl;
-    ss << "Defense: " << defense << std::endl;
+    // Inherit the Item::toString() method
+    std::string item = Item::toString();
 
+    // Add the Item attributes to the string stream
+    ss << item;
+
+    // Add the Armor attributes to the string stream
+    ss << "Defense: " << defense << std::endl;
+    
+    // Return the string stream as a string
     return ss.str();
 }
 

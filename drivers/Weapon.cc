@@ -79,17 +79,19 @@ void Weapon::setDamage(int damage)
 
 std::string Weapon::toString()
 {
+    // Create a string stream
     std::stringstream ss;
 
-    ss << "Name: " << name << std::endl;
-    ss << "Description: " << description << std::endl;
-    ss << "Rarity: " << rarity << std::endl;
-    ss << "Weight: " << weight << std::endl;
-    ss << "Price: " << price << std::endl;
-    ss << "Type: " << type << std::endl;
-    ss << "Subtype: " << subtype << std::endl;
-    ss << "Damage: " << damage << std::endl;
+    // Inherit the Item::toString() method
+    std::string item = Item::toString();
 
+    // Add the Item attributes to the string stream
+    ss << item;
+
+    // Add the Weapon attributes to the string stream
+    ss << "Damage: " << damage << std::endl;
+    
+    // Return the string stream as a string
     return ss.str();
 }
 
