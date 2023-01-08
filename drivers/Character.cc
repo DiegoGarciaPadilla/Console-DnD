@@ -450,12 +450,18 @@ std::string Character::toString()
 
     ss << readAsciiArt("asciiArt/myCharacter.txt") << std::endl;
 
+    ss << "CHARACTER" << std::endl;
     ss << "Name: " << name << std::endl;
     ss << "Gender: " << gender << std::endl;
     ss << "Age: " << age << std::endl;
     ss << "Alignment: " << alignment << std::endl;
     ss << "Race: " << race.getName() << std::endl;
     ss << "Class: " << clss.getName() << std::endl;
+    ss << std::endl;
+
+    ss << "DAMAGE AND DEFENSE" << std::endl;
+    ss << "Damage: " << damage << std::endl;
+    ss << "Defense: " << defense << std::endl;
     ss << std::endl;
 
     ss << "STATS" << std::endl;
@@ -583,11 +589,21 @@ void Character::showInventory()
     // Variables
     int option = 0;
     int itemNum = 1;
+    int numWeapons;
+    int numArmors;
+    int numPotions;
+    int numQuestItems;
 
     do
     {
         // Reset the item number
         itemNum = 1;
+
+        // Get the number of items
+        numWeapons = inventory.getWeapons().size();
+        numArmors = inventory.getArmors().size();
+        numPotions = inventory.getPotions().size();
+        numQuestItems = inventory.getQuestItems().size();
 
         // Clear the screen
         cleanScreen();
@@ -605,10 +621,10 @@ void Character::showInventory()
         std::cout << std::endl;
 
         // Weapons
-        if (inventory.getWeapons().size() > 0)
+        if (numWeapons > 0)
         {
             std::cout << "Weapons: " << std::endl;
-            for (int i = 0; i < inventory.getWeapons().size(); i++)
+            for (int i = 0; i < numWeapons; i++)
             {
                 std::cout << itemNum << ". " << inventory.getWeapons()[i].getName() << std::endl;
                 itemNum++;
@@ -617,10 +633,10 @@ void Character::showInventory()
         }
 
         // Armors
-        if (inventory.getArmors().size() > 0)
+        if (numArmors > 0)
         {
             std::cout << "Armors: " << std::endl;
-            for (int i = 0; i < inventory.getArmors().size(); i++)
+            for (int i = 0; i < numArmors; i++)
             {
                 std::cout << itemNum << ". " << inventory.getArmors()[i].getName() << std::endl;
                 itemNum++;
@@ -629,10 +645,10 @@ void Character::showInventory()
         }
 
         // Potions
-        if (inventory.getPotions().size() > 0)
+        if (numPotions > 0)
         {
             std::cout << "Potions: " << std::endl;
-            for (int i = 0; i < inventory.getPotions().size(); i++)
+            for (int i = 0; i < numPotions; i++)
             {
                 std::cout << itemNum << ". " << inventory.getPotions()[i].getName() << std::endl;
                 itemNum++;
@@ -641,10 +657,10 @@ void Character::showInventory()
         }
 
         // Quest Items
-        if (inventory.getQuestItems().size() > 0)
+        if (numQuestItems > 0)
         {
             std::cout << "Quest Items: " << std::endl;
-            for (int i = 0; i < inventory.getQuestItems().size(); i++)
+            for (int i = 0; i < numQuestItems; i++)
             {
                 std::cout << itemNum << ". " << inventory.getQuestItems()[i].getName() << std::endl;
                 itemNum++;
@@ -653,7 +669,7 @@ void Character::showInventory()
         }
 
         // Exit
-        std::cout << itemNum << ". Exit" << std::endl;
+        std::cout << "0. Exit" << std::endl;
         std::cout << std::endl;
 
         // Get the option
@@ -662,7 +678,7 @@ void Character::showInventory()
         std::cout << std::endl;
 
         // Check the option
-        if (option != itemNum)
+        if (option != 0)
         {
             // Clear the screen
             cleanScreen();
@@ -671,25 +687,25 @@ void Character::showInventory()
             int itemOption = 0;
 
             // Check the option
-            if (option <= inventory.getWeapons().size())
+            if (option <= numWeapons)
             {
                 // Show the weapon
                 std::cout << inventory.getWeapons()[option - 1].toString() << std::endl;
             }
-            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+            else if (option <= numWeapons + numArmors)
             {
                 // Show the armor
-                std::cout << inventory.getArmors()[option - inventory.getWeapons().size() - 1].toString() << std::endl;
+                std::cout << inventory.getArmors()[option - numWeapons - 1].toString() << std::endl;
             }
-            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
+            else if (option <= numWeapons + numArmors + numPotions)
             {
                 // Show the potion
-                std::cout << inventory.getPotions()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].toString() << std::endl;
+                std::cout << inventory.getPotions()[option - numWeapons - numArmors - 1].toString() << std::endl;
             }
-            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
+            else if (option <= numWeapons + numArmors + numPotions + numQuestItems)
             {
                 // Show the quest item
-                std::cout << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getPotions().size() - 1].toString() << std::endl;
+                std::cout << inventory.getQuestItems()[option - numWeapons - numArmors - numPotions - 1].toString() << std::endl;
             }
 
             // Get the item option
@@ -709,22 +725,22 @@ void Character::showInventory()
             {
             case 1:
                 // Check the option
-                if (option <= inventory.getWeapons().size())
+                if (option <= numWeapons)
                 {
                     // Equip the weapon
                     equipWeapon(option - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+                else if (option <= numWeapons + numArmors)
                 {
                     // Equip the armor
-                    equipArmor(option - inventory.getWeapons().size() - 1);
+                    equipArmor(option - numWeapons - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
+                else if (option <= numWeapons + numArmors + numPotions)
                 {
                     // Use the potion
-                    drinkPotion(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
+                    drinkPotion(option - numWeapons - numArmors - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
+                else if (option <= numWeapons + numArmors + numPotions + numQuestItems)
                 {
                     // Message
                     std::cout << "Quest items cannot be used." << std::endl;
@@ -738,20 +754,20 @@ void Character::showInventory()
                     // Drop the weapon
                     inventory.removeWeapon(option - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size())
+                else if (option <= inventory.getWeapons().size() + numArmors)
                 {
                     // Drop the armor
                     inventory.removeArmor(option - inventory.getWeapons().size() - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
+                else if (option <= inventory.getWeapons().size() + numArmors + numPotions)
                 {
                     // Drop the potion
-                    inventory.removePotion(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
+                    inventory.removePotion(option - inventory.getWeapons().size() - numArmors - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
+                else if (option <= inventory.getWeapons().size() + numArmors + numPotions + numQuestItems)
                 {
                     // Drop the quest item
-                    inventory.removeQuestItem(option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getPotions().size() - 1);
+                    inventory.removeQuestItem(option - inventory.getWeapons().size() - numArmors - numPotions - 1);
                 }
                 // Pause
                 pause();
@@ -763,7 +779,7 @@ void Character::showInventory()
             }
         }
 
-    } while (option != itemNum);
+    } while (option != 0);
 }
 
 /**
@@ -796,7 +812,7 @@ void Character::showEquippedItems()
         std::cout << std::endl;
 
         // Return option
-        std::cout << "3. Return" << std::endl;
+        std::cout << "0. Return" << std::endl;
         std::cout << std::endl;
 
         // Get the option
@@ -804,7 +820,7 @@ void Character::showEquippedItems()
         std::cin >> option;
 
         // Check the option
-        if (option == 3)
+        if (option == 0)
         {
             // Return
             return;
@@ -818,7 +834,7 @@ void Character::showEquippedItems()
             if (option == 1)
             {
                 // Show the equipped weapon
-                std::cout << "Weapon: " << std::endl;
+                std::cout << "EQUIPPED WEAPON" << std::endl;
                 std::cout << equippedWeapon.toString() << std::endl;
                 std::cout << std::endl;
 
@@ -846,7 +862,7 @@ void Character::showEquippedItems()
             else if (option == 2)
             {
                 // Show the equipped armor
-                std::cout << "Armor: " << std::endl;
+                std::cout << "EQUIPPED ARMOR" << std::endl;
                 std::cout << equippedArmor.toString() << std::endl;
                 std::cout << std::endl;
 
@@ -873,7 +889,7 @@ void Character::showEquippedItems()
             }
         }
 
-    } while (option != 3);
+    } while (option != 0);
 }
 
 /**
@@ -1152,8 +1168,6 @@ void Character::drinkPotion(int index)
                 inventory.removePotion(index);
             }
         }
-
-
     }
 }
 
