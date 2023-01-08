@@ -474,7 +474,7 @@ std::string Character::toString()
     ss << "EQUIPPED WEAPON" << std::endl;
     if (equippedWeapon.getName() == "None")
     {
-        ss << "No weapon equipped" << std::endl;
+        ss << "There is no weapon equipped." << std::endl;
     }
     else
     {
@@ -485,7 +485,7 @@ std::string Character::toString()
     ss << "EQUIPPED ARMOR" << std::endl;
     if (equippedArmor.getName() == "None")
     {
-        ss << "No armor equipped" << std::endl;
+        ss << "There is no armor equipped." << std::endl;
     }
     else
     {
@@ -795,23 +795,59 @@ void Character::showEquippedItems()
     // Variables
     int option;
     int itemOption;
+    int itemNum = 1;
+    bool weaponEquipped = false;
+    bool armorEquipped = false;
 
     do
     {
         // Clear the screen
         cleanScreen();
 
+        // Reset the variables
+        itemNum = 1;
+        weaponEquipped = false;
+        armorEquipped = false;
+
+        // Check if the weapon is equipped
+        if (equippedWeapon.getName() != "None")
+        {
+            weaponEquipped = true;
+        }
+
+        // Check if the armor is equipped
+        if (equippedArmor.getName() != "None")
+        {
+            armorEquipped = true;
+        }
+
         // Title
         std::cout << readAsciiArt("asciiArt/equipment.txt") << std::endl;
 
         // Show the equipped weapon
         std::cout << "Weapon: " << std::endl;
-        std::cout << "1. " << equippedWeapon.getName() << std::endl;
+        if (weaponEquipped)
+        {
+            std::cout << itemNum << ". " << equippedWeapon.getName() << std::endl;
+            itemNum++;
+        }
+        else
+        {
+            std::cout << "There is no weapon equipped." << std::endl;
+        }
         std::cout << std::endl;
 
         // Show the equipped armor
         std::cout << "Armor: " << std::endl;
-        std::cout << "2. " << equippedArmor.getName() << std::endl;
+        if (armorEquipped)
+        {
+            std::cout << itemNum << ". " << equippedArmor.getName() << std::endl;
+            itemNum++;
+        }
+        else
+        {
+            std::cout << "There is no armor equipped." << std::endl;
+        }
         std::cout << std::endl;
 
         // Return option
@@ -833,8 +869,8 @@ void Character::showEquippedItems()
             // Clear the screen
             cleanScreen();
 
-            // Show the equipped items
-            if (option == 1)
+            // Show the selected item
+            if (option == 1 && weaponEquipped)
             {
                 // Show the equipped weapon
                 std::cout << "EQUIPPED WEAPON" << std::endl;
@@ -861,8 +897,13 @@ void Character::showEquippedItems()
                     // Pause
                     pause();
                 }
+                else if (itemOption == 2)
+                {
+                    // Return
+                    return;
+                }
             }
-            else if (option == 2)
+            else if ((option == 2 && weaponEquipped && armorEquipped) || (option == 1 && !weaponEquipped && armorEquipped))
             {
                 // Show the equipped armor
                 std::cout << "EQUIPPED ARMOR" << std::endl;
@@ -888,6 +929,11 @@ void Character::showEquippedItems()
 
                     // Pause
                     pause();
+                }
+                else if (itemOption == 2)
+                {
+                    // Return
+                    return;
                 }
             }
         }
@@ -1044,7 +1090,7 @@ void Character::equipWeapon(int index)
     {
         // Equip the weapon
         equippedWeapon = inventory.getWeapons()[index];
-        
+
         // Add the weapon's damage to the character's attack
         damage += equippedWeapon.getDamage();
 
@@ -1073,7 +1119,7 @@ void Character::equipArmor(int index)
     {
         // Equip the armor
         equippedArmor = inventory.getArmors()[index];
-        
+
         // Add the armor's defense to the character's defense
         defense += equippedArmor.getDefense();
 
@@ -1201,7 +1247,7 @@ void Character::unequipWeapon()
     {
         // Reduce the damage
         damage -= equippedWeapon.getDamage();
-        
+
         // Unequip the weapon
         inventory.addWeapon(equippedWeapon);
 
