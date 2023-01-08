@@ -1,9 +1,9 @@
-Wooden armor|It's a wooden armor, with some rusty steel plates. It doesn't seem very useful.|2|0|Armor|Wood and steel|6
-Rusty armor|It's a rusty iron armor. It doesn't seem very useful.|2|0|Armor|Iron|6
-Leather armor|It's a leather armor, with some rusty steel plates. It doesn't seem very useful.|2|0|Armor|Leather and steel|6
-Leather cape|It's a leather cape, with some rusty steel plates. It doesn't seem very useful.|2|0|Armor|Leather and steel|6
-Worn armor|It's a worn armor. It doesn't seem very useful.|2|0|Armor|Iron|6
-Silk cape|It's a silk cape. It doesn't seem very useful.|2|0|Armor|Silk|6
-Cleric's robe|It's a cleric's robe. It doesn't seem very useful.|2|0|Armor|Cloth|6
-Bard's outfit|It's a bard's outfit. It doesn't seem very useful.|2|0|Armor|Cloth|6
-Linen rags|It's a linen rag. It doesn't seem very useful.|2|0|Armor|Linen|6
+Wooden armor|It's a wooden armor, with some rusty steel plates. It doesn't seem very useful.|2|10|Armor|Wood and steel|6
+Rusty armor|It's a rusty iron armor. It doesn't seem very useful.|2|10|Armor|Iron|6
+Leather armor|It's a leather armor, with some rusty steel plates. It doesn't seem very useful.|2|10|Armor|Leather and steel|6
+Leather cape|It's a leather cape, with some rusty steel plates. It doesn't seem very useful.|2|10|Armor|Leather and steel|6
+Worn armor|It's a worn armor. It doesn't seem very useful.|2|10|Armor|Iron|6
+Silk cape|It's a silk cape. It doesn't seem very useful.|2|10|Armor|Silk|6
+Cleric's robe|It's a cleric's robe. It doesn't seem very useful.|2|10|Armor|Cloth|6
+Bard's outfit|It's a bard's outfit. It doesn't seem very useful.|2|10|Armor|Cloth|6
+Linen rags|It's a linen rag. It doesn't seem very useful.|2|10|Armor|Linen|6
