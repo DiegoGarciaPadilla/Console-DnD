@@ -12,12 +12,12 @@
 #ifndef MERCHANT_H // If the file is not defined
 #define MERCHANT_H // Define the file
 
-#include "../drivers/NPC.cc"        // Include the NPC class
-#include "../drivers/Weapon.cc"     // Include the Weapon class
-#include "../drivers/Armor.cc"      // Include the Armor class
-#include "../drivers/Consumable.cc" // Include the Consumable class
-#include "../drivers/QuestItem.cc"  // Include the QuestItem class
-#include "../drivers/Character.cc"  // Include the Character class
+#include "../drivers/NPC.cc"       // Include the NPC class
+#include "../drivers/Weapon.cc"    // Include the Weapon class
+#include "../drivers/Armor.cc"     // Include the Armor class
+#include "../drivers/Potion.cc"    // Include the Potion class
+#include "../drivers/QuestItem.cc" // Include the QuestItem class
+#include "../drivers/Character.cc" // Include the Character class
 
 class Merchant : public NPC
 {
@@ -26,37 +26,37 @@ private:
     int gold;
     std::vector<Weapon> weapons;
     std::vector<Armor> armors;
-    std::vector<Consumable> consumables;
+    std::vector<Potion> potions;
     std::vector<QuestItem> questItems;
 
 public:
     // Constructors
     Merchant();
-    Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Consumable> consumables, std::vector<QuestItem> questItems);
+    Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems);
 
     // Getters
     int getGold();
     std::vector<Weapon> getWeapons();
     std::vector<Armor> getArmors();
-    std::vector<Consumable> getConsumables();
+    std::vector<Potion> getPotions();
     std::vector<QuestItem> getQuestItems();
 
     // Setters
     void setGold(int gold);
     void setWeapons(std::vector<Weapon> weapons);
     void setArmors(std::vector<Armor> armors);
-    void setConsumables(std::vector<Consumable> consumables);
+    void setPotions(std::vector<Potion> potions);
     void setQuestItems(std::vector<QuestItem> questItems);
 
     // Methods
     void buyWeapon(Character &character);
     void buyArmor(Character &character);
-    void buyConsumable(Character &character);
+    void buyPotion(Character &character);
     void buyQuestItem(Character &character);
 
     void sellWeapon(Character &character);
     void sellArmor(Character &character);
-    void sellConsumable(Character &character);
+    void sellPotion(Character &character);
     void sellQuestItem(Character &character);
 
     void buyItems(Character &character);

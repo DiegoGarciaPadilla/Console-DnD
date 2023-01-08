@@ -628,13 +628,13 @@ void Character::showInventory()
             std::cout << std::endl;
         }
 
-        // Consumables
-        if (inventory.getConsumables().size() > 0)
+        // Potions
+        if (inventory.getPotions().size() > 0)
         {
-            std::cout << "Consumables: " << std::endl;
-            for (int i = 0; i < inventory.getConsumables().size(); i++)
+            std::cout << "Potions: " << std::endl;
+            for (int i = 0; i < inventory.getPotions().size(); i++)
             {
-                std::cout << itemNum << ". " << inventory.getConsumables()[i].getName() << std::endl;
+                std::cout << itemNum << ". " << inventory.getPotions()[i].getName() << std::endl;
                 itemNum++;
             }
             std::cout << std::endl;
@@ -681,15 +681,15 @@ void Character::showInventory()
                 // Show the armor
                 std::cout << inventory.getArmors()[option - inventory.getWeapons().size() - 1].toString() << std::endl;
             }
-            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
+            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
             {
-                // Show the consumable
-                std::cout << inventory.getConsumables()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].toString() << std::endl;
+                // Show the potion
+                std::cout << inventory.getPotions()[option - inventory.getWeapons().size() - inventory.getArmors().size() - 1].toString() << std::endl;
             }
-            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+            else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
             {
                 // Show the quest item
-                std::cout << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1].toString() << std::endl;
+                std::cout << inventory.getQuestItems()[option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getPotions().size() - 1].toString() << std::endl;
             }
 
             // Get the item option
@@ -719,12 +719,12 @@ void Character::showInventory()
                     // Equip the armor
                     equipArmor(option - inventory.getWeapons().size() - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
                 {
-                    // Use the consumable
-                    useConsumable(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
+                    // Use the potion
+                    drinkPotion(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
                 {
                     // Message
                     std::cout << "Quest items cannot be used." << std::endl;
@@ -743,15 +743,15 @@ void Character::showInventory()
                     // Drop the armor
                     inventory.removeArmor(option - inventory.getWeapons().size() - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size())
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size())
                 {
-                    // Drop the consumable
-                    inventory.removeConsumable(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
+                    // Drop the potion
+                    inventory.removePotion(option - inventory.getWeapons().size() - inventory.getArmors().size() - 1);
                 }
-                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getConsumables().size() + inventory.getQuestItems().size())
+                else if (option <= inventory.getWeapons().size() + inventory.getArmors().size() + inventory.getPotions().size() + inventory.getQuestItems().size())
                 {
                     // Drop the quest item
-                    inventory.removeQuestItem(option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getConsumables().size() - 1);
+                    inventory.removeQuestItem(option - inventory.getWeapons().size() - inventory.getArmors().size() - inventory.getPotions().size() - 1);
                 }
                 // Pause
                 pause();
@@ -899,14 +899,14 @@ std::vector<Armor> Character::getArmors()
 }
 
 /**
- * @brief Get the character's consumables in the inventory
+ * @brief Get the character's potions in the inventory
  *
- * @return std::vector<Consumable>
+ * @return std::vector<Potion>
  */
 
-std::vector<Consumable> Character::getConsumables()
+std::vector<Potion> Character::getPotions()
 {
-    return inventory.getConsumables();
+    return inventory.getPotions();
 }
 
 /**
@@ -943,14 +943,14 @@ void Character::addArmorToInventory(Armor armor)
 }
 
 /**
- * @brief Method to add a consumable to the inventory
+ * @brief Method to add a potion to the inventory
  *
- * @param consumable
+ * @param potion
  */
 
-void Character::addConsumableToInventory(Consumable consumable)
+void Character::addPotionToInventory(Potion potion)
 {
-    inventory.addConsumable(consumable);
+    inventory.addPotion(potion);
 }
 
 /**
@@ -987,14 +987,14 @@ void Character::removeArmorFromInventory(int index)
 }
 
 /**
- * @brief Method to remove a consumable from the inventory
+ * @brief Method to remove a potion from the inventory
  *
  * @param index
  */
 
-void Character::removeConsumableFromInventory(int index)
+void Character::removePotionFromInventory(int index)
 {
-    inventory.removeConsumable(index);
+    inventory.removePotion(index);
 }
 
 /**
@@ -1056,15 +1056,15 @@ void Character::equipArmor(int index)
 }
 
 /**
- * @brief Method to use a consumable
+ * @brief Method to drink a potion
  *
  * @param index
  */
 
-void Character::useConsumable(int index)
+void Character::drinkPotion(int index)
 {
-    // Check if the consumable adds health
-    if (inventory.getConsumables()[index].getHealth() > 0)
+    // Check if the potion adds health
+    if (inventory.getPotions()[index].getHealth() > 0)
     {
         // Check if the character is at full health
         if (health == maxHealth)
@@ -1074,7 +1074,7 @@ void Character::useConsumable(int index)
         else
         {
             // Check if the character's health will be over the max health
-            if (health + inventory.getConsumables()[index].getHealth() > maxHealth)
+            if (health + inventory.getPotions()[index].getHealth() > maxHealth)
             {
                 // Set the character's health to the max health
                 health = maxHealth;
@@ -1082,18 +1082,18 @@ void Character::useConsumable(int index)
             else
             {
                 // Add the health to the character's health
-                health += inventory.getConsumables()[index].getHealth();
+                health += inventory.getPotions()[index].getHealth();
             }
 
             // Message
-            std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+            std::cout << "You have drank a " << inventory.getPotions()[index].getName() << "." << std::endl;
             std::cout << "Your health is now " << health << "." << std::endl;
 
-            // Remove the consumable from the inventory
-            inventory.removeConsumable(index);
+            // Remove the potion from the inventory
+            inventory.removePotion(index);
         }
-        // Check if the consumable adds mana
-        if (inventory.getConsumables()[index].getMana() > 0)
+        // Check if the potion adds mana
+        if (inventory.getPotions()[index].getMana() > 0)
         {
             // Check if the character is at full mana
             if (mana == maxMana)
@@ -1103,7 +1103,7 @@ void Character::useConsumable(int index)
             else
             {
                 // Check if the character's mana will be over the max mana
-                if (mana + inventory.getConsumables()[index].getMana() > maxMana)
+                if (mana + inventory.getPotions()[index].getMana() > maxMana)
                 {
                     // Set the character's mana to the max mana
                     mana = maxMana;
@@ -1111,19 +1111,19 @@ void Character::useConsumable(int index)
                 else
                 {
                     // Add the mana to the character's mana
-                    mana += inventory.getConsumables()[index].getMana();
+                    mana += inventory.getPotions()[index].getMana();
                 }
 
                 // Message
-                std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+                std::cout << "You have drank a " << inventory.getPotions()[index].getName() << "." << std::endl;
                 std::cout << "Your mana is now " << mana << "." << std::endl;
 
-                // Remove the consumable from the inventory
-                inventory.removeConsumable(index);
+                // Remove the potion from the inventory
+                inventory.removePotion(index);
             }
         }
-        // Check if the consumable adds stamina
-        if (inventory.getConsumables()[index].getStamina() > 0)
+        // Check if the potion adds stamina
+        if (inventory.getPotions()[index].getStamina() > 0)
         {
             // Check if the character is at full stamina
             if (stamina == maxStamina)
@@ -1133,7 +1133,7 @@ void Character::useConsumable(int index)
             else
             {
                 // Check if the character's stamina will be over the max stamina
-                if (stamina + inventory.getConsumables()[index].getStamina() > maxStamina)
+                if (stamina + inventory.getPotions()[index].getStamina() > maxStamina)
                 {
                     // Set the character's stamina to the max stamina
                     stamina = maxStamina;
@@ -1141,15 +1141,15 @@ void Character::useConsumable(int index)
                 else
                 {
                     // Add the stamina to the character's stamina
-                    stamina += inventory.getConsumables()[index].getStamina();
+                    stamina += inventory.getPotions()[index].getStamina();
                 }
 
                 // Message
-                std::cout << "You have used the " << inventory.getConsumables()[index].getName() << "." << std::endl;
+                std::cout << "You have drank a " << inventory.getPotions()[index].getName() << "." << std::endl;
                 std::cout << "Your stamina is now " << stamina << "." << std::endl;
 
-                // Remove the consumable from the inventory
-                inventory.removeConsumable(index);
+                // Remove the potion from the inventory
+                inventory.removePotion(index);
             }
         }
 

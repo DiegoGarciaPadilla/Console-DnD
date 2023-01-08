@@ -16,12 +16,14 @@
 #include <sstream> // Include string stream library
 #include <vector>  // Include vector library
 
-#include "../drivers/Race.cc"        // Include races class
-#include "../drivers/Class.cc"       // Include classes class
-#include "../drivers/Stats.cc"       // Include statistics class
-#include "../drivers/Inventory.cc"   // Include inventory class
-#include "../drivers/Weapon.cc"      // Include weapons class
-#include "../drivers/Armor.cc"       // Include armor class
+#include "../drivers/Race.cc"      // Include races class
+#include "../drivers/Class.cc"     // Include classes class
+#include "../drivers/Stats.cc"     // Include statistics class
+#include "../drivers/Inventory.cc" // Include inventory class
+#include "../drivers/Weapon.cc"    // Include weapons class
+#include "../drivers/Armor.cc"     // Include armor class
+#include "../drivers/Potion.cc"    // Include potions class
+#include "../drivers/QuestItem.cc" // Include quest items class
 
 class Character
 {
@@ -48,7 +50,7 @@ private:
     Stats stats;
 
     Inventory inventory;
-    
+
     Weapon equippedWeapon;
     Armor equippedArmor;
 
@@ -102,23 +104,23 @@ public:
 
     std::vector<Weapon> getWeapons();
     std::vector<Armor> getArmors();
-    std::vector<Consumable> getConsumables();
+    std::vector<Potion> getPotions();
     std::vector<QuestItem> getQuestItems();
 
     void addWeaponToInventory(Weapon weapon);
     void addArmorToInventory(Armor armor);
-    void addConsumableToInventory(Consumable consumable);
+    void addPotionToInventory(Potion potion);
     void addQuestItemToInventory(QuestItem questItem);
 
     void removeWeaponFromInventory(int index);
     void removeArmorFromInventory(int index);
-    void removeConsumableFromInventory(int index);
+    void removePotionFromInventory(int index);
     void removeQuestItemFromInventory(int index);
 
     void equipWeapon(int index);
     void equipArmor(int index);
 
-    void useConsumable(int index);
+    void drinkPotion(int index);
 
     void unequipWeapon();
     void unequipArmor();

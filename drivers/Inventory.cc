@@ -106,14 +106,14 @@ std::vector<Armor> Inventory::getArmors()
 }
 
 /**
- * @brief Get the Consumables object
+ * @brief Get the Potions object
  *
  * @return vector
  */
 
-std::vector<Consumable> Inventory::getConsumables()
+std::vector<Potion> Inventory::getPotions()
 {
-    return consumables;
+    return potions;
 }
 
 /**
@@ -185,14 +185,14 @@ void Inventory::setArmors(std::vector<Armor> armors)
 }
 
 /**
- * @brief Set the Consumables object
+ * @brief Set the Potions object
  *
- * @param consumables
+ * @param potions
  */
 
-void Inventory::setConsumables(std::vector<Consumable> consumables)
+void Inventory::setPotions(std::vector<Potion> potions)
 {
-    this->consumables = consumables;
+    this->potions = potions;
 }
 
 /**
@@ -233,15 +233,15 @@ void Inventory::addArmor(Armor armor)
 }
 
 /**
- * @brief Add a consumable to the inventory
+ * @brief Add a potion to the inventory
  *
- * @param consumable
+ * @param potion
  */
 
-void Inventory::addConsumable(Consumable consumable)
+void Inventory::addPotion(Potion potion)
 {
-    consumables.push_back(consumable);
-    currentWeight += consumable.getWeight();
+    potions.push_back(potion);
+    currentWeight += potion.getWeight();
 }
 
 /**
@@ -281,15 +281,15 @@ void Inventory::removeArmor(int index)
 }
 
 /**
- * @brief Remove a consumable from the inventory
+ * @brief Remove a potion from the inventory
  *
  * @param index
  */
 
-void Inventory::removeConsumable(int index)
+void Inventory::removePotion(int index)
 {
-    currentWeight -= consumables[index].getWeight();
-    consumables.erase(consumables.begin() + index);
+    currentWeight -= potions[index].getWeight();
+    potions.erase(potions.begin() + index);
 }
 
 /**

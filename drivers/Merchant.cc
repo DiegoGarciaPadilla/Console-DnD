@@ -34,7 +34,7 @@ Merchant::Merchant()
     this->gold = 0;
     this->weapons = {};
     this->armors = {};
-    this->consumables = {};
+    this->potions = {};
     this->questItems = {};
 }
 
@@ -49,12 +49,12 @@ Merchant::Merchant()
  * @param gold
  * @param weapons
  * @param armors
- * @param consumables
+ * @param potions
  * @param questItems
  * @return
  */
 
-Merchant::Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Consumable> consumables, std::vector<QuestItem> questItems)
+Merchant::Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems)
 {
     this->name = name;
     this->description = description;
@@ -64,7 +64,7 @@ Merchant::Merchant(std::string name, std::string description, std::vector<std::s
     this->gold = gold;
     this->weapons = weapons;
     this->armors = armors;
-    this->consumables = consumables;
+    this->potions = potions;
     this->questItems = questItems;
 }
 
@@ -107,15 +107,15 @@ std::vector<Armor> Merchant::getArmors()
 }
 
 /**
- * @brief Get the Consumables attribute
+ * @brief Get the Potions attribute
  *
  * @param
- * @return std::vector<Consumable>
+ * @return std::vector<Potion>
  */
 
-std::vector<Consumable> Merchant::getConsumables()
+std::vector<Potion> Merchant::getPotions()
 {
-    return this->consumables;
+    return this->potions;
 }
 
 /**
@@ -169,15 +169,15 @@ void Merchant::setArmors(std::vector<Armor> armors)
 }
 
 /**
- * @brief Set the Consumables attribute
+ * @brief Set the Potions attribute
  *
- * @param consumables
+ * @param potions
  * @return void
  */
 
-void Merchant::setConsumables(std::vector<Consumable> consumables)
+void Merchant::setPotions(std::vector<Potion> potions)
 {
-    this->consumables = consumables;
+    this->potions = potions;
 }
 
 /**
@@ -311,13 +311,13 @@ void Merchant::buyArmor(Character &character)
 }
 
 /**
- * @brief This method allows the player to buy a consumable from the merchant.
+ * @brief This method allows the player to buy a potion from the merchant.
  *
  * @param character
  * @return void
  */
 
-void Merchant::buyConsumable(Character &character)
+void Merchant::buyPotion(Character &character)
 {
     // Clear the screen
     cleanScreen();
@@ -325,11 +325,11 @@ void Merchant::buyConsumable(Character &character)
     // Variables
     int option = 0;
 
-    // Print the consumables
-    std::cout << "What consumable do you want to buy?" << std::endl;
-    for (int i = 0; i < this->consumables.size(); i++)
+    // Print the potions
+    std::cout << "What potion do you want to buy?" << std::endl;
+    for (int i = 0; i < this->potions.size(); i++)
     {
-        std::cout << i + 1 << ". " << this->consumables[i].getName() << std::endl;
+        std::cout << i + 1 << ". " << this->potions[i].getName() << std::endl;
     }
     std::cout << std::endl;
 
@@ -338,24 +338,24 @@ void Merchant::buyConsumable(Character &character)
     std::cin >> option;
 
     // Check if the option is valid
-    if (option > 0 && option <= this->consumables.size())
+    if (option > 0 && option <= this->potions.size())
     {
         // Check if the character has enough gold
-        if (character.getGold() >= this->consumables[option - 1].getPrice())
+        if (character.getGold() >= this->potions[option - 1].getPrice())
         {
-            // Buy the consumable
-            character.setGold(character.getGold() - this->consumables[option - 1].getPrice());
-            character.addConsumableToInventory(this->consumables[option - 1]);
+            // Buy the potion
+            character.setGold(character.getGold() - this->potions[option - 1].getPrice());
+            character.addPotionToInventory(this->potions[option - 1]);
 
             // Print the message
-            std::cout << "You bought the " << this->consumables[option - 1].getName() << " for " << this->consumables[option - 1].getPrice() << " gold." << std::endl;
+            std::cout << "You bought the " << this->potions[option - 1].getName() << " for " << this->potions[option - 1].getPrice() << " gold." << std::endl;
             std::cout << "You have " << character.getGold() << " gold." << std::endl;
 
             // Add gold to the merchant
-            this->gold += this->consumables[option - 1].getPrice();
+            this->gold += this->potions[option - 1].getPrice();
 
-            // Remove the consumable from the merchant
-            this->consumables.erase(this->consumables.begin() + option - 1);
+            // Remove the potion from the merchant
+            this->potions.erase(this->potions.begin() + option - 1);
         }
         else
         {
@@ -547,13 +547,13 @@ void Merchant::sellArmor(Character &character)
 }
 
 /**
- * @brief This method allows the player to sell a consumable to the merchant.
+ * @brief This method allows the player to sell a potion to the merchant.
  *
  * @param character
  * @return void
  */
 
-void Merchant::sellConsumable(Character &character)
+void Merchant::sellPotion(Character &character)
 {
     // Clear the screen
     cleanScreen();
@@ -561,11 +561,11 @@ void Merchant::sellConsumable(Character &character)
     // Variables
     int option = 0;
 
-    // Print the consumables
-    std::cout << "What consumable do you want to sell?" << std::endl;
-    for (int i = 0; i < character.getConsumables().size(); i++)
+    // Print the potions
+    std::cout << "What potion do you want to sell?" << std::endl;
+    for (int i = 0; i < character.getPotions().size(); i++)
     {
-        std::cout << i + 1 << ". " << character.getConsumables()[i].getName() << std::endl;
+        std::cout << i + 1 << ". " << character.getPotions()[i].getName() << std::endl;
     }
     std::cout << std::endl;
 
@@ -574,25 +574,25 @@ void Merchant::sellConsumable(Character &character)
     std::cin >> option;
 
     // Check if the option is valid
-    if (option > 0 && option <= character.getConsumables().size())
+    if (option > 0 && option <= character.getPotions().size())
     {
         // Check if the merchant has enough gold
-        if (this->gold >= character.getConsumables()[option - 1].getPrice())
+        if (this->gold >= character.getPotions()[option - 1].getPrice())
         {
             // Remove gold from the merchant
-            this->gold -= character.getConsumables()[option - 1].getPrice();
+            this->gold -= character.getPotions()[option - 1].getPrice();
 
             // Add gold to the character
-            character.setGold(character.getGold() + character.getConsumables()[option - 1].getPrice());
+            character.setGold(character.getGold() + character.getPotions()[option - 1].getPrice());
 
-            // Add the consumable to the merchant
-            this->consumables.push_back(character.getConsumables()[option - 1]);
+            // Add the potion to the merchant
+            this->potions.push_back(character.getPotions()[option - 1]);
 
-            // Remove the consumable from the character
-            character.removeConsumableFromInventory(option - 1);
+            // Remove the potion from the character
+            character.removePotionFromInventory(option - 1);
 
             // Print the message
-            std::cout << "You sold the " << character.getConsumables()[option - 1].getName() << " for " << character.getConsumables()[option - 1].getPrice() << " gold." << std::endl;
+            std::cout << "You sold the " << character.getPotions()[option - 1].getName() << " for " << character.getPotions()[option - 1].getPrice() << " gold." << std::endl;
             std::cout << "You have " << character.getGold() << " gold." << std::endl;
         }
         else
@@ -685,7 +685,7 @@ void Merchant::buyItems(Character &character)
     std::cout << "What type of items do you want to buy?" << std::endl;
     std::cout << "1. Weapons" << std::endl;
     std::cout << "2. Armors" << std::endl;
-    std::cout << "3. Consumables" << std::endl;
+    std::cout << "3. Potions" << std::endl;
     std::cout << "4. Quest items" << std::endl;
     std::cout << "5. Nevermind" << std::endl;
     std::cout << std::endl;
@@ -704,7 +704,7 @@ void Merchant::buyItems(Character &character)
         this->buyArmor(character);
         break;
     case 3:
-        this->buyConsumable(character);
+        this->buyPotion(character);
         break;
     case 4:
         this->buyQuestItem(character);
@@ -740,7 +740,7 @@ void Merchant::sellItems(Character &character)
     std::cout << "What type of items do you want to sell?" << std::endl;
     std::cout << "1. Weapons" << std::endl;
     std::cout << "2. Armors" << std::endl;
-    std::cout << "3. Consumables" << std::endl;
+    std::cout << "3. Potions" << std::endl;
     std::cout << "4. Quest items" << std::endl;
     std::cout << "5. Nevermind" << std::endl;
     std::cout << std::endl;
@@ -759,7 +759,7 @@ void Merchant::sellItems(Character &character)
         this->sellArmor(character);
         break;
     case 3:
-        this->sellConsumable(character);
+        this->sellPotion(character);
         break;
     case 4:
         this->sellQuestItem(character);
