@@ -40,6 +40,9 @@ private:
     int maxMana;
     int maxStamina;
 
+    int damage;
+    int defense;
+
     Race race;
     Class clss;
     Stats stats;
@@ -64,6 +67,8 @@ public:
     int getMaxHealth();
     int getMaxMana();
     int getMaxStamina();
+    int getDamage();
+    int getDefense();
 
     // Setters
     void setName(std::string name);
@@ -76,6 +81,8 @@ public:
     void setMaxHealth(int maxHealth);
     void setMaxMana(int maxMana);
     void setMaxStamina(int maxStamina);
+    void setDamage(int damage);
+    void setDefense(int defense);
 
     // Methods
     void createCharacter();

@@ -162,6 +162,28 @@ int Character::getMaxStamina()
     return maxStamina;
 }
 
+/**
+ * @brief Get the Damage attribute
+ *
+ * @return int
+ */
+
+int Character::getDamage()
+{
+    return damage;
+}
+
+/**
+ * @brief Get the Defense attribute
+ *
+ * @return int
+ */
+
+int Character::getDefense()
+{
+    return defense;
+}
+
 // Setters
 
 /**
@@ -272,6 +294,28 @@ void Character::setMaxMana(int maxMana)
 void Character::setMaxStamina(int maxStamina)
 {
     this->maxStamina = maxStamina;
+}
+
+/**
+ * @brief Set the Damage attribute
+ *
+ * @param attack
+ */
+
+void Character::setDamage(int damage)
+{
+    this->damage = damage;
+}
+
+/**
+ * @brief Set the Defense attribute
+ *
+ * @param defense
+ */
+
+void Character::setDefense(int defense)
+{
+    this->defense = defense;
 }
 
 // Methods
@@ -979,6 +1023,7 @@ void Character::equipWeapon(int index)
     {
         // Equip the weapon
         equippedWeapon = inventory.getWeapons()[index];
+        damage = equippedWeapon.getDamage();
         inventory.removeWeapon(index);
         std::cout << "The weapon has been equipped." << std::endl;
     }
@@ -1001,6 +1046,8 @@ void Character::equipArmor(int index)
     {
         // Equip the armor
         equippedArmor = inventory.getArmors()[index];
+        defense = equippedArmor.getDefense();
+
         inventory.removeArmor(index);
         std::cout << "The armor has been equipped." << std::endl;
     }
