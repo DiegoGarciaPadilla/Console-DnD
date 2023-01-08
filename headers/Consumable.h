@@ -19,7 +19,6 @@ class Consumable : public Item
 protected:
     // Attributes
     std::string type = "Consumable";
-    std::string effect;
     int health;
     int mana;
     int stamina;
@@ -27,10 +26,9 @@ protected:
 public:
     // Constructors
     Consumable();
-    Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina);
+    Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int health, int mana, int stamina);
 
     // Getters
-    std::string getEffect();
     int getHealth();
     int getMana();
     int getStamina();

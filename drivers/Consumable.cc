@@ -4,9 +4,9 @@
  * @brief This file contains the implementation of the Consumable class
  * @version 0.1
  * @date 2023-01-02
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef CONSUMABLE_CC // If the file is not defined
@@ -18,18 +18,17 @@
 
 /**
  * @brief Construct a new Consumable:: Consumable object
- * 
+ *
  */
 
 Consumable::Consumable()
 {
-    name = "Potion";
-    description = "It's a potion. It's probably useful.";
-    weight = 1;
-    price = 10;
-    subtype = "Potion";
-    material = "Strange liquid";
-    effect = "Nothing happens...";
+    name = "None";
+    description = "None";
+    weight = 0;
+    price = 0;
+    subtype = "Consumable";
+    material = "None";
     health = 0;
     mana = 0;
     stamina = 0;
@@ -37,20 +36,19 @@ Consumable::Consumable()
 
 /**
  * @brief Construct a new Consumable:: Consumable object
- * 
- * @param name 
- * @param description 
- * @param weight 
- * @param price 
- * @param subtype 
- * @param material 
- * @param effect  
- * @param health 
- * @param mana 
+ *
+ * @param name
+ * @param description
+ * @param weight
+ * @param price
+ * @param subtype
+ * @param material
+ * @param health
+ * @param mana
  * @param stamina
  */
 
-Consumable::Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, std::string effect, int health, int mana, int stamina)
+Consumable::Consumable(std::string name, std::string description, int weight, int price, std::string subtype, std::string material, int health, int mana, int stamina)
 {
     this->name = name;
     this->description = description;
@@ -58,7 +56,6 @@ Consumable::Consumable(std::string name, std::string description, int weight, in
     this->price = price;
     this->subtype = subtype;
     this->material = material;
-    this->effect = effect;
     this->health = health;
     this->mana = mana;
     this->stamina = stamina;
@@ -67,20 +64,9 @@ Consumable::Consumable(std::string name, std::string description, int weight, in
 // Getters
 
 /**
- * @brief Get the Effect attribute
- * 
- * @return std::string 
- */
-
-std::string Consumable::getEffect()
-{
-    return effect;
-}
-
-/**
  * @brief Get the Health attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Consumable::getHealth()
@@ -90,8 +76,8 @@ int Consumable::getHealth()
 
 /**
  * @brief Get the Mana attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Consumable::getMana()
@@ -101,8 +87,8 @@ int Consumable::getMana()
 
 /**
  * @brief Get the Stamina attribute
- * 
- * @return int 
+ *
+ * @return int
  */
 
 int Consumable::getStamina()
@@ -114,8 +100,8 @@ int Consumable::getStamina()
 
 /**
  * @brief Get the string representation of the object
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 
 std::string Consumable::toString()
@@ -128,7 +114,6 @@ std::string Consumable::toString()
     ss << "Price: " << price << std::endl;
     ss << "Subtype: " << subtype << std::endl;
     ss << "Material: " << material << std::endl;
-    ss << "Effect: " << effect << std::endl;
     ss << "Health: " << health << std::endl;
     ss << "Mana: " << mana << std::endl;
     ss << "Stamina: " << stamina << std::endl;
