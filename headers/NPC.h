@@ -24,32 +24,22 @@ protected:
     // Attributes
     std::string name;
     std::string description;
-    std::vector<std::string> dialogues;
-    std::vector<std::vector<std::string>> options;
-    std::vector<std::vector<std::string>> responses;
 
 public:
     // Constructors
     NPC();
-    NPC(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses);
+    NPC(std::string name, std::string description);
 
     // Getters
     std::string getName();
     std::string getDescription();
-    std::vector<std::string> getDialogues();
-    std::vector<std::vector<std::string>> getOptions();
-    std::vector<std::vector<std::string>> getResponses();
 
     // Setters
     void setName(std::string name);
     void setDescription(std::string description);
-    void setDialogues(std::vector<std::string> dialogues);
-    void setOptions(std::vector<std::vector<std::string>> options);
-    void setResponses(std::vector<std::vector<std::string>> responses);
 
     // Methods
     std::string toString();
-    void talk();
 };
 
 #endif // End of the NPC_H preprocessor
