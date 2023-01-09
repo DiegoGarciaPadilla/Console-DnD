@@ -42,7 +42,7 @@ Consumable::Consumable() : Item()
  * @param stamina
  */
 
-Consumable::Consumable(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int health, int mana, int stamina) : Item(name, description, rarity, weight, price, "Consumable", subtype)
+Consumable::Consumable(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, int health, int mana, int stamina) : Item(name, description, rarity, weight, price, "Consumable", subtype)
 {
     this->health = health;
     this->mana = mana;

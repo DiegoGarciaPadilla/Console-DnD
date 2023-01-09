@@ -26,7 +26,7 @@ Item::Item()
     name = "None";
     description = "None";
     rarity = "None";
-    weight = 0;
+    weight = 0.0;
     price = 0;
     type = "None";
     subtype = "None";
@@ -44,7 +44,7 @@ Item::Item()
  * @param subtype
  */
 
-Item::Item(std::string name, std::string description, std::string rarity, int weight, int price, std::string type, std::string subtype)
+Item::Item(std::string name, std::string description, std::string rarity, float weight, int price, std::string type, std::string subtype)
 {
     this->name = name;
     this->description = description;
@@ -93,10 +93,10 @@ std::string Item::getRarity()
 /**
  * @brief Get the Weight attribute
  *
- * @return int
+ * @return float
  */
 
-int Item::getWeight()
+float Item::getWeight()
 {
     return weight;
 }
@@ -175,7 +175,7 @@ void Item::setRarity(std::string rarity)
  * @param weight
  */
 
-void Item::setWeight(int weight)
+void Item::setWeight(float weight)
 {
     this->weight = weight;
 }

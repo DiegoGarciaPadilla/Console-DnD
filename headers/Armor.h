@@ -24,7 +24,7 @@ private:
 public:
     // Constructors
     Armor();
-    Armor(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int defense);
+    Armor(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, int defense);
 
     // Getters
     int getDefense();

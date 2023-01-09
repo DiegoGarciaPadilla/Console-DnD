@@ -25,7 +25,7 @@ private:
 public:
     // Constructors
     Potion();
-    Potion(std::string name, std::string description, std::string rarity, int weight, int price, int health, int mana, int stamina);
+    Potion(std::string name, std::string description, std::string rarity, float weight, int price, int health, int mana, int stamina);
 
     // Getters
 

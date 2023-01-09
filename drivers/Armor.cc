@@ -39,7 +39,7 @@ Armor::Armor() : Item()
  * @param defense
  */
 
-Armor::Armor(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int defense) : Item(name, description, rarity, weight, price, "Armor", subtype)
+Armor::Armor(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, int defense) : Item(name, description, rarity, weight, price, "Armor", subtype)
 {
     this->defense = defense;
 }

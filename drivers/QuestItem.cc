@@ -38,7 +38,7 @@ QuestItem::QuestItem() : Item()
  * @param quest 
  */
 
-QuestItem::QuestItem(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, std::string quest) : Item(name, description, rarity, weight, price, "QuestItem", subtype)
+QuestItem::QuestItem(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, std::string quest) : Item(name, description, rarity, weight, price, "QuestItem", subtype)
 {
     this->quest = quest;
 }

@@ -43,7 +43,7 @@ Potion::Potion() : Consumable()
  * @param stamina
  */
 
-Potion::Potion(std::string name, std::string description, std::string rarity, int weight, int price, int health, int mana, int stamina) : Consumable(name, description, rarity, weight, price, "Potion", health, mana, stamina) {}
+Potion::Potion(std::string name, std::string description, std::string rarity, float weight, int price, int health, int mana, int stamina) : Consumable(name, description, rarity, weight, price, "Potion", health, mana, stamina) {}
 
 // Methods
 

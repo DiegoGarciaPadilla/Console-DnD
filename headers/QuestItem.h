@@ -24,7 +24,7 @@ private:
 public:
     // Constructors
     QuestItem();
-    QuestItem(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, std::string quest);
+    QuestItem(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, std::string quest);
 
     // Getters
     std::string getQuest();

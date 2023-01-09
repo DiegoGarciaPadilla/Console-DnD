@@ -24,7 +24,7 @@ private:
 public:
     // Constructors
     Weapon();
-    Weapon(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int damage);
+    Weapon(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, int damage);
 
     // Getters
     int getDamage();

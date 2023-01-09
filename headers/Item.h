@@ -24,7 +24,7 @@ protected:
     std::string description;
     std::string rarity;
 
-    int weight;
+    float weight;
     int price;
 
     std::string type;
@@ -33,13 +33,13 @@ protected:
 public:
     // Constructors
     Item();
-    Item(std::string name, std::string description, std::string rarity, int weight, int price, std::string type, std::string subtype);
+    Item(std::string name, std::string description, std::string rarity, float weight, int price, std::string type, std::string subtype);
 
     // Getters
     std::string getName();
     std::string getDescription();
     std::string getRarity();
-    int getWeight();
+    float getWeight();
     int getPrice();
     std::string getType();
     std::string getSubtype();
@@ -48,7 +48,7 @@ public:
     void setName(std::string name);
     void setDescription(std::string description);
     void setRarity(std::string rarity);
-    void setWeight(int weight);
+    void setWeight(float weight);
     void setPrice(int value);
     void setType(std::string type);
     void setSubtype(std::string subtype);

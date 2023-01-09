@@ -38,7 +38,7 @@ Weapon::Weapon() : Item()
  * @param damage
  */
 
-Weapon::Weapon(std::string name, std::string description, std::string rarity, int weight, int price, std::string subtype, int damage) : Item(name, description, rarity, weight, price, "Weapon", subtype)
+Weapon::Weapon(std::string name, std::string description, std::string rarity, float weight, int price, std::string subtype, int damage) : Item(name, description, rarity, weight, price, "Weapon", subtype)
 {
     this->damage = damage;
 }
