@@ -24,13 +24,8 @@
  * @return
  */
 
-Merchant::Merchant()
+Merchant::Merchant() : NPC()
 {
-    this->name = "Merchant";
-    this->description = "This is a merchant.";
-    this->dialogues = {{"Hello, I am a merchant."}, {"Bye, I am a merchant."}};
-    this->options = {{"Hello"}, {"Bye"}};
-    this->responses = {{"Hello, I am a merchant."}, {"Bye, I am a merchant."}};
     this->gold = 0;
     this->weapons = {};
     this->armors = {};
@@ -43,9 +38,6 @@ Merchant::Merchant()
  *
  * @param name
  * @param description
- * @param dialogues
- * @param options
- * @param responses
  * @param gold
  * @param weapons
  * @param armors
@@ -54,7 +46,7 @@ Merchant::Merchant()
  * @return
  */
 
-Merchant::Merchant(std::string name, std::string description, std::vector<std::string> dialogues, std::vector<std::vector<std::string>> options, std::vector<std::vector<std::string>> responses, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems) : NPC(name, description, dialogues, options, responses)
+Merchant::Merchant(std::string name, std::string description, int gold, std::vector<Weapon> weapons, std::vector<Armor> armors, std::vector<Potion> potions, std::vector<QuestItem> questItems) : NPC(name, description)
 {
     this->gold = gold;
     this->weapons = weapons;
@@ -694,26 +686,26 @@ void Merchant::buyItems(Character &character)
     {
     case 1:
         this->buyWeapon(character);
+        pause();
         break;
     case 2:
         this->buyArmor(character);
+        pause();
         break;
     case 3:
         this->buyPotion(character);
+        pause();
         break;
     case 4:
         this->buyQuestItem(character);
+        pause();
         break;
     case 5:
-        std::cout << "If you change your mind, come back." << std::endl;
         break;
     default:
         std::cout << "Invalid option." << std::endl;
         break;
     }
-
-    // Pause the program
-    pause();
 }
 
 /**
@@ -749,18 +741,21 @@ void Merchant::sellItems(Character &character)
     {
     case 1:
         this->sellWeapon(character);
+        pause();
         break;
     case 2:
         this->sellArmor(character);
+        pause();
         break;
     case 3:
         this->sellPotion(character);
+        pause();
         break;
     case 4:
         this->sellQuestItem(character);
+        pause();
         break;
     case 5:
-        std::cout << "If you change your mind, come back." << std::endl;
         break;
     default:
         std::cout << "Invalid option." << std::endl;
@@ -807,7 +802,6 @@ void Merchant::openShop(Character &character)
         this->sellItems(character);
         break;
     case 3:
-        std::cout << "If you change your mind, come back." << std::endl;
         break;
     default:
         std::cout << "Invalid option." << std::endl;
@@ -832,9 +826,10 @@ void Merchant::interact(Character &character)
 
     // Print the options
     std::cout << "Hello, " << character.getName() << "." << std::endl;
-    std::cout << "1. Talk" << std::endl;
-    std::cout << "2. Open shop" << std::endl;
-    std::cout << "3. Nevermind" << std::endl;
+    std::cout << "1. Open shop" << std::endl;
+
+    // Return option
+    std::cout << "0. Nevermind" << std::endl;
     std::cout << std::endl;
 
     // Get the option
@@ -845,21 +840,15 @@ void Merchant::interact(Character &character)
     switch (option)
     {
     case 1:
-        this->talk();
-        break;
-    case 2:
         this->openShop(character);
         break;
-    case 3:
+    case 0:
         std::cout << "If you change your mind, come back." << std::endl;
         break;
     default:
         std::cout << "Invalid option." << std::endl;
         break;
     }
-
-    // Pause the program
-    pause();
 }
 
 
