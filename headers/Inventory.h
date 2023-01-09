@@ -24,8 +24,8 @@ class Inventory
 private:
     // Attributes
     int gold;
-    int maxWeight;
-    int currentWeight;
+    float maxWeight;
+    float currentWeight;
     std::vector<Weapon> weapons;
     std::vector<Armor> armors;
     std::vector<Potion> potions;
@@ -34,12 +34,12 @@ private:
 public:
     // Constructors
     Inventory();
-    Inventory(int capacity);
+    Inventory(float capacity);
 
     // Getters
     int getGold();
-    int getMaxWeight();
-    int getCurrentWeight();
+    float getMaxWeight();
+    float getCurrentWeight();
     std::vector<Weapon> getWeapons();
     std::vector<Armor> getArmors();
     std::vector<Potion> getPotions();
@@ -47,8 +47,8 @@ public:
 
     // Setters
     void setGold(int gold);
-    void setMaxWeight(int maxWeight);
-    void setCurrentWeight(int currentWeight);
+    void setMaxWeight(float maxWeight);
+    void setCurrentWeight(float currentWeight);
     void setWeapons(std::vector<Weapon> weapons);
     void setArmors(std::vector<Armor> armors);
     void setPotions(std::vector<Potion> potions);

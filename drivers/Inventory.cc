@@ -32,7 +32,7 @@ Inventory::Inventory()
 {
     gold = 0;
     maxWeight = 20;
-    currentWeight = 0;
+    currentWeight = 0.0;
 }
 
 /**
@@ -41,7 +41,7 @@ Inventory::Inventory()
  * @param capacity
  */
 
-Inventory::Inventory(int capacity)
+Inventory::Inventory(float capacity)
 {
     gold = 0;
     maxWeight = capacity;
@@ -64,10 +64,10 @@ int Inventory::getGold()
 /**
  * @brief Get the Max Weight object
  *
- * @return int
+ * @return float
  */
 
-int Inventory::getMaxWeight()
+float Inventory::getMaxWeight()
 {
     return maxWeight;
 }
@@ -75,10 +75,10 @@ int Inventory::getMaxWeight()
 /**
  * @brief Get the Current Weight object
  *
- * @return int
+ * @return float
  */
 
-int Inventory::getCurrentWeight()
+float Inventory::getCurrentWeight()
 {
     return currentWeight;
 }
@@ -146,7 +146,7 @@ void Inventory::setGold(int gold)
  * @param maxWeight
  */
 
-void Inventory::setMaxWeight(int maxWeight)
+void Inventory::setMaxWeight(float maxWeight)
 {
     this->maxWeight = maxWeight;
 }
@@ -157,7 +157,7 @@ void Inventory::setMaxWeight(int maxWeight)
  * @param currentWeight
  */
 
-void Inventory::setCurrentWeight(int currentWeight)
+void Inventory::setCurrentWeight(float currentWeight)
 {
     this->currentWeight = currentWeight;
 }
