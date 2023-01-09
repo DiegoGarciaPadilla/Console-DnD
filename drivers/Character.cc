@@ -1081,12 +1081,32 @@ void Character::removeQuestItemFromInventory(int index)
 
 void Character::equipWeapon(int index)
 {
+    // Variables
+    int option;
+
     // Check if the weapon is equipped
     if (equippedWeapon.getName() != "None")
     {
         std::cout << "There is already a weapon equipped." << std::endl;
+        std::cout << "Do you want to unequip the current weapon?" << std::endl;
+        std::cout << "1. Yes" << std::endl;
+        std::cout << "2. No" << std::endl;
+        std::cin >> option;
+
+        // If the user wants to unequip the weapon
+        if (option == 1)
+        {
+            // Unequip the current weapon
+            unequipWeapon();
+        }
     }
     else
+    {
+        option = 1;
+    }
+
+    // Check the option
+    if (option == 1)
     {
         // Equip the weapon
         equippedWeapon = inventory.getWeapons()[index];
@@ -1110,12 +1130,32 @@ void Character::equipWeapon(int index)
 
 void Character::equipArmor(int index)
 {
+    // Variables
+    int option;
+
     // Check if the armor is equipped
     if (equippedArmor.getName() != "None")
     {
         std::cout << "There is already an armor equipped." << std::endl;
+        std::cout << "Do you want to unequip the current armor?" << std::endl;
+        std::cout << "1. Yes" << std::endl;
+        std::cout << "2. No" << std::endl;
+        std::cin >> option;
+
+        // If the user wants to unequip the armor
+        if (option == 1)
+        {
+            // Unequip the current armor
+            unequipArmor();
+        }
     }
     else
+    {
+        option = 1;
+    }
+
+    // Check the option
+    if (option == 1)
     {
         // Equip the armor
         equippedArmor = inventory.getArmors()[index];
