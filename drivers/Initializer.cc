@@ -468,7 +468,7 @@ std::vector<Potion> initPotions()
         }
 
         // Create the potion
-        Potion potion(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+        Potion potion(tokens[0], tokens[1], tokens[2], std::stof(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
 
         // Add the potion to the vector
         potions.push_back(potion);
