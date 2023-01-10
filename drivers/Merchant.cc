@@ -639,13 +639,16 @@ void Merchant::buyItems(Character &character)
         cleanScreen();
 
         // Ask the user if they want to buy another item
-        std::cout << "Would you like to buy another item?" << std::endl;
-        std::cout << "1. Yes" << std::endl;
-        std::cout << "0. No" << std::endl;
+        if (option != 0)
+        {
+            std::cout << "Would you like to buy another item?" << std::endl;
+            std::cout << "1. Yes" << std::endl;
+            std::cout << "0. No" << std::endl;
 
-        // Get the option
-        std::cout << "Enter the option:" << std::endl;
-        std::cin >> option;
+            // Get the option
+            std::cout << "Enter the option:" << std::endl;
+            std::cin >> option;
+        }
 
     } while (option != 0);
 }
@@ -784,14 +787,17 @@ void Merchant::sellItems(Character &character)
         // Clear the screen
         cleanScreen();
 
-        // Ask the user if they want to buy another item
-        std::cout << "Would you like to buy another item?" << std::endl;
-        std::cout << "1. Yes" << std::endl;
-        std::cout << "0. No" << std::endl;
+        // Ask the user if they want to sell another item
+        if (option != 0)
+        {
+            std::cout << "Would you like to sell another item?" << std::endl;
+            std::cout << "1. Yes" << std::endl;
+            std::cout << "0. No" << std::endl;
 
-        // Get the option
-        std::cout << "Enter the option:" << std::endl;
-        std::cin >> option;
+            // Get the option
+            std::cout << "Enter the option:" << std::endl;
+            std::cin >> option;
+        }
 
     } while (option != 0);
 }
