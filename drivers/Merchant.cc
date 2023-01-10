@@ -14,6 +14,7 @@
 
 #include "../headers/Merchant.h" // Include the Merchant header file
 #include "Functions.cc"          // Include the Functions header file
+#include "Initializer.cc"        // Include the Initializer header file
 
 // Constructors
 
@@ -180,6 +181,34 @@ void Merchant::setQuestItems(std::vector<QuestItem> questItems)
 }
 
 // Methods
+
+/**
+ * @brief This method initializes the merchant with example data.
+ *
+ * @return void
+ */
+
+void Merchant::initialize()
+{
+    // Initialize arrays
+    std::vector<Weapon> weapons = initWeapons();
+    std::vector<Armor> armors = initArmors();
+    std::vector<Potion> potions = initPotions();
+    std::vector<QuestItem> questItems = {};
+
+    // Initialize the merchant
+    this->name = "Bob";
+    this->description = "I'm Bob, the merchant. I sell weapons, armors and potions.";
+    this->gold = 100;
+
+    //  Add random items to the merchant
+    for (int i = 0; i < 3; i++)
+    {
+        this->weapons.push_back(weapons[rand() % weapons.size()]);
+        this->armors.push_back(armors[rand() % armors.size()]);
+        this->potions.push_back(potions[rand() % potions.size()]);
+    }
+}
 
 /**
  * @brief This method allows the player to buy a weapon from the merchant.

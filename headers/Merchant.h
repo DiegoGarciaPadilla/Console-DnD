@@ -42,6 +42,8 @@ public:
     std::vector<QuestItem> getQuestItems();
 
     // Setters
+    void initialize();
+
     void setGold(int gold);
     void setWeapons(std::vector<Weapon> weapons);
     void setArmors(std::vector<Armor> armors);
