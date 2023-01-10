@@ -49,15 +49,15 @@ public:
     void setQuestItems(std::vector<QuestItem> questItems);
 
     // Methods
-    void buyWeapon(Character &character);
-    void buyArmor(Character &character);
-    void buyPotion(Character &character);
-    void buyQuestItem(Character &character);
+    void buyWeapon(Character &character, int index);
+    void buyArmor(Character &character, int index);
+    void buyPotion(Character &character, int index);
+    void buyQuestItem(Character &character, int index);
 
-    void sellWeapon(Character &character);
-    void sellArmor(Character &character);
-    void sellPotion(Character &character);
-    void sellQuestItem(Character &character);
+    void sellWeapon(Character &character, int index);
+    void sellArmor(Character &character, int index);
+    void sellPotion(Character &character, int index);
+    void sellQuestItem(Character &character, int index);
 
     void buyItems(Character &character);
     void sellItems(Character &character);

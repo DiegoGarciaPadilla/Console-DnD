@@ -185,57 +185,40 @@ void Merchant::setQuestItems(std::vector<QuestItem> questItems)
  * @brief This method allows the player to buy a weapon from the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::buyWeapon(Character &character)
+void Merchant::buyWeapon(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Weapon weapon = this->weapons[index];
+    int gold = character.getGold();
+    int weaponPrice = weapon.getPrice();
 
-    // Print the weapons
-    std::cout << "What weapon do you want to buy?" << std::endl;
-    for (int i = 0; i < this->weapons.size(); i++)
+    // Check if the player has enough gold
+    if (gold >= weaponPrice)
     {
-        std::cout << i + 1 << ". " << this->weapons[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the weapon to the player
+        character.addWeaponToInventory(weapon);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the weapon from the merchant
+        this->weapons.erase(this->weapons.begin() + index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= this->weapons.size())
-    {
-        // Check if the character has enough gold
-        if (character.getGold() >= this->weapons[option - 1].getPrice())
-        {
-            // Buy the weapon
-            character.setGold(character.getGold() - this->weapons[option - 1].getPrice());
-            character.addWeaponToInventory(this->weapons[option - 1]);
+        // Remove the gold from the player
+        character.setGold(gold - weaponPrice);
 
-            // Print the message
-            std::cout << "You bought the " << this->weapons[option - 1].getName() << " for " << this->weapons[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
+        // Add the gold to the merchant
+        this->gold += weaponPrice;
 
-            // Add gold to the merchant
-            this->gold += this->weapons[option - 1].getPrice();
-
-            // Remove the weapon from the merchant
-            this->weapons.erase(this->weapons.begin() + option - 1);
-        }
-        else
-        {
-            std::cout << "You don't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You bought " << weapon.getName() << " for " << weaponPrice << " gold." << std::endl;
+        std::cout << "You have " << character.getGold() << " gold left." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "You don't have enough gold." << std::endl;
     }
 }
 
@@ -243,57 +226,40 @@ void Merchant::buyWeapon(Character &character)
  * @brief This method allows the player to buy an armor from the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::buyArmor(Character &character)
+void Merchant::buyArmor(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Armor armor = this->armors[index];
+    int gold = character.getGold();
+    int armorPrice = armor.getPrice();
 
-    // Print the armors
-    std::cout << "What armor do you want to buy?" << std::endl;
-    for (int i = 0; i < this->armors.size(); i++)
+    // Check if the player has enough gold
+    if (gold >= armorPrice)
     {
-        std::cout << i + 1 << ". " << this->armors[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the armor to the player
+        character.addArmorToInventory(armor);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the armor from the merchant
+        this->armors.erase(this->armors.begin() + index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= this->armors.size())
-    {
-        // Check if the character has enough gold
-        if (character.getGold() >= this->armors[option - 1].getPrice())
-        {
-            // Buy the armor
-            character.setGold(character.getGold() - this->armors[option - 1].getPrice());
-            character.addArmorToInventory(this->armors[option - 1]);
+        // Remove the gold from the player
+        character.setGold(gold - armorPrice);
 
-            // Print the message
-            std::cout << "You bought the " << this->armors[option - 1].getName() << " for " << this->armors[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
+        // Add the gold to the merchant
+        this->gold += armorPrice;
 
-            // Add gold to the merchant
-            this->gold += this->armors[option - 1].getPrice();
-
-            // Remove the armor from the merchant
-            this->armors.erase(this->armors.begin() + option - 1);
-        }
-        else
-        {
-            std::cout << "You don't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You bought " << armor.getName() << " for " << armorPrice << " gold." << std::endl;
+        std::cout << "You have " << character.getGold() << " gold left." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "You don't have enough gold." << std::endl;
     }
 }
 
@@ -301,57 +267,40 @@ void Merchant::buyArmor(Character &character)
  * @brief This method allows the player to buy a potion from the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::buyPotion(Character &character)
+void Merchant::buyPotion(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Potion potion = this->potions[index];
+    int gold = character.getGold();
+    int potionPrice = potion.getPrice();
 
-    // Print the potions
-    std::cout << "What potion do you want to buy?" << std::endl;
-    for (int i = 0; i < this->potions.size(); i++)
+    // Check if the player has enough gold
+    if (gold >= potionPrice)
     {
-        std::cout << i + 1 << ". " << this->potions[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the potion to the player
+        character.addPotionToInventory(potion);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the potion from the merchant
+        this->potions.erase(this->potions.begin() + index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= this->potions.size())
-    {
-        // Check if the character has enough gold
-        if (character.getGold() >= this->potions[option - 1].getPrice())
-        {
-            // Buy the potion
-            character.setGold(character.getGold() - this->potions[option - 1].getPrice());
-            character.addPotionToInventory(this->potions[option - 1]);
+        // Remove the gold from the player
+        character.setGold(gold - potionPrice);
 
-            // Print the message
-            std::cout << "You bought the " << this->potions[option - 1].getName() << " for " << this->potions[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
+        // Add the gold to the merchant
+        this->gold += potionPrice;
 
-            // Add gold to the merchant
-            this->gold += this->potions[option - 1].getPrice();
-
-            // Remove the potion from the merchant
-            this->potions.erase(this->potions.begin() + option - 1);
-        }
-        else
-        {
-            std::cout << "You don't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You bought " << potion.getName() << " for " << potionPrice << " gold." << std::endl;
+        std::cout << "You have " << character.getGold() << " gold left." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "You don't have enough gold." << std::endl;
     }
 }
 
@@ -359,57 +308,40 @@ void Merchant::buyPotion(Character &character)
  * @brief This method allows the player to buy a quest item from the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::buyQuestItem(Character &character)
+void Merchant::buyQuestItem(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    QuestItem questItem = this->questItems[index];
+    int gold = character.getGold();
+    int questItemPrice = questItem.getPrice();
 
-    // Print the quest items
-    std::cout << "What quest item do you want to buy?" << std::endl;
-    for (int i = 0; i < this->questItems.size(); i++)
+    // Check if the player has enough gold
+    if (gold >= questItemPrice)
     {
-        std::cout << i + 1 << ". " << this->questItems[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the quest item to the player
+        character.addQuestItemToInventory(questItem);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the quest item from the merchant
+        this->questItems.erase(this->questItems.begin() + index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= this->questItems.size())
-    {
-        // Check if the character has enough gold
-        if (character.getGold() >= this->questItems[option - 1].getPrice())
-        {
-            // Buy the quest item
-            character.setGold(character.getGold() - this->questItems[option - 1].getPrice());
-            character.addQuestItemToInventory(this->questItems[option - 1]);
+        // Remove the gold from the player
+        character.setGold(gold - questItemPrice);
 
-            // Print the message
-            std::cout << "You bought the " << this->questItems[option - 1].getName() << " for " << this->questItems[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
+        // Add the gold to the merchant
+        this->gold += questItemPrice;
 
-            // Add gold to the merchant
-            this->gold += this->questItems[option - 1].getPrice();
-
-            // Remove the quest item from the merchant
-            this->questItems.erase(this->questItems.begin() + option - 1);
-        }
-        else
-        {
-            std::cout << "You don't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You bought " << questItem.getName() << " for " << questItemPrice << " gold." << std::endl;
+        std::cout << "You have " << character.getGold() << " gold left." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "You don't have enough gold." << std::endl;
     }
 }
 
@@ -417,59 +349,39 @@ void Merchant::buyQuestItem(Character &character)
  * @brief This method allows the player to sell a weapon to the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::sellWeapon(Character &character)
+void Merchant::sellWeapon(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Weapon weapon = character.getWeapons()[index];
+    int weaponPrice = weapon.getPrice();
 
-    // Print the weapons
-    std::cout << "What weapon do you want to sell?" << std::endl;
-    for (int i = 0; i < character.getWeapons().size(); i++)
+    // Check if the merchant has enough gold
+    if (this->gold >= weaponPrice)
     {
-        std::cout << i + 1 << ". " << character.getWeapons()[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the weapon to the merchant
+        this->weapons.push_back(weapon);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the weapon from the player
+        character.removeWeaponFromInventory(index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= character.getWeapons().size())
-    {
-        // Check if the merchant has enough gold
-        if (this->gold >= character.getWeapons()[option - 1].getPrice())
-        {
-            // Remove gold from the merchant
-            this->gold -= character.getWeapons()[option - 1].getPrice();
+        // Remove the gold from the merchant
+        this->gold -= weaponPrice;
 
-            // Add gold to the character
-            character.setGold(character.getGold() + character.getWeapons()[option - 1].getPrice());
+        // Add the gold to the player
+        character.addGold(weaponPrice);
 
-            // Add the weapon to the merchant
-            this->weapons.push_back(character.getWeapons()[option - 1]);
-
-            // Remove the weapon from the character
-            character.removeWeaponFromInventory(option - 1);
-
-            // Print the message
-            std::cout << "You sold the " << character.getWeapons()[option - 1].getName() << " for " << character.getWeapons()[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
-        }
-        else
-        {
-            std::cout << "The merchant doesn't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You sold " << weapon.getName() << " for " << weaponPrice << " gold." << std::endl;
+        std::cout << "You now have " << character.getGold() << " gold." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "The merchant doesn't have enough gold." << std::endl;
     }
 }
 
@@ -477,59 +389,39 @@ void Merchant::sellWeapon(Character &character)
  * @brief This method allows the player to sell an armor to the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::sellArmor(Character &character)
+void Merchant::sellArmor(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Armor armor = character.getArmors()[index];
+    int armorPrice = armor.getPrice();
 
-    // Print the armors
-    std::cout << "What armor do you want to sell?" << std::endl;
-    for (int i = 0; i < character.getArmors().size(); i++)
+    // Check if the merchant has enough gold
+    if (this->gold >= armorPrice)
     {
-        std::cout << i + 1 << ". " << character.getArmors()[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the armor to the merchant
+        this->armors.push_back(armor);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the armor from the player
+        character.removeArmorFromInventory(index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= character.getArmors().size())
-    {
-        // Check if the merchant has enough gold
-        if (this->gold >= character.getArmors()[option - 1].getPrice())
-        {
-            // Remove gold from the merchant
-            this->gold -= character.getArmors()[option - 1].getPrice();
+        // Remove the gold from the merchant
+        this->gold -= armorPrice;
 
-            // Add gold to the character
-            character.setGold(character.getGold() + character.getArmors()[option - 1].getPrice());
+        // Add the gold to the player
+        character.addGold(armorPrice);
 
-            // Add the armor to the merchant
-            this->armors.push_back(character.getArmors()[option - 1]);
-
-            // Remove the armor from the character
-            character.removeArmorFromInventory(option - 1);
-
-            // Print the message
-            std::cout << "You sold the " << character.getArmors()[option - 1].getName() << " for " << character.getArmors()[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
-        }
-        else
-        {
-            std::cout << "The merchant doesn't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You sold " << armor.getName() << " for " << armorPrice << " gold." << std::endl;
+        std::cout << "You now have " << character.getGold() << " gold." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "The merchant doesn't have enough gold." << std::endl;
     }
 }
 
@@ -537,59 +429,39 @@ void Merchant::sellArmor(Character &character)
  * @brief This method allows the player to sell a potion to the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::sellPotion(Character &character)
+void Merchant::sellPotion(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    Potion potion = character.getPotions()[index];
+    int potionPrice = potion.getPrice();
 
-    // Print the potions
-    std::cout << "What potion do you want to sell?" << std::endl;
-    for (int i = 0; i < character.getPotions().size(); i++)
+    // Check if the merchant has enough gold
+    if (this->gold >= potionPrice)
     {
-        std::cout << i + 1 << ". " << character.getPotions()[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the potion to the merchant
+        this->potions.push_back(potion);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the potion from the player
+        character.removeArmorFromInventory(index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= character.getPotions().size())
-    {
-        // Check if the merchant has enough gold
-        if (this->gold >= character.getPotions()[option - 1].getPrice())
-        {
-            // Remove gold from the merchant
-            this->gold -= character.getPotions()[option - 1].getPrice();
+        // Remove the gold from the merchant
+        this->gold -= potionPrice;
 
-            // Add gold to the character
-            character.setGold(character.getGold() + character.getPotions()[option - 1].getPrice());
+        // Add the gold to the player
+        character.addGold(potionPrice);
 
-            // Add the potion to the merchant
-            this->potions.push_back(character.getPotions()[option - 1]);
-
-            // Remove the potion from the character
-            character.removePotionFromInventory(option - 1);
-
-            // Print the message
-            std::cout << "You sold the " << character.getPotions()[option - 1].getName() << " for " << character.getPotions()[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
-        }
-        else
-        {
-            std::cout << "The merchant doesn't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You sold " << potion.getName() << " for " << potionPrice << " gold." << std::endl;
+        std::cout << "You now have " << character.getGold() << " gold." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "The merchant doesn't have enough gold." << std::endl;
     }
 }
 
@@ -597,59 +469,39 @@ void Merchant::sellPotion(Character &character)
  * @brief This method allows the player to sell a quest item to the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
-void Merchant::sellQuestItem(Character &character)
+void Merchant::sellQuestItem(Character &character, int index)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
-    int option = 0;
+    QuestItem questItem = character.getQuestItems()[index];
+    int questItemPrice = questItem.getPrice();
 
-    // Print the quest items
-    std::cout << "What quest item do you want to sell?" << std::endl;
-    for (int i = 0; i < character.getQuestItems().size(); i++)
+    // Check if the merchant has enough gold
+    if (this->gold >= questItemPrice)
     {
-        std::cout << i + 1 << ". " << character.getQuestItems()[i].getName() << std::endl;
-    }
-    std::cout << std::endl;
+        // Add the quest item to the merchant
+        this->questItems.push_back(questItem);
 
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
+        // Remove the quest item from the player
+        character.removeQuestItemFromInventory(index);
 
-    // Check if the option is valid
-    if (option > 0 && option <= character.getQuestItems().size())
-    {
-        // Check if the merchant has enough gold
-        if (this->gold >= character.getQuestItems()[option - 1].getPrice())
-        {
-            // Remove gold from the merchant
-            this->gold -= character.getQuestItems()[option - 1].getPrice();
+        // Remove the gold from the merchant
+        this->gold -= questItemPrice;
 
-            // Add gold to the character
-            character.setGold(character.getGold() + character.getQuestItems()[option - 1].getPrice());
+        // Add the gold to the player
+        character.addGold(questItemPrice);
 
-            // Add the quest item to the merchant
-            this->questItems.push_back(character.getQuestItems()[option - 1]);
-
-            // Remove the quest item from the character
-            character.removeQuestItemFromInventory(option - 1);
-
-            // Print the message
-            std::cout << "You sold the " << character.getQuestItems()[option - 1].getName() << " for " << character.getQuestItems()[option - 1].getPrice() << " gold." << std::endl;
-            std::cout << "You have " << character.getGold() << " gold." << std::endl;
-        }
-        else
-        {
-            std::cout << "The merchant doesn't have enough gold." << std::endl;
-        }
+        // Print the message
+        std::cout << "You sold " << questItem.getName() << " for " << questItemPrice << " gold." << std::endl;
+        std::cout << "You now have " << character.getGold() << " gold." << std::endl;
     }
     else
     {
-        std::cout << "Invalid option." << std::endl;
+        // Print the message
+        std::cout << "The merchant doesn't have enough gold." << std::endl;
     }
 }
 
@@ -662,112 +514,290 @@ void Merchant::sellQuestItem(Character &character)
 
 void Merchant::buyItems(Character &character)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
     int option = 0;
+    int itemNum = 1;
+    int numWeapons;
+    int numArmors;
+    int numPotions;
+    int numQuestItems;
 
-    // Print the items
-    std::cout << "What type of items do you want to buy?" << std::endl;
-    std::cout << "1. Weapons" << std::endl;
-    std::cout << "2. Armors" << std::endl;
-    std::cout << "3. Potions" << std::endl;
-    std::cout << "4. Quest items" << std::endl;
-    std::cout << "5. Nevermind" << std::endl;
-    std::cout << std::endl;
-
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
-
-    // Check the option
-    switch (option)
+    do
     {
-    case 1:
-        this->buyWeapon(character);
+        // Clear the screen
+        cleanScreen();
+
+        // Reset the item number
+        itemNum = 1;
+
+        // Get the number of items
+        numWeapons = this->weapons.size();
+        numArmors = this->armors.size();
+        numPotions = this->potions.size();
+        numQuestItems = this->questItems.size();
+
+        // Print the options
+        std::cout << "Hello, " << character.getName() << "." << std::endl;
+        std::cout << "What would you like to buy?" << std::endl;
+        std::cout << std::endl;
+
+        // Print the weapons
+        if (numWeapons > 0)
+        {
+            std::cout << "Weapons:" << std::endl;
+            for (int i = 0; i < numWeapons; i++)
+            {
+                std::cout << itemNum << ". " << this->weapons[i].getName() << " - " << this->weapons[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the armors
+        if (numArmors > 0)
+        {
+            std::cout << "Armors:" << std::endl;
+            for (int i = 0; i < numArmors; i++)
+            {
+                std::cout << itemNum << ". " << this->armors[i].getName() << " - " << this->armors[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the potions
+        if (numPotions > 0)
+        {
+            std::cout << "Potions:" << std::endl;
+            for (int i = 0; i < numPotions; i++)
+            {
+                std::cout << itemNum << ". " << this->potions[i].getName() << " - " << this->potions[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the quest items
+        if (numQuestItems > 0)
+        {
+            std::cout << "Quest Items:" << std::endl;
+            for (int i = 0; i < numQuestItems; i++)
+            {
+                std::cout << itemNum << ". " << this->questItems[i].getName() << " - " << this->questItems[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the return option
+        std::cout << "0. Nevermind" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+        // Clear the screen
+        cleanScreen();
+
+        // Check the option
+        if (option > 0 && option <= numWeapons)
+        {
+            // Buy the weapon
+            this->buyWeapon(character, option - 1);
+        }
+        else if (option > numWeapons && option <= numWeapons + numArmors)
+        {
+            // Buy the armor
+            this->buyArmor(character, option - numWeapons - 1);
+        }
+        else if (option > numWeapons + numArmors && option <= numWeapons + numArmors + numPotions)
+        {
+            // Buy the potion
+            this->buyPotion(character, option - numWeapons - numArmors - 1);
+        }
+        else if (option > numWeapons + numArmors + numPotions && option <= numWeapons + numArmors + numPotions + numQuestItems)
+        {
+            // Buy the quest item
+            this->buyQuestItem(character, option - numWeapons - numArmors - numPotions - 1);
+        }
+        else if (option == 0)
+        {
+            // Print the message
+            std::cout << "If you ever need anything, just come back." << std::endl;
+        }
+        else
+        {
+            // Print the message
+            std::cout << "Invalid option." << std::endl;
+        }
+
+        // Pause the program
         pause();
-        break;
-    case 2:
-        this->buyArmor(character);
-        pause();
-        break;
-    case 3:
-        this->buyPotion(character);
-        pause();
-        break;
-    case 4:
-        this->buyQuestItem(character);
-        pause();
-        break;
-    case 5:
-        break;
-    default:
-        std::cout << "Invalid option." << std::endl;
-        break;
-    }
+
+        // Clear the screen
+        cleanScreen();
+
+        // Ask the user if they want to buy another item
+        std::cout << "Would you like to buy another item?" << std::endl;
+        std::cout << "1. Yes" << std::endl;
+        std::cout << "0. No" << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+    } while (option != 0);
 }
 
 /**
  * @brief This method allows the player to sell items to the merchant.
  *
  * @param character
+ * @param index
  * @return void
  */
 
 void Merchant::sellItems(Character &character)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
     int option = 0;
+    int itemNum = 1;
+    int numWeapons;
+    int numArmors;
+    int numPotions;
+    int numQuestItems;
 
-    // Print the items
-    std::cout << "What type of items do you want to sell?" << std::endl;
-    std::cout << "1. Weapons" << std::endl;
-    std::cout << "2. Armors" << std::endl;
-    std::cout << "3. Potions" << std::endl;
-    std::cout << "4. Quest items" << std::endl;
-    std::cout << "5. Nevermind" << std::endl;
-    std::cout << std::endl;
-
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
-
-    // Check the option
-    switch (option)
+    do
     {
-    case 1:
-        this->sellWeapon(character);
-        pause();
-        break;
-    case 2:
-        this->sellArmor(character);
-        pause();
-        break;
-    case 3:
-        this->sellPotion(character);
-        pause();
-        break;
-    case 4:
-        this->sellQuestItem(character);
-        pause();
-        break;
-    case 5:
-        break;
-    default:
-        std::cout << "Invalid option." << std::endl;
-        break;
-    }
+        // Clear the screen
+        cleanScreen();
 
-    // Pause the program
-    pause();
+        // Reset the item number
+        itemNum = 1;
+
+        // Get the number of items
+        numWeapons = character.getWeapons().size();
+        numArmors = character.getArmors().size();
+        numPotions = character.getPotions().size();
+        numQuestItems = character.getQuestItems().size();
+
+        // Print the options
+        std::cout << "Hello, " << character.getName() << "." << std::endl;
+        std::cout << "What would you like to sell?" << std::endl;
+        std::cout << std::endl;
+
+        // Print the weapons
+        if (numWeapons > 0)
+        {
+            std::cout << "Weapons:" << std::endl;
+            for (int i = 0; i < numWeapons; i++)
+            {
+                std::cout << itemNum << ". " << character.getWeapons()[i].getName() << " - " << character.getWeapons()[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the armors
+        if (numArmors > 0)
+        {
+            std::cout << "Armors:" << std::endl;
+            for (int i = 0; i < numArmors; i++)
+            {
+                std::cout << itemNum << ". " << character.getArmors()[i].getName() << " - " << character.getArmors()[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the potions
+        if (numPotions > 0)
+        {
+            std::cout << "Potions:" << std::endl;
+            for (int i = 0; i < numPotions; i++)
+            {
+                std::cout << itemNum << ". " << character.getPotions()[i].getName() << " - " << character.getPotions()[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the quest items
+        if (numQuestItems > 0)
+        {
+            std::cout << "Quest Items:" << std::endl;
+            for (int i = 0; i < numQuestItems; i++)
+            {
+                std::cout << itemNum << ". " << character.getQuestItems()[i].getName() << " - " << character.getQuestItems()[i].getPrice() << " gold" << std::endl;
+                itemNum++;
+            }
+            std::cout << std::endl;
+        }
+
+        // Print the return option
+        std::cout << "0. Nevermind" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+        // Clear the screen
+        cleanScreen();
+
+        // Check the option
+        if (option > 0 && option <= numWeapons)
+        {
+            // Sell the weapon
+            this->sellWeapon(character, option - 1);
+        }
+        else if (option > numWeapons && option <= numWeapons + numArmors)
+        {
+            // Sell the armor
+            this->sellArmor(character, option - numWeapons - 1);
+        }
+        else if (option > numWeapons + numArmors && option <= numWeapons + numArmors + numPotions)
+        {
+            // Sell the potion
+            this->sellPotion(character, option - numWeapons - numArmors - 1);
+        }
+        else if (option > numWeapons + numArmors + numPotions && option <= numWeapons + numArmors + numPotions + numQuestItems)
+        {
+            // Sell the quest item
+            this->sellQuestItem(character, option - numWeapons - numArmors - numPotions - 1);
+        }
+        else if (option == 0)
+        {
+            // Print the message
+            std::cout << "If you ever need anything, just come back." << std::endl;
+        }
+        else
+        {
+            // Print the message
+            std::cout << "Invalid option." << std::endl;
+        }
+
+        // Pause the program
+        pause();
+
+        // Clear the screen
+        cleanScreen();
+
+        // Ask the user if they want to buy another item
+        std::cout << "Would you like to buy another item?" << std::endl;
+        std::cout << "1. Yes" << std::endl;
+        std::cout << "0. No" << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+    } while (option != 0);
 }
 
 /**
- * @brief This method allows the player to buy or sell items from the merchant.
+ * @brief This method allows the player to buy or sell items to the merchant.
  *
  * @param character
  * @return void
@@ -775,38 +805,54 @@ void Merchant::sellItems(Character &character)
 
 void Merchant::openShop(Character &character)
 {
-    // Clear the screen
-    cleanScreen();
-
     // Variables
     int option = 0;
 
-    // Print the options
-    std::cout << "I travel all over the world to sell and buy items." << std::endl;
-    std::cout << "1. Buy items" << std::endl;
-    std::cout << "2. Sell items" << std::endl;
-    std::cout << "3. Nevermind" << std::endl;
-    std::cout << std::endl;
-
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
-
-    // Check the option
-    switch (option)
+    do
     {
-    case 1:
-        this->buyItems(character);
-        break;
-    case 2:
-        this->sellItems(character);
-        break;
-    case 3:
-        break;
-    default:
-        std::cout << "Invalid option." << std::endl;
-        break;
-    }
+        // Clear the screen
+        cleanScreen();
+
+        // Print the options
+        std::cout << "Hello, " << character.getName() << "." << std::endl;
+        std::cout << "What would you like to do?" << std::endl;
+        std::cout << std::endl;
+
+        // Print the options
+        std::cout << "1. Buy items" << std::endl;
+        std::cout << "2. Sell items" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Goodbye" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+        // Check the option
+        switch (option)
+        {
+        case 0:
+            // Print the message
+            std::cout << "If you ever need anything, just come back." << std::endl;
+            break;
+        case 1:
+            // Buy items
+            this->buyItems(character);
+            break;
+        case 2:
+            // Sell items
+            this->sellItems(character);
+            break;
+        default:
+            // Print the message
+            std::cout << "Invalid option." << std::endl;
+            break;
+        }
+
+    } while (option != 0);
 }
 
 /**
@@ -824,32 +870,40 @@ void Merchant::interact(Character &character)
     // Variables
     int option = 0;
 
-    // Print the options
-    std::cout << "Hello, " << character.getName() << "." << std::endl;
-    std::cout << "1. Open shop" << std::endl;
-
-    // Return option
-    std::cout << "0. Nevermind" << std::endl;
-    std::cout << std::endl;
-
-    // Get the option
-    std::cout << "Enter the option:" << std::endl;
-    std::cin >> option;
-
-    // Check the option
-    switch (option)
+    do
     {
-    case 1:
-        this->openShop(character);
-        break;
-    case 0:
-        std::cout << "If you change your mind, come back." << std::endl;
-        break;
-    default:
-        std::cout << "Invalid option." << std::endl;
-        break;
-    }
-}
+        // Clear the screen
+        cleanScreen();
 
+        // Print the options
+        std::cout << "Hello, " << character.getName() << "." << std::endl;
+        std::cout << "1. Open shop" << std::endl;
+
+        // Return option
+        std::cout << "0. Goodbye" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Enter the option:" << std::endl;
+        std::cin >> option;
+
+        // Check the option
+        switch (option)
+        {
+        case 1:
+            // Open the shop
+            this->openShop(character);
+            break;
+        case 0:
+            // Print the message
+            std::cout << "Goodbye, " << character.getName() << "." << std::endl;
+            break;
+        default:
+            // Print the message
+            std::cout << "Invalid option." << std::endl;
+            break;
+        }
+    } while (option != 0);
+}
 
 #endif // End of the preprocessor MERCHANT_CC
