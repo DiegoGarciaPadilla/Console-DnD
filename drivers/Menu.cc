@@ -36,8 +36,13 @@ void mainMenu()
     std::cout << "2. Show character" << std::endl;
     std::cout << "3. Show equipped items" << std::endl;
     std::cout << "4. Show inventory" << std::endl;
-    std::cout << "5. D&D encyclopedia" << std::endl;
-    std::cout << "6. Exit" << std::endl;
+    std::cout << "5. Merchant" << std::endl;
+    std::cout << "6. D&D encyclopedia" << std::endl;
+    std::cout << std::endl;
+
+    // Exit option
+    std::cout << "0. Exit" << std::endl;
+    std::cout << std::endl;
 }
 
 /**
@@ -69,29 +74,38 @@ void racesMenu()
 
         // Show races
         printStringVector(racesNames);
-        std::cout << racesNumber + 1 << ". Return" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
 
-        // Check if the option is valid
-        while (option < 1 || option > racesNumber + 1)
-        {
-            std::cout << "Invalid option" << std::endl;
-            std::cin >> option;
-        }
-
-        // If the option is valid, show the race
-        if (option != racesNumber + 1)
+        // Check the option
+        if (option > 0 && option <= racesNumber)
         {
             // Clear the screen
             cleanScreen();
 
-            // Show the race
+            //  Show the race
             std::cout << races[option - 1].toString() << std::endl;
             pause();
         }
+        else if (option == 0)
+        {
+            // Return
+        }
+        else
+        {
+            // Invalid option
+            std::cout << "Invalid option" << std::endl;
+            pause();
+        }
 
-    } while (option != racesNumber + 1);
+    } while (option != 0);
 }
 
 /**
@@ -123,29 +137,38 @@ void classesMenu()
 
         // Show classes
         printStringVector(classesNames);
-        std::cout << classesNumber + 1 << ". Return" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
 
-        // Check if the option is valid
-        while (option < 1 || option > classesNumber + 1)
-        {
-            std::cout << "Invalid option" << std::endl;
-            std::cin >> option;
-        }
-
-        // If the option is valid, show the class
-        if (option != classesNumber + 1)
+        // Check the option
+        if (option > 0 && option <= classesNumber)
         {
             // Clear the screen
             cleanScreen();
 
-            // Show the class
+            //  Show the class
             std::cout << classes[option - 1].toString() << std::endl;
             pause();
         }
+        else if (option == 0)
+        {
+            // Return
+        }
+        else
+        {
+            // Invalid option
+            std::cout << "Invalid option" << std::endl;
+            pause();
+        }
 
-    } while (option != classesNumber + 1);
+    } while (option != 0);
 }
 
 /**
@@ -177,19 +200,18 @@ void weaponsMenu()
 
         // Show weapons
         printStringVector(weaponsNames);
-        std::cout << weaponsNumber + 1 << ". Return" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
 
-        // Check if the option is valid
-        while (option < 1 || option > weaponsNumber + 1)
-        {
-            std::cout << "Invalid option" << std::endl;
-            std::cin >> option;
-        }
-
-        // If the option is valid, show the weapon
-        if (option != weaponsNumber + 1)
+        // Check the option
+        if (option > 0 && option <= weaponsNumber)
         {
             // Clear the screen
             cleanScreen();
@@ -198,8 +220,18 @@ void weaponsMenu()
             std::cout << weapons[option - 1].toString() << std::endl;
             pause();
         }
+        else if (option == 0)
+        {
+            // Return
+        }
+        else
+        {
+            // Invalid option
+            std::cout << "Invalid option" << std::endl;
+            pause();
+        }
 
-    } while (option != weaponsNumber + 1);
+    } while (option != 0);
 }
 
 /**
@@ -231,19 +263,18 @@ void armorMenu()
 
         // Show armors
         printStringVector(armorsNames);
-        std::cout << armorsNumber + 1 << ". Return" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
 
-        // Check if the option is valid
-        while (option < 1 || option > armorsNumber + 1)
-        {
-            std::cout << "Invalid option" << std::endl;
-            std::cin >> option;
-        }
-
-        // If the option is valid, show the armor
-        if (option != armorsNumber + 1)
+        // Check the option
+        if (option > 0 && option <= armorsNumber + 1)
         {
             // Clear the screen
             cleanScreen();
@@ -252,8 +283,18 @@ void armorMenu()
             std::cout << armors[option - 1].toString() << std::endl;
             pause();
         }
+        else if (option == 0)
+        {
+            // Do nothing
+        }
+        else
+        {
+            // Print a message
+            std::cout << "Invalid option" << std::endl;
+            pause();
+        }
 
-    } while (option != armorsNumber + 1);
+    } while (option != 0);
 }
 
 /**
@@ -282,18 +323,17 @@ void encyclopediaMenu()
         std::cout << "2. Classes" << std::endl;
         std::cout << "3. Weapons" << std::endl;
         std::cout << "4. Armors" << std::endl;
-        std::cout << "5. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
         std::cout << "Choose an option: " << std::endl;
         std::cin >> option;
 
-        // Check if the option is valid
-        while (option < 1 || option > 5)
-        {
-            std::cout << "Invalid option" << std::endl;
-            std::cin >> option;
-        }
-
-        // If the option is valid, show the encyclopedia
+        // Check the option
         switch (option)
         {
         case 1:
@@ -308,9 +348,15 @@ void encyclopediaMenu()
         case 4:
             armorMenu();
             break;
+        case 0:
+            std::cout << "You can come here if you want to learn more about D&D" << std::endl;
+            break;
+        default:
+            std::cout << "Invalid option" << std::endl;
+            break;
         }
 
-    } while (option != 5);
+    } while (option != 0);
 }
 
 #endif // End of the preprocessor MENU_CC

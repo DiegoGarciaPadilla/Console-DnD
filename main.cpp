@@ -19,9 +19,10 @@
 #include <cstdlib>  // Library for system functions
 #include <vector>   // Library for vectors
 
-#include "drivers/Menu.cc"        // Library for menus
-#include "drivers/Functions.cc"   // Library for functions
-#include "drivers/Character.cc"   // Library for the character class
+#include "drivers/Menu.cc"      // Library for menus
+#include "drivers/Functions.cc" // Library for functions
+#include "drivers/Character.cc" // Library for the character class
+#include "drivers/Merchant.cc"  // Library for the merchant class
 
 // Main function
 int main()
@@ -29,12 +30,19 @@ int main()
     // Variables
     int mainOption;
     Character character;
+    Merchant merchant;
+
+    // Initialize merchant
+    merchant.initialize();
 
     // Main menu loop
     do
     {
         // Show the main menu
         mainMenu();
+
+        // Get the option
+        std::cout << "Enter an option:" << std::endl;
         std::cin >> mainOption;
         cleanScreen();
 
@@ -108,9 +116,20 @@ int main()
             pause();
             break;
         case 5:
-            encyclopediaMenu();
+            if (character.getName() == "None")
+            {
+                std::cout << "You need to create a character first" << std::endl;
+            }
+            else
+            {
+                merchant.interact(character);
+            }
+            pause();
             break;
         case 6:
+            encyclopediaMenu();
+            break;
+        case 0:
             std::cout << "Goodbye adventurer. See you soon..." << std::endl;
             pause();
             break;
@@ -120,7 +139,7 @@ int main()
             break;
         }
         cleanScreen();
-    } while (mainOption != 6);
+    } while (mainOption != 0);
 }
 
 #endif // End of the preprocessor MAIN_H
