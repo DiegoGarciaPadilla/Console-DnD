@@ -89,7 +89,7 @@ std::vector<std::string> listAlignments()
 std::vector<Weapon> initWeapons()
 {
     // Open the file
-    std::ifstream file("data/weapons.txt");
+    std::ifstream file("data/weapons.csv");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -172,7 +172,7 @@ std::vector<std::string> listWeapons()
 std::vector<Armor> initArmors()
 {
     // Open the file
-    std::ifstream file("data/armors.txt");
+    std::ifstream file("data/armors.csv");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -255,7 +255,7 @@ std::vector<std::string> listArmors()
 std::vector<Race> initRaces()
 {
     // Open the file
-    std::ifstream file("data/races.txt");
+    std::ifstream file("data/races.csv");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -343,7 +343,7 @@ std::vector<Class> initClasses()
     std::vector<Armor> armors = initArmors();
 
     // Open the file
-    std::ifstream file("data/classes.txt");
+    std::ifstream file("data/classes.csv");
 
     // Check if the file was opened correctly
     if (!file.is_open())
@@ -430,7 +430,7 @@ std::vector<std::string> listClasses()
 std::vector<Potion> initPotions()
 {
     // Open the file
-    std::ifstream file("data/potions.txt");
+    std::ifstream file("data/potions.csv");
 
     // Check if the file was opened correctly
     if (!file.is_open())
