@@ -102,18 +102,18 @@ std::vector<Weapon> initWeapons()
     // Create the vector of weapons
     std::vector<Weapon> weapons;
 
-    // Line of the file
+    // Get the first line of the file (header)
     std::string line;
+    std::getline(file, line);
 
     // Read the file line by line
-    int i = 0;
     while (std::getline(file, line))
     {
-        // Split the line by pipe character
+        // Split the line by semi-colon character
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
+        while (std::getline(ss, token, ';'))
         {
             tokens.push_back(token);
         }
@@ -123,9 +123,6 @@ std::vector<Weapon> initWeapons()
 
         // Add the weapon to the vector
         weapons.push_back(weapon);
-
-        // Increase the counter
-        i++;
     }
 
     // Close the file
@@ -188,18 +185,18 @@ std::vector<Armor> initArmors()
     // Create the vector of armors
     std::vector<Armor> armors;
 
-    // Line of the file
+    // Get the first line of the file (header)
     std::string line;
+    std::getline(file, line);
 
     // Read the file line by line
-    int i = 0;
     while (std::getline(file, line))
     {
-        // Split the line by pipe character
+        // Split the line by semi-colon character
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
+        while (std::getline(ss, token, ';'))
         {
             tokens.push_back(token);
         }
@@ -209,9 +206,6 @@ std::vector<Armor> initArmors()
 
         // Add the armor to the vector
         armors.push_back(armor);
-
-        // Increase the counter
-        i++;
     }
 
     // Close the file
@@ -274,18 +268,18 @@ std::vector<Race> initRaces()
     // Create the vector of races
     std::vector<Race> races;
 
-    // Line of the file
+    // Get the first line of the file (header)
     std::string line;
+    std::getline(file, line);
 
     // Read the file line by line
-    int i = 0;
     while (std::getline(file, line))
     {
-        // Split the line by pipe character
+        // Split the line by semi-colon character
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
+        while (std::getline(ss, token, ';'))
         {
             tokens.push_back(token);
         }
@@ -295,9 +289,6 @@ std::vector<Race> initRaces()
 
         // Add the race to the vector
         races.push_back(race);
-
-        // Increase the counter
-        i++;
     }
 
     // Close the file
@@ -365,18 +356,19 @@ std::vector<Class> initClasses()
     // Create the vector of classes
     std::vector<Class> classes;
 
-    // Line of the file
+    // Get the first line of the file (header)
     std::string line;
+    std::getline(file, line);;
 
     // Read the file line by line
     int i = 0;
     while (std::getline(file, line))
     {
-        // Split the line by pipe character
+        // Split the line by semi-colon character
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
+        while (std::getline(ss, token, ';'))
         {
             tokens.push_back(token);
         }
@@ -451,18 +443,18 @@ std::vector<Potion> initPotions()
     // Create the vector of potions
     std::vector<Potion> potions;
 
-    // Line of the file
+    // Get the first line of the file (header)
     std::string line;
+    std::getline(file, line);
 
     // Read the file line by line
-    int i = 0;
     while (std::getline(file, line))
     {
         // Split the line by pipe character
         std::stringstream ss(line);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
+        while (std::getline(ss, token, ';'))
         {
             tokens.push_back(token);
         }
@@ -472,15 +464,40 @@ std::vector<Potion> initPotions()
 
         // Add the potion to the vector
         potions.push_back(potion);
-
-        // Increase the counter
-        i++;
     }
 
     // Close the file
     file.close();
 
     // Return the array of potions
+    return potions;
+}
+
+/**
+ * @brief Function to get the list of potions
+ *
+ * @param
+ * @return vector
+ */
+
+std::vector<std::string> listPotions()
+{
+    // Create the vector of strings
+    std::vector<std::string> potions;
+
+    // Create the vector of potions
+    std::vector<Potion> potionsArray = initPotions();
+
+    // Get the number of potions
+    int numPotions = potionsArray.size();
+
+    // Add potions to the vector
+    for (int i = 0; i < numPotions; i++)
+    {
+        potions.push_back(potionsArray[i].getName());
+    }
+
+    // Return the vector of potions
     return potions;
 }
 
