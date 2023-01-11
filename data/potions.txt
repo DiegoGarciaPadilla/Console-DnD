@@ -1,15 +1,16 @@
-Potion of Minor Healing|Restores 10 health|Common|0.1|5|10|0|0
-Potion of Healing|Restores 25 health|Common|0.1|10|25|0|0
-Potion of Greater Healing|Restores 50 health|Uncommon|0.1|30|50|0|0
-Potion of Superior Healing|Restores 75 health|Rare|0.1|50|75|0|0
-Potion of Supreme Healing|Restores 100 health|Very rare|0.1|70|100|0|0
-Potion of Minor Mana|Restores 10 Mana|Common|0.1|5|0|10|0
-Potion of Mana|Restores 25 Mana|Common|0.1|10|0|25|0
-Potion of Greater Mana|Restores 50 Mana|Uncommon|0.1|30|0|50|0
-Potion of Superior Mana|Restores 75 Mana|Rare|0.1|50|0|75|0
-Potion of Supreme Mana|Restores 100 Mana|Very rare|0.1|70|0|100|0
-Potion of Minor Stamina|Restores 10 Stamina|Common|0.1|5|0|0|10
-Potion of Stamina|Restores 25 Stamina|Common|0.1|10|0|0|25
-Potion of Greater Stamina|Restores 50 Stamina|Uncommon|0.1|30|0|0|50
-Potion of Superior Stamina|Restores 75 Stamina|Rare|0.1|50|0|0|75
-Potion of Supreme Stamina|Restores 100 Stamina|Very rare|0.1|70|0|0|100
+name;description;rarity;weight;price;health;mana;stamina
+Potion of Minor Healing;Restores 10 health;Common;0.1;5;10;0;0
+Potion of Healing;Restores 25 health;Common;0.1;10;25;0;0
+Potion of Greater Healing;Restores 50 health;Uncommon;0.1;30;50;0;0
+Potion of Superior Healing;Restores 75 health;Rare;0.1;50;75;0;0
+Potion of Supreme Healing;Restores 100 health;Very rare;0.1;70;100;0;0
+Potion of Minor Mana;Restores 10 Mana;Common;0.1;5;0;10;0
+Potion of Mana;Restores 25 Mana;Common;0.1;10;0;25;0
+Potion of Greater Mana;Restores 50 Mana;Uncommon;0.1;30;0;50;0
+Potion of Superior Mana;Restores 75 Mana;Rare;0.1;50;0;75;0
+Potion of Supreme Mana;Restores 100 Mana;Very rare;0.1;70;0;100;0
+Potion of Minor Stamina;Restores 10 Stamina;Common;0.1;5;0;0;10
+Potion of Stamina;Restores 25 Stamina;Common;0.1;10;0;0;25
+Potion of Greater Stamina;Restores 50 Stamina;Uncommon;0.1;30;0;0;50
+Potion of Superior Stamina;Restores 75 Stamina;Rare;0.1;50;0;0;75
+Potion of Supreme Stamina;Restores 100 Stamina;Very rare;0.1;70;0;0;100
