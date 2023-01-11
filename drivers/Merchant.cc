@@ -15,6 +15,7 @@
 #include "../headers/Merchant.h" // Include the Merchant header file
 #include "Functions.cc"          // Include the Functions header file
 #include "Initializer.cc"        // Include the Initializer header file
+#include "Ascii.cc"              // Include the Ascii header file
 
 // Constructors
 
@@ -848,10 +849,13 @@ void Merchant::openShop(Character &character)
         // Clear the screen
         cleanScreen();
 
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
+
         // Print the options
         std::cout << "Hello, " << character.getName() << "." << std::endl;
         std::cout << "What would you like to do?" << std::endl;
-        std::cout << std::endl;
+        std::cout << std::endl << std::endl;   
 
         // Print the options
         std::cout << "1. Buy items" << std::endl;
