@@ -304,6 +304,69 @@ void armorMenu()
  * @return
  */
 
+/**
+ * @brief Function to show the potion encyclopedia menu
+ *
+ * @param
+ * @return
+ */
+
+void potionsMenu()
+{
+    // Variables
+    int option;
+
+    // Arrays
+    std::vector<Potion> potions = initPotions();
+    std::vector<std::string> potionsNames = listPotions();
+    int potionsNumber = potions.size();
+
+    // Show the armors menu
+    do
+    {
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << "Welcome to the D&D's potions encyclopedia" << std::endl;
+        std::cout << std::endl;
+
+        // Show armors
+        printStringVector(potionsNames);
+        std::cout << std::endl;
+
+        // Return option
+        std::cout << "0. Return" << std::endl;
+        std::cout << std::endl;
+
+        // Get the option
+        std::cout << "Choose an option: " << std::endl;
+        std::cin >> option;
+
+        // Check the option
+        if (option > 0 && option <= potionsNumber + 1)
+        {
+            // Clear the screen
+            cleanScreen();
+
+            // Show the armor
+            std::cout << potions[option - 1].toString() << std::endl;
+            pause();
+        }
+        else if (option == 0)
+        {
+            // Do nothing
+        }
+        else
+        {
+            // Print a message
+            std::cout << "Invalid option" << std::endl;
+            pause();
+        }
+
+    } while (option != 0);
+}
+
 void encyclopediaMenu()
 {
     // Variables
@@ -323,6 +386,7 @@ void encyclopediaMenu()
         std::cout << "2. Classes" << std::endl;
         std::cout << "3. Weapons" << std::endl;
         std::cout << "4. Armors" << std::endl;
+        std::cout << "5. Potions" << std::endl;
         std::cout << std::endl;
 
         // Return option
@@ -347,6 +411,9 @@ void encyclopediaMenu()
             break;
         case 4:
             armorMenu();
+            break;
+        case 5:
+            potionsMenu();
             break;
         case 0:
             std::cout << "You can come here if you want to learn more about D&D" << std::endl;
