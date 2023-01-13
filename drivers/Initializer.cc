@@ -12,12 +12,13 @@
 #ifndef INITIALIZER_CC // If the file is not defined
 #define INITIALIZER_CC // Define the file
 
-#include <iostream> // Include input and output library
-#include <string>   // Include string library
-#include <sstream>  // Include string stream library
-#include <fstream>  // Include file stream library
-#include <cstdlib>  // Include system library
-#include <vector>   // Include vector library
+#include <iostream>          // Include input and output library
+#include <string>            // Include string library
+#include <sstream>           // Include string stream library
+#include <fstream>           // Include file stream library
+#include <cstdlib>           // Include system library
+#include <vector>            // Include vector library
+#include <nlohmann/json.hpp> // Include JSON library
 
 #include "Weapon.cc" // Include the Weapon class
 #include "Armor.cc"  // Include the Armor class
@@ -80,7 +81,7 @@ std::vector<std::string> listAlignments()
 // Weapons
 
 /**
- * @brief Function to initialize weapons array
+ * @brief Function to initialize weapons array from a JSON file
  *
  * @param
  * @return vector
@@ -88,38 +89,51 @@ std::vector<std::string> listAlignments()
 
 std::vector<Weapon> initWeapons()
 {
-    // Open the file
-    std::ifstream file("data/weapons.csv");
-
-    // Check if the file was opened correctly
-    if (!file.is_open())
-    {
-        // If the file was not opened correctly, show an error message
-        std::cout << "There was an error opening the file" << std::endl;
-        return std::vector<Weapon>();
-    }
+    // Variables
+    std::string name;
+    std::string description;
+    std::string rarity;
+    float weight;
+    int price;
+    std::string subtype;
+    int damage;
 
     // Create the vector of weapons
     std::vector<Weapon> weapons;
 
-    // Get the first line of the file (header)
-    std::string line;
-    std::getline(file, line);
+    // Create the JSON reader
+    using json = nlohmann::json;
 
-    // Read the file line by line
-    while (std::getline(file, line))
+    // Open the JSON file
+    std::ifstream file("data/weapons.json");
+
+    // Check if the file is open
+    if (!file.is_open())
     {
-        // Split the line by semi-colon character
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, ';'))
-        {
-            tokens.push_back(token);
-        }
+        // If the file is not open, print an error message
+        std::cout << "Error: The file could not be opened." << std::endl;
 
-        // Create the weapon
-        Weapon weapon(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), tokens[5], std::stoi(tokens[6]));
+        // Return the vector of weapons
+        return weapons;
+    }
+
+    // Create the JSON object
+    json weaponsJSON = json::parse(file);
+
+    // Create the weapon objects
+    for (int i = 0; i < weaponsJSON.size(); i++)
+    {
+        // Get the Weapon attributes
+        name = weaponsJSON[i]["name"];
+        description = weaponsJSON[i]["description"];
+        rarity = weaponsJSON[i]["rarity"];
+        weight = weaponsJSON[i]["weight"];
+        price = weaponsJSON[i]["price"];
+        subtype = weaponsJSON[i]["subtype"];
+        damage = weaponsJSON[i]["damage"];
+
+        // Create the weapon object
+        Weapon weapon(name, description, rarity, weight, price, subtype, damage);
 
         // Add the weapon to the vector
         weapons.push_back(weapon);
@@ -144,16 +158,13 @@ std::vector<std::string> listWeapons()
     // Create the vector of strings
     std::vector<std::string> weapons;
 
-    // Create the vector of weapons
-    std::vector<Weapon> weaponsArray = initWeapons();
+    // Create the weapon vector
+    std::vector<Weapon> weaponsVector = initWeapons();
 
-    // Get the number of weapons
-    int numWeapons = weaponsArray.size();
-
-    // Add weapons to the vector
-    for (int i = 0; i < numWeapons; i++)
+    // Add the weapons to the vector
+    for (int i = 0; i < weaponsVector.size(); i++)
     {
-        weapons.push_back(weaponsArray[i].getName());
+        weapons.push_back(weaponsVector[i].getName());
     }
 
     // Return the vector of weapons
@@ -163,7 +174,7 @@ std::vector<std::string> listWeapons()
 // Armors
 
 /**
- * @brief Function to initialize armors array
+ * @brief Function to initialize armors array from a JSON file
  *
  * @param
  * @return vector
@@ -171,38 +182,51 @@ std::vector<std::string> listWeapons()
 
 std::vector<Armor> initArmors()
 {
-    // Open the file
-    std::ifstream file("data/armors.csv");
-
-    // Check if the file was opened correctly
-    if (!file.is_open())
-    {
-        // If the file was not opened correctly, show an error message
-        std::cout << "There was an error opening the file" << std::endl;
-        return std::vector<Armor>();
-    }
+    // Variables
+    std::string name;
+    std::string description;
+    std::string rarity;
+    float weight;
+    int price;
+    std::string subtype;
+    int defense;
 
     // Create the vector of armors
     std::vector<Armor> armors;
 
-    // Get the first line of the file (header)
-    std::string line;
-    std::getline(file, line);
+    // Create the JSON reader
+    using json = nlohmann::json;
 
-    // Read the file line by line
-    while (std::getline(file, line))
+    // Open the JSON file
+    std::ifstream file("data/armors.json");
+
+    // Check if the file is open
+    if (!file.is_open())
     {
-        // Split the line by semi-colon character
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, ';'))
-        {
-            tokens.push_back(token);
-        }
+        // If the file is not open, print an error message
+        std::cout << "Error: The file could not be opened." << std::endl;
 
-        // Create the armor
-        Armor armor(tokens[0], tokens[1], tokens[2], std::stoi(tokens[3]), std::stoi(tokens[4]), tokens[5], std::stoi(tokens[6]));
+        // Return the vector of armors
+        return armors;
+    }
+
+    // Create the JSON object
+    json armorsJSON = json::parse(file);
+
+    // Create the armor objects
+    for (int i = 0; i < armorsJSON.size(); i++)
+    {
+        // Get the Armor attributes
+        name = armorsJSON[i]["name"].get<std::string>();
+        description = armorsJSON[i]["description"].get<std::string>();
+        rarity = armorsJSON[i]["rarity"].get<std::string>();
+        weight = armorsJSON[i]["weight"].get<float>();
+        price = armorsJSON[i]["price"].get<int>();
+        subtype = armorsJSON[i]["subtype"].get<std::string>();
+        defense = armorsJSON[i]["defense"].get<int>();
+
+        // Create the armor object
+        Armor armor(name, description, rarity, weight, price, subtype, defense);
 
         // Add the armor to the vector
         armors.push_back(armor);
@@ -219,7 +243,7 @@ std::vector<Armor> initArmors()
  * @brief Function to get the list of armors
  *
  * @param
- * @return std::vector
+ * @return vector
  */
 
 std::vector<std::string> listArmors()
@@ -227,16 +251,13 @@ std::vector<std::string> listArmors()
     // Create the vector of strings
     std::vector<std::string> armors;
 
-    // Create the vector of armors
-    std::vector<Armor> armorsArray = initArmors();
+    // Create the armor vector
+    std::vector<Armor> armorsVector = initArmors();
 
-    // Get the number of armors
-    int numArmors = armorsArray.size();
-
-    // Add armors to the vector
-    for (int i = 0; i < numArmors; i++)
+    // Add the armors to the vector
+    for (int i = 0; i < armorsVector.size(); i++)
     {
-        armors.push_back(armorsArray[i].getName());
+        armors.push_back(armorsVector[i].getName());
     }
 
     // Return the vector of armors
@@ -246,7 +267,7 @@ std::vector<std::string> listArmors()
 // Races
 
 /**
- * @brief Function to initialize races array
+ * @brief Function to initialize the races array from a JSON file
  *
  * @param
  * @return vector
@@ -254,38 +275,53 @@ std::vector<std::string> listArmors()
 
 std::vector<Race> initRaces()
 {
-    // Open the file
-    std::ifstream file("data/races.csv");
-
-    // Check if the file was opened correctly
-    if (!file.is_open())
-    {
-        // If the file was not opened correctly, show an error message
-        std::cout << "There was an error opening the file" << std::endl;
-        return std::vector<Race>();
-    }
+    // Variables
+    std::string name;
+    std::string description;
+    int strengthModifier;
+    int dexterityModifier;
+    int constitutionModifier;
+    int intelligenceModifier;
+    int wisdomModifier;
+    int charismaModifier;
 
     // Create the vector of races
     std::vector<Race> races;
 
-    // Get the first line of the file (header)
-    std::string line;
-    std::getline(file, line);
+    // Create the JSON reader
+    using json = nlohmann::json;
 
-    // Read the file line by line
-    while (std::getline(file, line))
+    // Open the JSON file
+    std::ifstream file("data/races.json");
+
+    // Check if the file is open
+    if (!file.is_open())
     {
-        // Split the line by semi-colon character
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, ';'))
-        {
-            tokens.push_back(token);
-        }
+        // If the file is not open, print an error message
+        std::cout << "Error: The file could not be opened." << std::endl;
 
-        // Create the race
-        Race race(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+        // Return the vector of races
+        return races;
+    }
+
+    // Create the JSON object
+    json racesJSON = json::parse(file);
+
+    // Create the armor objects
+    for (int i = 0; i < racesJSON.size(); i++)
+    {
+        // Get the Race attributes
+        name = racesJSON[i]["name"].get<std::string>();
+        description = racesJSON[i]["description"].get<std::string>();
+        strengthModifier = racesJSON[i]["strengthModifier"].get<int>();
+        dexterityModifier = racesJSON[i]["dexterityModifier"].get<int>();
+        constitutionModifier = racesJSON[i]["constitutionModifier"].get<int>();
+        intelligenceModifier = racesJSON[i]["intelligenceModifier"].get<int>();
+        wisdomModifier = racesJSON[i]["wisdomModifier"].get<int>();
+        charismaModifier = racesJSON[i]["charismaModifier"].get<int>();
+
+        // Create the race object
+        Race race(name, description, strengthModifier, dexterityModifier, constitutionModifier, intelligenceModifier, wisdomModifier, charismaModifier);
 
         // Add the race to the vector
         races.push_back(race);
@@ -294,7 +330,7 @@ std::vector<Race> initRaces()
     // Close the file
     file.close();
 
-    // Return the array of races
+    // Return the vector of races
     return races;
 }
 
@@ -310,16 +346,13 @@ std::vector<std::string> listRaces()
     // Create the vector of strings
     std::vector<std::string> races;
 
-    // Create the vector of races
-    std::vector<Race> racesArray = initRaces();
+    // Create the races vector
+    std::vector<Race> racesVector = initRaces();
 
-    // Get the number of races
-    int numRaces = racesArray.size();
-
-    // Add races to the vector
-    for (int i = 0; i < numRaces; i++)
+    // Add the races to the vector
+    for (int i = 0; i < racesVector.size(); i++)
     {
-        races.push_back(racesArray[i].getName());
+        races.push_back(racesVector[i].getName());
     }
 
     // Return the vector of races
@@ -329,7 +362,7 @@ std::vector<std::string> listRaces()
 // Classes
 
 /**
- * @brief Function to initialize classes array
+ * @brief Function to initialize the classes array from a JSON file
  *
  * @param
  * @return vector
@@ -337,57 +370,87 @@ std::vector<std::string> listRaces()
 
 std::vector<Class> initClasses()
 {
+    // Variables for the class
+    std::string name;
+    std::string description;
 
-    // Initialize the weapons and armors vectors
-    std::vector<Weapon> weapons = initWeapons();
-    std::vector<Armor> armors = initArmors();
+    // Variables for the initial weapon
+    std::string initialWeaponName;
+    std::string initialWeaponDescription;
+    std::string initialWeaponRarity;
+    float initialWeaponWeight;
+    int initialWeaponPrice;
+    std::string initialWeaponSubtype;
+    int initialWeaponDamage;
 
-    // Open the file
-    std::ifstream file("data/classes.csv");
-
-    // Check if the file was opened correctly
-    if (!file.is_open())
-    {
-        // If the file was not opened correctly, show an error message
-        std::cout << "There was an error opening the file" << std::endl;
-        return std::vector<Class>();
-    }
+    // Variables for the initial armor
+    std::string initialArmorName;
+    std::string initialArmorDescription;
+    std::string initialArmorRarity;
+    float initialArmorWeight;
+    int initialArmorPrice;
+    std::string initialArmorSubtype;
+    int initialArmorDefense;
 
     // Create the vector of classes
     std::vector<Class> classes;
 
-    // Get the first line of the file (header)
-    std::string line;
-    std::getline(file, line);;
+    // Create the JSON reader
+    using json = nlohmann::json;
 
-    // Read the file line by line
-    int i = 0;
-    while (std::getline(file, line))
+    // Open the JSON file
+    std::ifstream file("data/classes.json");
+
+    // Check if the file is open
+    if (!file.is_open())
     {
-        // Split the line by semi-colon character
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, ';'))
-        {
-            tokens.push_back(token);
-        }
+        // If the file is not open, print an error message
+        std::cout << "Error: The file could not be opened." << std::endl;
 
-        // Create the class
-        Class cl(tokens[0], tokens[1], weapons[i], armors[i]);
-
-        // Add the class to the vector
-        classes.push_back(cl);
-
-        // Increase the counter
-        i++;
+        // Return the vector of classes
+        return classes;
     }
 
-    // Close the file
-    file.close();
+    // Create the JSON object
+    json classesJSON = json::parse(file);
 
-    // Return the array of classes
-    return classes;
+    // Create the class objects
+    for (int i = 0; i < classesJSON.size(); i++)
+    {
+        // Get the Class attributes
+        name = classesJSON[i]["name"].get<std::string>();
+        description = classesJSON[i]["description"].get<std::string>();
+
+        // Get the initial weapon attributes
+        initialWeaponName = classesJSON[i]["initialWeapon"]["name"].get<std::string>();
+        initialWeaponDescription = classesJSON[i]["initialWeapon"]["description"].get<std::string>();
+        initialWeaponRarity = classesJSON[i]["initialWeapon"]["rarity"].get<std::string>();
+        initialWeaponWeight = classesJSON[i]["initialWeapon"]["weight"].get<float>();
+        initialWeaponPrice = classesJSON[i]["initialWeapon"]["price"].get<int>();
+        initialWeaponSubtype = classesJSON[i]["initialWeapon"]["subtype"].get<std::string>();
+        initialWeaponDamage = classesJSON[i]["initialWeapon"]["damage"].get<int>();
+
+        // Get the initial armor attributes
+        initialArmorName = classesJSON[i]["initialArmor"]["name"].get<std::string>();
+        initialArmorDescription = classesJSON[i]["initialArmor"]["description"].get<std::string>();
+        initialArmorRarity = classesJSON[i]["initialArmor"]["rarity"].get<std::string>();
+        initialArmorWeight = classesJSON[i]["initialArmor"]["weight"].get<float>();
+        initialArmorPrice = classesJSON[i]["initialArmor"]["price"].get<int>();
+        initialArmorSubtype = classesJSON[i]["initialArmor"]["subtype"].get<std::string>();
+        initialArmorDefense = classesJSON[i]["initialArmor"]["defense"].get<int>();
+
+        // Create the initial weapon object
+        Weapon initialWeapon(initialWeaponName, initialWeaponDescription, initialWeaponRarity, initialWeaponWeight, initialWeaponPrice, initialWeaponSubtype, initialWeaponDamage);
+
+        // Create the initial armor object
+        Armor initialArmor(initialArmorName, initialArmorDescription, initialArmorRarity, initialArmorWeight, initialArmorPrice, initialArmorSubtype, initialArmorDefense);
+
+        // Create the class object
+        Class classObject(name, description, initialWeapon, initialArmor);
+
+        // Add the class to the vector
+        classes.push_back(classObject);
+    }
 }
 
 /**
@@ -402,16 +465,13 @@ std::vector<std::string> listClasses()
     // Create the vector of strings
     std::vector<std::string> classes;
 
-    // Create the vector of classes
-    std::vector<Class> classesArray = initClasses();
+    // Create the classes vector
+    std::vector<Class> classesVector = initClasses();
 
-    // Get the number of classes
-    int numClasses = classesArray.size();
-
-    // Add classes to the vector
-    for (int i = 0; i < numClasses; i++)
+    // Add the classes to the vector
+    for (int i = 0; i < classesVector.size(); i++)
     {
-        classes.push_back(classesArray[i].getName());
+        classes.push_back(classesVector[i].getName());
     }
 
     // Return the vector of classes
@@ -421,7 +481,7 @@ std::vector<std::string> listClasses()
 // Potions
 
 /**
- * @brief Function to initialize potions array
+ * @brief Function to initialize the potions array from a JSON file
  *
  * @param
  * @return vector
@@ -429,38 +489,53 @@ std::vector<std::string> listClasses()
 
 std::vector<Potion> initPotions()
 {
-    // Open the file
-    std::ifstream file("data/potions.csv");
-
-    // Check if the file was opened correctly
-    if (!file.is_open())
-    {
-        // If the file was not opened correctly, show an error message
-        std::cout << "There was an error opening the file" << std::endl;
-        return std::vector<Potion>();
-    }
+    // Variables for the potion
+    std::string name;
+    std::string description;
+    std::string rarity;
+    float weight;
+    int price;
+    int health;
+    int mana;
+    int stamina;
 
     // Create the vector of potions
     std::vector<Potion> potions;
 
-    // Get the first line of the file (header)
-    std::string line;
-    std::getline(file, line);
+    // Create the JSON reader
+    using json = nlohmann::json;
 
-    // Read the file line by line
-    while (std::getline(file, line))
+    // Open the JSON file
+    std::ifstream file("data/potions.json");
+
+    // Check if the file is open
+    if (!file.is_open())
     {
-        // Split the line by pipe character
-        std::stringstream ss(line);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, ';'))
-        {
-            tokens.push_back(token);
-        }
+        // If the file is not open, print an error message
+        std::cout << "Error: The file could not be opened." << std::endl;
 
-        // Create the potion
-        Potion potion(tokens[0], tokens[1], tokens[2], std::stof(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+        // Return the vector of potions
+        return potions;
+    }
+
+    // Create the JSON object
+    json potionsJSON = json::parse(file);
+
+    // Create the potion objects
+    for (int i = 0; i < potionsJSON.size(); i++)
+    {
+        // Get the potion attributes
+        name = potionsJSON[i]["name"].get<std::string>();
+        description = potionsJSON[i]["description"].get<std::string>();
+        rarity = potionsJSON[i]["rarity"].get<std::string>();
+        weight = potionsJSON[i]["weight"].get<float>();
+        price = potionsJSON[i]["price"].get<int>();
+        health = potionsJSON[i]["health"].get<int>();
+        mana = potionsJSON[i]["mana"].get<int>();
+        stamina = potionsJSON[i]["stamina"].get<int>();
+
+        // Create the potion object
+        Potion potion(name, description, rarity, weight, price, health, mana, stamina);
 
         // Add the potion to the vector
         potions.push_back(potion);
@@ -469,7 +544,7 @@ std::vector<Potion> initPotions()
     // Close the file
     file.close();
 
-    // Return the array of potions
+    // Return the vector of potions
     return potions;
 }
 
@@ -485,16 +560,13 @@ std::vector<std::string> listPotions()
     // Create the vector of strings
     std::vector<std::string> potions;
 
-    // Create the vector of potions
-    std::vector<Potion> potionsArray = initPotions();
+    // Create the potions vector
+    std::vector<Potion> potionsVector = initPotions();
 
-    // Get the number of potions
-    int numPotions = potionsArray.size();
-
-    // Add potions to the vector
-    for (int i = 0; i < numPotions; i++)
+    // Add the potions to the vector
+    for (int i = 0; i < potionsVector.size(); i++)
     {
-        potions.push_back(potionsArray[i].getName());
+        potions.push_back(potionsVector[i].getName());
     }
 
     // Return the vector of potions
