@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Leather armor",
+    "description": "An light armor made of leather. It is very flexible and comfortable.",
+    "rarity": "Common",
+    "weight": 8,
+    "price": 20,
+    "subtype": "Light",
+    "defense": 12
+  },
+  {
+    "name": "Chainmail",
+    "description": "A heavy armor made of metal rings. It is very protective.",
+    "rarity": "Common",
+    "weight": 20,
+    "price": 75,
+    "subtype": "Heavy",
+    "defense": 16
+  },
+  {
+    "name": "Plate armor",
+    "description": "A heavy armor made of metal plates. It is very protective.",
+    "rarity": "Common",
+    "weight": 25,
+    "price": 100,
+    "subtype": "Heavy",
+    "defense": 18
+  },
+  {
+    "name": "Line tunic",
+    "description": "A light armor made of linen. It is very flexible and comfortable.",
+    "rarity": "Common",
+    "weight": 6,
+    "price": 20,
+    "subtype": "Light",
+    "defense": 10
+  }
+]

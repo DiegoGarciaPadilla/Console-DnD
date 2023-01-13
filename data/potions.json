@@ -1,0 +1,152 @@
+[
+    {
+      "name": "Potion of Minor Healing",
+      "description": "Restores 10 health",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 5,
+      "health": 10,
+      "mana": 0,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Healing",
+      "description": "Restores 25 health",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 10,
+      "health": 25,
+      "mana": 0,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Greater Healing",
+      "description": "Restores 50 health",
+      "rarity": "Uncommon",
+      "weight": 0.1,
+      "price": 30,
+      "health": 50,
+      "mana": 0,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Superior Healing",
+      "description": "Restores 75 health",
+      "rarity": "Rare",
+      "weight": 0.1,
+      "price": 50,
+      "health": 75,
+      "mana": 0,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Supreme Healing",
+      "description": "Restores 100 health",
+      "rarity": "Very rare",
+      "weight": 0.1,
+      "price": 70,
+      "health": 100,
+      "mana": 0,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Minor Mana",
+      "description": "Restores 10 Mana",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 5,
+      "health": 0,
+      "mana": 10,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Mana",
+      "description": "Restores 25 Mana",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 10,
+      "health": 0,
+      "mana": 25,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Greater Mana",
+      "description": "Restores 50 Mana",
+      "rarity": "Uncommon",
+      "weight": 0.1,
+      "price": 30,
+      "health": 0,
+      "mana": 50,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Superior Mana",
+      "description": "Restores 75 Mana",
+      "rarity": "Rare",
+      "weight": 0.1,
+      "price": 50,
+      "health": 0,
+      "mana": 75,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Supreme Mana",
+      "description": "Restores 100 Mana",
+      "rarity": "Very rare",
+      "weight": 0.1,
+      "price": 70,
+      "health": 0,
+      "mana": 100,
+      "stamina": 0
+    },
+    {
+      "name": "Potion of Minor Stamina",
+      "description": "Restores 10 Stamina",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 5,
+      "health": 0,
+      "mana": 0,
+      "stamina": 10
+    },
+    {
+      "name": "Potion of Stamina",
+      "description": "Restores 25 Stamina",
+      "rarity": "Common",
+      "weight": 0.1,
+      "price": 10,
+      "health": 0,
+      "mana": 0,
+      "stamina": 25
+    },
+    {
+      "name": "Potion of Greater Stamina",
+      "description": "Restores 50 Stamina",
+      "rarity": "Uncommon",
+      "weight": 0.1,
+      "price": 30,
+      "health": 0,
+      "mana": 0,
+      "stamina": 50
+    },
+    {
+      "name": "Potion of Superior Stamina",
+      "description": "Restores 75 Stamina",
+      "rarity": "Rare",
+      "weight": 0.1,
+      "price": 50,
+      "health": 0,
+      "mana": 0,
+      "stamina": 75
+    },
+    {
+      "name": "Potion of Supreme Stamina",
+      "description": "Restores 100 Stamina",
+      "rarity": "Very rare",
+      "weight": 0.1,
+      "price": 70,
+      "health": 0,
+      "mana": 0,
+      "stamina": 100
+    }
+  ]

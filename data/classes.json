@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Barbarian",
+    "description": "A fierce warrior of primitive background who can enter a battle rage",
+    "initialWeapon": {
+      "name": "Rusty greataxe",
+      "description": "It's a greataxe, with a rusty steel blade. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Axe",
+      "damage": 6
+    },
+    "initialArmor": {
+      "name": "Worn leather armor",
+      "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Bard",
+    "description": "An inspiring magician whose power echoes the music of creation",
+    "initialWeapon": {
+      "name": "Rusty rapier",
+      "description": "It's a rapier, with a rusty steel blade. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Sword",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn tunic",
+      "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Cleric",
+    "description": "A priestly champion who wields divine magic in service of a higher power",
+    "initialWeapon": {
+      "name": "Rusty mace",
+      "description": "It's a mace, with a rusty steel head. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Blunt",
+      "damage": 6
+    },
+    "initialArmor": {
+      "name": "Rusty chain mail",
+      "description": "It's a suit of chain mail, with rusty steel links. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Medium",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Druid",
+    "description": "A priest of the Old Faith, wielding the powers of nature and adopting animal forms",
+    "initialWeapon": {
+      "name": "Rusty quarterstaff",
+      "description": "It's a quarterstaff, with a rusty steel head. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Blunt",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn studded leather armor",
+      "description": "It's a suit of studded leather armor, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Fighter",
+    "description": "A master of martial combat, skilled with a variety of weapons and armor",
+    "initialWeapon": {
+      "name": "Rusty longsword",
+      "description": "It's a longsword, with a rusty steel blade. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Sword",
+      "damage": 6
+    },
+    "initialArmor": {
+      "name": "Rusty chain mail",
+      "description": "It's a suit of chain mail, with rusty steel links. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Medium",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Monk",
+    "description": "A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection",
+    "initialWeapon": {
+      "name": "Rusty quarterstaff",
+      "description": "It's a quarterstaff, with a rusty steel head. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Blunt",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn tunic",
+      "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Paladin",
+    "description": "A holy warrior bound to a sacred oath",
+    "initialWeapon": {
+      "name": "Rusty longsword",
+      "description": "It's a longsword, with a rusty steel blade. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 12,
+      "subtype": "Sword",
+      "damage": 6
+    },
+    "initialArmor": {
+      "name": "Rusty iron plate armor",
+      "description": "It's a suit of iron plate armor, with rusty steel plates. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 14,
+      "subtype": "Heavy",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Ranger",
+    "description": "A warrior who combats threats on the edges of civilization",
+    "initialWeapon": {
+      "name": "Rusty longbow",
+      "description": "It's a longbow, with a rusty steel bow. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Bow",
+      "damage": 6
+    },
+    "initialArmor": {
+      "name": "Worn leather armor",
+      "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Rogue",
+    "description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies",
+    "initialWeapon": {
+      "name": "Rusty dagger",
+      "description": "It's a dagger, with a rusty steel blade. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Dagger",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn leather armor",
+      "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Sorcerer",
+    "description": "A spellcaster who draws on inherent magic from a gift or bloodline",
+    "initialWeapon": {
+      "name": "Old spellbook",
+      "description": "It's an old spellbook, with a worn leather cover. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Arcane Focus",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn tunic",
+      "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Warlock",
+    "description": "A wielder of magic that is derived from a bargain with an extraplanar entity",
+    "initialWeapon": {
+      "name": "Worn scepter",
+      "description": "It's a scepter, with a worn wooden handle. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Arcane Focus",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn leather armor",
+      "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 8,
+      "subtype": "Light",
+      "defense": 6
+    }
+  },
+  {
+    "name": "Wizard",
+    "description": "A scholarly magic-user capable of manipulating the structures of reality",
+    "initialWeapon": {
+      "name": "Worn wand",
+      "description": "It's a wand, with a worn wooden handle. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Arcane Focus",
+      "damage": 4
+    },
+    "initialArmor": {
+      "name": "Worn tunic",
+      "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
+      "rarity": "Common",
+      "value": 2,
+      "weight": 6,
+      "subtype": "Light",
+      "defense": 6
+    }
+  }
+]

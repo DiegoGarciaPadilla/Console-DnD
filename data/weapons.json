@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Iron sword",
+    "description": "A sword made of iron.",
+    "rarity": "Common",
+    "weight": 10,
+    "price": 20,
+    "subtype": "Sword",
+    "damage": 12
+  },
+  {
+    "name": "Iron axe",
+    "description": "An axe made of iron.",
+    "rarity": "Common",
+    "weight": 12,
+    "price": 30,
+    "subtype": "Axe",
+    "damage": 16
+  },
+  {
+    "name": "Iron mace",
+    "description": "A mace made of iron.",
+    "rarity": "Common",
+    "weight": 14,
+    "price": 30,
+    "subtype": "Mace",
+    "damage": 18
+  },
+  {
+    "name": "Iron dagger",
+    "description": "A dagger made of iron.",
+    "rarity": "Common",
+    "weight": 6,
+    "price": 20,
+    "subtype": "Dagger",
+    "damage": 10
+  },
+  {
+    "name": "Iron spear",
+    "description": "A spear made of iron.",
+    "rarity": "Common",
+    "weight": 12,
+    "price": 20,
+    "subtype": "Spear",
+    "damage": 12
+  },
+  {
+    "name": "Iron bow",
+    "description": "A bow made of iron.",
+    "rarity": "Common",
+    "weight": 8,
+    "price": 20,
+    "subtype": "Bow",
+    "damage": 12
+  },
+  {
+    "name": "Iron crossbow",
+    "description": "A crossbow made of iron.",
+    "rarity": "Common",
+    "weight": 12,
+    "price": 30,
+    "subtype": "Crossbow",
+    "damage": 14
+  }
+]
