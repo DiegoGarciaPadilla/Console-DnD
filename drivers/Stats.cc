@@ -205,4 +205,113 @@ std::string Stats::toString()
     return ss.str();
 }
 
+/**
+ * @brief Increase the stats of the character
+ *
+ * @param strength
+ * @param dexterity
+ * @param constitution
+ * @param intelligence
+ * @param wisdom
+ * @param charisma
+ */
+
+void Stats::increaseStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
+{
+    this->strength += strength;
+    this->dexterity += dexterity;
+    this->constitution += constitution;
+    this->intelligence += intelligence;
+    this->wisdom += wisdom;
+    this->charisma += charisma;
+}
+
+/**
+ * @brief Decrease the stats of the character
+ *
+ * @param strength
+ * @param dexterity
+ * @param constitution
+ * @param intelligence
+ * @param wisdom
+ * @param charisma
+ */
+
+void Stats::decreaseStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
+{
+    this->strength -= strength;
+    this->dexterity -= dexterity;
+    this->constitution -= constitution;
+    this->intelligence -= intelligence;
+    this->wisdom -= wisdom;
+    this->charisma -= charisma;
+}
+
+/**
+ * @brief Increase the selected stat of the character by 1
+ * 
+ * @param stat 
+ */
+
+void Stats::increaseByOne(int stat)
+{
+    switch (stat)
+    {
+    case 1:
+        strength++;
+        break;
+    case 2:
+        dexterity++;
+        break;
+    case 3:
+        constitution++;
+        break;
+    case 4:
+        intelligence++;
+        break;
+    case 5:
+        wisdom++;
+        break;
+    case 6:
+        charisma++;
+        break;
+    default:
+        break;
+    }
+}
+
+/**
+ * @brief Decrease the selected stat of the character by 1
+ * 
+ * @param stat 
+ */
+
+void Stats::decreaseByOne(int stat)
+{
+    switch (stat)
+    {
+    case 1:
+        strength--;
+        break;
+    case 2:
+        dexterity--;
+        break;
+    case 3:
+        constitution--;
+        break;
+    case 4:
+        intelligence--;
+        break;
+    case 5:
+        wisdom--;
+        break;
+    case 6:
+        charisma--;
+        break;
+    default:
+        break;
+    }
+}
+
+
 #endif // End of the preprocessor STATS_CC

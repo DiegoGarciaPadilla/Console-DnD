@@ -48,6 +48,13 @@ public:
 
     // Methods
     std::string toString();
+
+    void increaseStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma);
+    void decreaseStats(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma);
+
+    void increaseByOne(int stat);
+    void decreaseByOne(int stat);
+
 };
 
 #endif // End of the STATS_H preprocessor
