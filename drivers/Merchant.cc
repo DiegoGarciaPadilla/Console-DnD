@@ -958,6 +958,7 @@ void Merchant::interact(Character &character)
         case 0:
             // Print the message
             std::cout << "Goodbye, " << character.getName() << "." << std::endl;
+            pause();
             break;
         default:
             // Print the message
