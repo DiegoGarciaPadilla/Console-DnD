@@ -566,6 +566,9 @@ void Merchant::buyItems(Character &character)
         numPotions = this->potions.size();
         numQuestItems = this->questItems.size();
 
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
+
         // Print the options
         std::cout << "Hello, " << character.getName() << "." << std::endl;
         std::cout << "What would you like to buy?" << std::endl;
@@ -629,6 +632,9 @@ void Merchant::buyItems(Character &character)
 
         // Clear the screen
         cleanScreen();
+
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
 
         // Check the option
         if (option > 0 && option <= numWeapons)
@@ -715,6 +721,9 @@ void Merchant::sellItems(Character &character)
         numPotions = character.getPotions().size();
         numQuestItems = character.getQuestItems().size();
 
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
+
         // Print the options
         std::cout << "Hello, " << character.getName() << "." << std::endl;
         std::cout << "What would you like to sell?" << std::endl;
@@ -778,6 +787,9 @@ void Merchant::sellItems(Character &character)
 
         // Clear the screen
         cleanScreen();
+
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
 
         // Check the option
         if (option > 0 && option <= numWeapons)
@@ -855,7 +867,8 @@ void Merchant::openShop(Character &character)
         // Print the options
         std::cout << "Hello, " << character.getName() << "." << std::endl;
         std::cout << "What would you like to do?" << std::endl;
-        std::cout << std::endl << std::endl;   
+        std::cout << std::endl
+                  << std::endl;
 
         // Print the options
         std::cout << "1. Buy items" << std::endl;
@@ -914,6 +927,9 @@ void Merchant::interact(Character &character)
         // Clear the screen
         cleanScreen();
 
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
+
         // Print the options
         std::cout << "Hello, " << character.getName() << "." << std::endl;
         std::cout << "1. Open shop" << std::endl;
@@ -925,6 +941,12 @@ void Merchant::interact(Character &character)
         // Get the option
         std::cout << "Enter the option:" << std::endl;
         std::cin >> option;
+
+        // Clear the screen
+        cleanScreen();
+
+        // Title
+        std::cout << readAsciiArt("asciiArt/merchant.txt") << std::endl;
 
         // Check the option
         switch (option)
