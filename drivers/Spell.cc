@@ -4,13 +4,13 @@
  * @brief This file contains the implementation of the spell class.
  * @version 0.1
  * @date 2023-01-13
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#ifdef SPELL_CC // If the preprocessor SPELL_H is defined
-#undef SPELL_CC // Undefine the preprocessor SPELL_H
+#ifndef SPELL_CC  // If the preprocessor SPELL_H is defined
+#define SPELL_CC // Undefine the preprocessor SPELL_H
 
 #include <iostream> // Library for input and output
 #include <string>   // Library for strings
@@ -25,9 +25,9 @@
 
 /**
  * @brief Construct a new Spell:: Spell object
- * 
- * @param 
- * @return 
+ *
+ * @param
+ * @return
  */
 
 Spell::Spell()
@@ -42,14 +42,14 @@ Spell::Spell()
 
 /**
  * @brief Construct a new Spell:: Spell object
- * 
- * @param name 
- * @param description 
- * @param type 
- * @param level 
- * @param damage 
- * @param manaCost 
- * @return 
+ *
+ * @param name
+ * @param description
+ * @param type
+ * @param level
+ * @param damage
+ * @param manaCost
+ * @return
  */
 
 Spell::Spell(std::string name, std::string description, std::string type, int level, int damage, int manaCost)
@@ -66,9 +66,9 @@ Spell::Spell(std::string name, std::string description, std::string type, int le
 
 /**
  * @brief Get the Name attribute
- * 
- * @param 
- * @return std::string 
+ *
+ * @param
+ * @return std::string
  */
 
 std::string Spell::getName()
@@ -78,9 +78,9 @@ std::string Spell::getName()
 
 /**
  * @brief Get the Description attribute
- * 
- * @param 
- * @return std::string 
+ *
+ * @param
+ * @return std::string
  */
 
 std::string Spell::getDescription()
@@ -90,9 +90,9 @@ std::string Spell::getDescription()
 
 /**
  * @brief Get the Type attribute
- * 
- * @param 
- * @return std::string 
+ *
+ * @param
+ * @return std::string
  */
 
 std::string Spell::getType()
@@ -102,9 +102,9 @@ std::string Spell::getType()
 
 /**
  * @brief Get the Level attribute
- * 
- * @param 
- * @return int 
+ *
+ * @param
+ * @return int
  */
 
 int Spell::getLevel()
@@ -114,9 +114,9 @@ int Spell::getLevel()
 
 /**
  * @brief Get the Damage attribute
- * 
- * @param 
- * @return int 
+ *
+ * @param
+ * @return int
  */
 
 int Spell::getDamage()
@@ -126,9 +126,9 @@ int Spell::getDamage()
 
 /**
  * @brief Get the Mana Cost attribute
- * 
- * @param 
- * @return int 
+ *
+ * @param
+ * @return int
  */
 
 int Spell::getManaCost()
@@ -140,9 +140,9 @@ int Spell::getManaCost()
 
 /**
  * @brief Set the Name attribute
- * 
- * @param name 
- * @return void 
+ *
+ * @param name
+ * @return void
  */
 
 void Spell::setName(std::string name)
@@ -152,9 +152,9 @@ void Spell::setName(std::string name)
 
 /**
  * @brief Set the Description attribute
- * 
- * @param description 
- * @return void 
+ *
+ * @param description
+ * @return void
  */
 
 void Spell::setDescription(std::string description)
@@ -164,9 +164,9 @@ void Spell::setDescription(std::string description)
 
 /**
  * @brief Set the Type attribute
- * 
- * @param type 
- * @return void 
+ *
+ * @param type
+ * @return void
  */
 
 void Spell::setType(std::string type)
@@ -176,9 +176,9 @@ void Spell::setType(std::string type)
 
 /**
  * @brief Set the Level attribute
- * 
- * @param level 
- * @return void 
+ *
+ * @param level
+ * @return void
  */
 
 void Spell::setLevel(int level)
@@ -188,9 +188,9 @@ void Spell::setLevel(int level)
 
 /**
  * @brief Set the Damage attribute
- * 
- * @param damage 
- * @return void 
+ *
+ * @param damage
+ * @return void
  */
 
 void Spell::setDamage(int damage)
@@ -200,9 +200,9 @@ void Spell::setDamage(int damage)
 
 /**
  * @brief Set the Mana Cost attribute
- * 
- * @param manaCost 
- * @return void 
+ *
+ * @param manaCost
+ * @return void
  */
 
 void Spell::setManaCost(int manaCost)
@@ -214,9 +214,9 @@ void Spell::setManaCost(int manaCost)
 
 /**
  * @brief Get the Spell object as a string
- * 
- * @param 
- * @return std::string 
+ *
+ * @param
+ * @return std::string
  */
 
 std::string Spell::toString()
@@ -235,8 +235,8 @@ std::string Spell::toString()
 
 /**
  * @brief Level up the spell
- * 
- * @param 
+ *
+ * @param
  * @return
  */
 
@@ -247,4 +247,4 @@ void Spell::levelUp()
     manaCost += 10;
 }
 
-#endif // End of the preprocessor SPELL_H
+#endif // End of the preprocessor SPELL_CC
