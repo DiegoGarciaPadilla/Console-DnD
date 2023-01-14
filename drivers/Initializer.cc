@@ -421,23 +421,29 @@ std::vector<Class> initClasses()
         name = classesJSON[i]["name"].get<std::string>();
         description = classesJSON[i]["description"].get<std::string>();
 
+        // Get the initial weapon JSON object
+        json initialWeaponJSON = classesJSON[i]["initialWeapon"];
+
         // Get the initial weapon attributes
-        initialWeaponName = classesJSON[i]["initialWeapon"]["name"].get<std::string>();
-        initialWeaponDescription = classesJSON[i]["initialWeapon"]["description"].get<std::string>();
-        initialWeaponRarity = classesJSON[i]["initialWeapon"]["rarity"].get<std::string>();
-        initialWeaponWeight = classesJSON[i]["initialWeapon"]["weight"].get<float>();
-        initialWeaponPrice = classesJSON[i]["initialWeapon"]["price"].get<int>();
-        initialWeaponSubtype = classesJSON[i]["initialWeapon"]["subtype"].get<std::string>();
-        initialWeaponDamage = classesJSON[i]["initialWeapon"]["damage"].get<int>();
+        initialWeaponName = initialWeaponJSON["name"].get<std::string>();
+        initialWeaponDescription = initialWeaponJSON["description"].get<std::string>();
+        initialWeaponRarity = initialWeaponJSON["rarity"].get<std::string>();
+        initialWeaponWeight = initialWeaponJSON["weight"].get<float>();
+        initialWeaponPrice = initialWeaponJSON["price"].get<int>();
+        initialWeaponSubtype = initialWeaponJSON["subtype"].get<std::string>();
+        initialWeaponDamage = initialWeaponJSON["damage"].get<int>();
+
+        // Get the initial armor JSON object
+        json initialArmorJSON = classesJSON[i]["initialArmor"];
 
         // Get the initial armor attributes
-        initialArmorName = classesJSON[i]["initialArmor"]["name"].get<std::string>();
-        initialArmorDescription = classesJSON[i]["initialArmor"]["description"].get<std::string>();
-        initialArmorRarity = classesJSON[i]["initialArmor"]["rarity"].get<std::string>();
-        initialArmorWeight = classesJSON[i]["initialArmor"]["weight"].get<float>();
-        initialArmorPrice = classesJSON[i]["initialArmor"]["price"].get<int>();
-        initialArmorSubtype = classesJSON[i]["initialArmor"]["subtype"].get<std::string>();
-        initialArmorDefense = classesJSON[i]["initialArmor"]["defense"].get<int>();
+        initialArmorName = initialArmorJSON["name"].get<std::string>();
+        initialArmorDescription = initialArmorJSON["description"].get<std::string>();
+        initialArmorRarity = initialArmorJSON["rarity"].get<std::string>();
+        initialArmorWeight = initialArmorJSON["weight"].get<float>();
+        initialArmorPrice = initialArmorJSON["price"].get<int>();
+        initialArmorSubtype = initialArmorJSON["subtype"].get<std::string>();
+        initialArmorDefense = initialArmorJSON["defense"].get<int>();
 
         // Create the initial weapon object
         Weapon initialWeapon(initialWeaponName, initialWeaponDescription, initialWeaponRarity, initialWeaponWeight, initialWeaponPrice, initialWeaponSubtype, initialWeaponDamage);
@@ -451,6 +457,12 @@ std::vector<Class> initClasses()
         // Add the class to the vector
         classes.push_back(classObject);
     }
+
+    // Close the file
+    file.close();
+
+    // Return the vector of classes
+    return classes;
 }
 
 /**
