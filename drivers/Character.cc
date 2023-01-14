@@ -368,7 +368,7 @@ void Character::createCharacter()
     std::cout << "What gender do you identify with? " << std::endl;
     printStringVector(genders);
     std::cin >> option;
-    while (option < 1 || option > 3)
+    while (option < 1 || option > genders.size())
     {
         std::cout << "Invalid option" << std::endl;
         std::cin >> option;
@@ -402,7 +402,7 @@ void Character::createCharacter()
     std::cout << "Alignment: " << std::endl;
     printStringVector(alignments);
     std::cin >> option;
-    while (option < 1 || option > 9)
+    while (option < 1 || option > alignments.size())
     {
         std::cout << "Invalid option" << std::endl;
         std::cin >> option;
@@ -414,7 +414,7 @@ void Character::createCharacter()
     std::cout << "Race: " << std::endl;
     printStringVector(races);
     std::cin >> option;
-    while (option < 1 || option > 9)
+    while (option < 1 || option > races.size())
     {
         std::cout << "Invalid option" << std::endl;
         std::cin >> option;
@@ -426,7 +426,7 @@ void Character::createCharacter()
     std::cout << "Class: " << std::endl;
     printStringVector(classes);
     std::cin >> option;
-    while (option < 1 || option > 9)
+    while (option < 1 || option > classes.size())
     {
         std::cout << "Invalid option" << std::endl;
         std::cin >> option;
