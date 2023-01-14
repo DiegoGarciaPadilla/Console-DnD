@@ -364,6 +364,9 @@ void Character::createCharacter()
     std::cout << std::endl;
     this->name = name;
 
+    // Clear the screen
+    cleanScreen();
+
     // Set the gender
     std::cout << "What gender do you identify with? " << std::endl;
     printStringVector(genders);
@@ -387,6 +390,9 @@ void Character::createCharacter()
     }
     std::cout << std::endl;
 
+    // Clear the screen
+    cleanScreen();
+
     // Set the age
     std::cout << "Age: ";
     std::cin >> age;
@@ -397,6 +403,9 @@ void Character::createCharacter()
     }
     std::cout << std::endl;
     this->age = age;
+
+    // Clear the screen
+    cleanScreen();
 
     // Set the alignment
     std::cout << "Alignment: " << std::endl;
@@ -410,6 +419,9 @@ void Character::createCharacter()
     std::cout << std::endl;
     this->alignment = alignments[option - 1];
 
+    // Clear the screen
+    cleanScreen();
+
     // Set the race
     std::cout << "Race: " << std::endl;
     printStringVector(races);
@@ -421,6 +433,9 @@ void Character::createCharacter()
     }
     std::cout << std::endl;
     this->defineRace(option - 1);
+
+    // Clear the screen
+    cleanScreen();
 
     // Set the class
     std::cout << "Class: " << std::endl;
@@ -434,11 +449,19 @@ void Character::createCharacter()
     std::cout << std::endl;
     this->defineClass(option - 1);
 
+    // Clear the screen
+    cleanScreen();
+
     // Set the stats
     std::cout << "Stats:" << std::endl;
-    std::cout << "The stats are generated randomly." << std::endl;
     this->defineStats();
-    std::cout << std::endl;
+    pause();
+
+    // Clear the screen
+    cleanScreen();
+
+    // Print a message
+    std::cout << "Your character has been created!" << std::endl;
 }
 
 /**
@@ -555,7 +578,103 @@ void Character::defineRace(int option)
 
 void Character::defineStats()
 {
-    stats = Stats(race);
+    // Clear the screen
+    cleanScreen();  
+
+    // If the character is not a Half-Elf, set the stats randomly
+    if (race.getName() != "Half-Elf")
+    {
+        // Generate random stats
+        stats = Stats(race);
+
+        // Print a message
+        std::cout << "Your stats have been generated randomly." << std::endl;
+    }
+    else
+    {
+        // Variables
+        int option = 0;
+        int stat1 = 0;
+        int stat2 = 0;
+
+        // Vector with the stats
+        std::vector<std::string> statsNames = listStats();
+
+        // Print a message
+        std::cout << "You are a Half-Elf. You can increase two stats by 1 point." << std::endl;
+        std::cout << "Which stats do you want to increase?" << std::endl;
+        std::cout << std::endl;
+
+        // Print the stats
+        printStringVector(statsNames);
+        std::cout << std::endl;
+
+        // Get the first stat
+        std::cout << "First stat:" << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > statsNames.size())
+        {
+            std::cout << "Invalid option" << std::endl;
+            std::cin >> option;
+        }
+
+        // Print a message
+        std::cout << "You have chosen " << statsNames[option - 1] << std::endl;
+        pause();
+
+        // Set the first stat
+        stat1 = option;
+
+        // Clear the screen
+        cleanScreen();
+
+        // Print the message
+        std::cout << "Choose the second stat:" << std::endl;
+        std::cout << std::endl;
+
+        // Print the stats
+        printStringVector(statsNames);
+
+        // Get the second stat
+        std::cout << "Second stat:" << std::endl;
+        std::cin >> option;
+
+        // Check if the option is valid
+        while (option < 1 || option > statsNames.size() || option == stat1)
+        {
+            if (option == stat1)
+            {
+                std::cout << "You have already chosen this stat" << std::endl;
+            }
+            else
+            {
+                std::cout << "Invalid option" << std::endl;
+            }
+            std::cin >> option;
+        }
+
+        // Print a message
+        std::cout << "You have chosen " << statsNames[option - 1] << std::endl;
+        pause();
+
+        // Clear the screen
+        cleanScreen();
+
+        // Set the second stat
+        stat2 = option;
+
+        // Generate random stats
+        stats = Stats(race);
+
+        // Increase the stats
+        stats.increaseByOne(stat1);
+        stats.increaseByOne(stat2);
+
+        // Print a message
+        std::cout << "Your stats have been saved." << std::endl;
+    }
 }
 
 /**
