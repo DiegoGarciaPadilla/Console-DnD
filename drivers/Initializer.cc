@@ -78,6 +78,32 @@ std::vector<std::string> listAlignments()
     return alignments;
 }
 
+// Stats
+
+/**
+ * @brief Function to get the list of stats
+ *
+ * @param
+ * @return vector
+ */
+
+std::vector<std::string> listStats()
+{
+    // Create the vector of strings
+    std::vector<std::string> stats;
+
+    // Add stats to the vector
+    stats.push_back("Strength");
+    stats.push_back("Dexterity");
+    stats.push_back("Constitution");
+    stats.push_back("Intelligence");
+    stats.push_back("Wisdom");
+    stats.push_back("Charisma");
+
+    // Return the vector of stats
+    return stats;
+}
+
 // Weapons
 
 /**
