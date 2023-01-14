@@ -1,11 +1,227 @@
 [
   {
+    "name": "Rusty sword",
+    "description": "It's a sword, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Sword",
+    "damage": 6
+  },
+  {
+    "name": "Rusty rapier",
+    "description": "It's a rapier, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Sword",
+    "damage": 6
+  },
+  {
+    "name": "Rusty longsword",
+    "description": "It's a longsword, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 15,
+    "weight": 10,
+    "subtype": "Sword",
+    "damage": 8
+  },
+  {
+    "name": "Rusty greatsword",
+    "description": "It's a greatsword, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 4,
+    "weight": 12,
+    "subtype": "Sword",
+    "damage": 10
+  },
+  {
+    "name": "Rusty warhammer",
+    "description": "It's a warhammer, with a rusty head. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 15,
+    "weight": 12,
+    "subtype": "Mace",
+    "damage": 12
+  },
+  {
+    "name": "Rusty flail",
+    "description": "It's a flail, with a rusty head. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 15,
+    "weight": 12,
+    "subtype": "Mace",
+    "damage": 12
+  },
+  {
+    "name": "Rusty scimitar",
+    "description": "It's a scimitar, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Sword",
+    "damage": 6
+  },
+  {
+    "name": "Rusty shortsword",
+    "description": "It's a shortsword, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 6,
+    "subtype": "Sword",
+    "damage": 4
+  },
+  {
+    "name": "Rusty halberd",
+    "description": "It's a halberd, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 15,
+    "weight": 12,
+    "subtype": "Spear",
+    "damage": 8
+  },
+  {
+    "name": "Rusty trident",
+    "description": "It's a trident, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 10,
+    "subtype": "Spear",
+    "damage": 6
+  },
+  {
+    "name": "Rusty axe",
+    "description": "It's an axe, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 15,
+    "weight": 10,
+    "subtype": "Axe",
+    "damage": 10
+  },
+  {
+    "name": "Rusty mace",
+    "description": "It's a mace, with a rusty head. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 10,
+    "subtype": "Mace",
+    "damage": 8
+  },
+  {
+    "name": "Rusty spear",
+    "description": "It's a spear, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Spear",
+    "damage": 6
+  },
+  {
+    "name": "Rusty dagger",
+    "description": "It's a dagger, with a rusty blade. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 1,
+    "weight": 4,
+    "subtype": "Dagger",
+    "damage": 2
+  },
+  {
+    "name": "Rusty crossbow",
+    "description": "It's a crossbow, with a rusty barrel. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Crossbow",
+    "damage": 6
+  },
+  {
     "name": "Iron sword",
     "description": "A sword made of iron.",
     "rarity": "Common",
     "weight": 10,
     "price": 20,
     "subtype": "Sword",
+    "damage": 12
+  },
+  {
+    "name": "Iron rapier",
+    "description": "A rapier made of iron.",
+    "rarity": "Common",
+    "weight": 10,
+    "price": 20,
+    "subtype": "Sword",
+    "damage": 12
+  },
+  {
+    "name": "Iron longsword",
+    "description": "A longsword made of iron.",
+    "rarity": "Common",
+    "weight": 12,
+    "price": 30,
+    "subtype": "Sword",
+    "damage": 14
+  },
+  {
+    "name": "Iron greatsword",
+    "description": "A greatsword made of iron.",
+    "rarity": "Common",
+    "weight": 14,
+    "price": 40,
+    "subtype": "Sword",
+    "damage": 16
+  },
+  {
+    "name": "Iron warhammer",
+    "description": "A warhammer made of iron.",
+    "rarity": "Common",
+    "weight": 14,
+    "price": 30,
+    "subtype": "Mace",
+    "damage": 18
+  },
+  {
+    "name": "Iron flail",
+    "description": "A flail made of iron.",
+    "rarity": "Common",
+    "weight": 14,
+    "price": 30,
+    "subtype": "Mace",
+    "damage": 18
+  },
+  {
+    "name": "Iron scimitar",
+    "description": "A scimitar made of iron.",
+    "rarity": "Common",
+    "weight": 10,
+    "price": 20,
+    "subtype": "Sword",
+    "damage": 12
+  },
+  {
+    "name": "Iron shortsword",
+    "description": "A shortsword made of iron.",
+    "rarity": "Common",
+    "weight": 8,
+    "price": 20,
+    "subtype": "Sword",
+    "damage": 10
+  },
+  {
+    "name": "Iron halberd",
+    "description": "A halberd made of iron.",
+    "rarity": "Common",
+    "weight": 14,
+    "price": 30,
+    "subtype": "Spear",
+    "damage": 14
+  },
+  {
+    "name": "Iron trident",
+    "description": "A trident made of iron.",
+    "rarity": "Common",
+    "weight": 12,
+    "price": 20,
+    "subtype": "Spear",
     "damage": 12
   },
   {

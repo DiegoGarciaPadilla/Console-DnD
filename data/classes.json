@@ -6,7 +6,7 @@
       "name": "Rusty greataxe",
       "description": "It's a greataxe, with a rusty steel blade. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Axe",
       "damage": 6
@@ -15,7 +15,7 @@
       "name": "Worn leather armor",
       "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Light",
       "defense": 6
@@ -28,16 +28,16 @@
       "name": "Rusty rapier",
       "description": "It's a rapier, with a rusty steel blade. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Sword",
-      "damage": 4
+      "damage": 6
     },
     "initialArmor": {
       "name": "Worn tunic",
       "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Light",
       "defense": 6
@@ -50,7 +50,7 @@
       "name": "Rusty mace",
       "description": "It's a mace, with a rusty steel head. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Blunt",
       "damage": 6
@@ -59,7 +59,7 @@
       "name": "Rusty chain mail",
       "description": "It's a suit of chain mail, with rusty steel links. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Medium",
       "defense": 6
@@ -72,7 +72,7 @@
       "name": "Rusty quarterstaff",
       "description": "It's a quarterstaff, with a rusty steel head. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Blunt",
       "damage": 4
@@ -81,7 +81,7 @@
       "name": "Worn studded leather armor",
       "description": "It's a suit of studded leather armor, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Light",
       "defense": 6
@@ -94,7 +94,7 @@
       "name": "Rusty longsword",
       "description": "It's a longsword, with a rusty steel blade. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Sword",
       "damage": 6
@@ -103,7 +103,7 @@
       "name": "Rusty chain mail",
       "description": "It's a suit of chain mail, with rusty steel links. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Medium",
       "defense": 6
@@ -116,7 +116,7 @@
       "name": "Rusty quarterstaff",
       "description": "It's a quarterstaff, with a rusty steel head. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Blunt",
       "damage": 4
@@ -125,7 +125,7 @@
       "name": "Worn tunic",
       "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Light",
       "defense": 6
@@ -138,7 +138,7 @@
       "name": "Rusty longsword",
       "description": "It's a longsword, with a rusty steel blade. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 12,
       "subtype": "Sword",
       "damage": 6
@@ -147,7 +147,7 @@
       "name": "Rusty iron plate armor",
       "description": "It's a suit of iron plate armor, with rusty steel plates. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 14,
       "subtype": "Heavy",
       "defense": 6
@@ -160,7 +160,7 @@
       "name": "Rusty longbow",
       "description": "It's a longbow, with a rusty steel bow. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Bow",
       "damage": 6
@@ -169,7 +169,7 @@
       "name": "Worn leather armor",
       "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Light",
       "defense": 6
@@ -182,7 +182,7 @@
       "name": "Rusty dagger",
       "description": "It's a dagger, with a rusty steel blade. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Dagger",
       "damage": 4
@@ -191,7 +191,7 @@
       "name": "Worn leather armor",
       "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Light",
       "defense": 6
@@ -204,7 +204,7 @@
       "name": "Old spellbook",
       "description": "It's an old spellbook, with a worn leather cover. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Arcane Focus",
       "damage": 4
@@ -213,7 +213,7 @@
       "name": "Worn tunic",
       "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Light",
       "defense": 6
@@ -226,7 +226,7 @@
       "name": "Worn scepter",
       "description": "It's a scepter, with a worn wooden handle. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Arcane Focus",
       "damage": 4
@@ -235,7 +235,7 @@
       "name": "Worn leather armor",
       "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 8,
       "subtype": "Light",
       "defense": 6
@@ -248,7 +248,7 @@
       "name": "Worn wand",
       "description": "It's a wand, with a worn wooden handle. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Arcane Focus",
       "damage": 4
@@ -257,7 +257,7 @@
       "name": "Worn tunic",
       "description": "It's a tunic, worn and torn. It doesn't seem very useful.",
       "rarity": "Common",
-      "price": 2,
+      "price": 10,
       "weight": 6,
       "subtype": "Light",
       "defense": 6

@@ -1,38 +1,119 @@
 [
   {
-    "name": "Leather armor",
-    "description": "An light armor made of leather. It is very flexible and comfortable.",
+    "name": "Worn leather armor",
+    "description": "It's a suit of leather armor, worn and torn. It doesn't seem very useful.",
     "rarity": "Common",
+    "price": 10,
     "weight": 8,
+    "subtype": "Light",
+    "defense": 6
+  },
+  {
+    "name": "Leather armor",
+    "description": "It's a suit of leather armor. It doesn't seem very useful.",
+    "rarity": "Common",
     "price": 20,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 8
+  },
+  {
+    "name": "Studded leather armor",
+    "description": "It's a suit of leather armor with metal studs. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 30,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 10
+  },
+  {
+    "name": "Chain shirt",
+    "description": "It's a suit of chain mail, but with a shirt-like design. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 40,
+    "weight": 8,
     "subtype": "Light",
     "defense": 12
   },
   {
-    "name": "Chainmail",
-    "description": "A heavy armor made of metal rings. It is very protective.",
+    "name": "Hide armor",
+    "description": "It's a suit of hide armor. It doesn't seem very useful.",
     "rarity": "Common",
-    "weight": 20,
-    "price": 75,
-    "subtype": "Heavy",
+    "price": 40,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 12
+  },
+  {
+    "name": "Scale mail",
+    "description": "It's a suit of scale mail. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 50,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 14
+  },
+  {
+    "name": "Breastplate",
+    "description": "It's a breastplate. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 50,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 14
+  },
+  {
+    "name": "Half plate",
+    "description": "It's a suit of half plate. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 60,
+    "weight": 8,
+    "subtype": "Light",
     "defense": 16
   },
   {
-    "name": "Plate armor",
-    "description": "A heavy armor made of metal plates. It is very protective.",
+    "name": "Ring mail",
+    "description": "It's a suit of ring mail. It doesn't seem very useful.",
     "rarity": "Common",
-    "weight": 25,
-    "price": 100,
-    "subtype": "Heavy",
+    "price": 60,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 16
+  },
+  {
+    "name": "Chain mail",
+    "description": "It's a suit of chain mail. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 80,
+    "weight": 8,
+    "subtype": "Light",
     "defense": 18
   },
   {
-    "name": "Line tunic",
-    "description": "A light armor made of linen. It is very flexible and comfortable.",
+    "name": "Splint mail",
+    "description": "It's a suit of splint mail. It doesn't seem very useful.",
     "rarity": "Common",
-    "weight": 6,
-    "price": 20,
+    "price": 80,
+    "weight": 8,
     "subtype": "Light",
-    "defense": 10
+    "defense": 18
+  },
+  {
+    "name": "Plate mail",
+    "description": "It's a suit of plate mail. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 100,
+    "weight": 8,
+    "subtype": "Light",
+    "defense": 20
+  },
+  {
+    "name": "Padded armor",
+    "description": "It's a suit of padded armor. It doesn't seem very useful.",
+    "rarity": "Common",
+    "price": 10,
+    "weight": 8,
+    "subtype": "Medium",
+    "defense": 11
   }
 ]
